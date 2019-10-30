@@ -23,6 +23,8 @@ public class NightCycle : MonoBehaviour
     public GameObject Open;
     public GameObject Closed;
 
+    public GameObject Spawner;
+
 
     public int speed;
 
@@ -106,12 +108,14 @@ public class NightCycle : MonoBehaviour
             Park_Light.SetActive(false);
             Open.SetActive(false);
             Closed.SetActive(true);
+            Spawner.SetActive(true);
         }
         if (night)
         {
             Park_Light.SetActive(true);
             Open.SetActive(true);
             Closed.SetActive(false);
+            Spawner.SetActive(false);
         }
 
     }
