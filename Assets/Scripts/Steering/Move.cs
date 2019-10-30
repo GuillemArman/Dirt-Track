@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Move : MonoBehaviour 
 {
+    private Animator animator;
+
     [Header("------ Read Only -------")]
+    public GameObject target;
     public Vector3 velocity = Vector3.zero;
     public float rotation = 0.0f;
 
     [Header("------ Set Values ------")]
-    public GameObject target;
     public float max_velocity = 3.0f;
     public float max_rotation = 2.0f;
     public float max_acceleration = 0.1f;
@@ -36,10 +38,15 @@ public class Move : MonoBehaviour
         rotation = new_rotation;
     }
 
+    public void SetTarget(GameObject new_target)
+    {
+        target = new_target;
+    }
+
     // Use this for initialization
     void Start()
     {
-      
+        animator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -50,6 +57,9 @@ public class Move : MonoBehaviour
         {
             velocity = velocity.normalized * max_velocity;
         }
+
+        // Animation parameters
+        animator.SetFloat("Velocity", velocity.magnitude);
 
         // Move
         velocity.y = 0.0f;

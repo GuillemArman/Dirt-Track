@@ -73,7 +73,8 @@
     <Compile Include="Assets\Scripts\Steering\SteeringAvoidance.cs" />
     <Compile Include="Assets\Scripts\Steering\SteeringQueue.cs" />
     <Compile Include="Assets\Scripts\Steering\SteeringSeparation.cs" />
-    <Compile Include="Assets\Scripts\VisitorSpawner.cs" />
+    <Compile Include="Assets\Scripts\VisitorEnterStadium.cs" />
+    <Compile Include="Assets\Scripts\VisitorSpawn.cs" />
     <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\SimpleWorld\SimpleTown\Changelog.txt" />
     <None Include="Assets\SimpleWorld\SimpleMilitary\ReadMe.txt" />
