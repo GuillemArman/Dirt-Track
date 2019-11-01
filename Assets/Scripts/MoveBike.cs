@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class MoveBike : MonoBehaviour
 {
+    NightCycle cycle;
+    public bool isDay;
 
     // put the points from unity interface
     public GameObject[] wayPointList;
@@ -17,6 +19,7 @@ public class MoveBike : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        isDay = GameObject.Find("_Game Manager").GetComponent<NightCycle>().day;
         wayPointList = GameObject.FindGameObjectsWithTag("BikePoint");
         wayPointList[0] = GameObject.Find("Bike1");
         wayPointList[1] = GameObject.Find("Bike2");
@@ -35,12 +38,14 @@ public class MoveBike : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isDay = GameObject.Find("_Game Manager").GetComponent<NightCycle>().day;
         // check if we have somewere to walk
         if (currentWayPoint < this.wayPointList.Length)
         {
             if (targetWayPoint == null)
                 targetWayPoint = wayPointList[currentWayPoint];
-            walk();
+            if (isDay)
+                walk();
         }
     }
 
@@ -55,7 +60,7 @@ public class MoveBike : MonoBehaviour
 
         if (aux <= 1)
         {
-            if (currentWayPoint == 7)
+            if (currentWayPoint == 10)
             {
                 currentWayPoint = 0;
                 targetWayPoint = wayPointList[currentWayPoint];
