@@ -24,6 +24,12 @@ public class MoveBike : MonoBehaviour
         wayPointList[3] = GameObject.Find("Bike4");
         wayPointList[4] = GameObject.Find("Bike5");
         wayPointList[5] = GameObject.Find("Bike6");
+        wayPointList[6] = GameObject.Find("Bike7");
+        wayPointList[7] = GameObject.Find("Bike8");
+        wayPointList[8] = GameObject.Find("Bike9");
+        wayPointList[9] = GameObject.Find("Bike10");
+        wayPointList[10] = GameObject.Find("Bike11");
+
     }
 
     // Update is called once per frame
@@ -49,7 +55,7 @@ public class MoveBike : MonoBehaviour
 
         if (aux <= 1)
         {
-            if (currentWayPoint == 5)
+            if (currentWayPoint == 7)
             {
                 currentWayPoint = 0;
                 targetWayPoint = wayPointList[currentWayPoint];
