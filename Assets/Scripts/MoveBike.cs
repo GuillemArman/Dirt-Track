@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class MoveBike : MonoBehaviour
 {
 
+  
     // put the points from unity interface
     public GameObject[] wayPointList;
 
@@ -13,6 +14,8 @@ public class MoveBike : MonoBehaviour
     GameObject targetWayPoint;
 
     public float speed = 7f;
+
+    
 
     // Use this for initialization
     void Start()
@@ -35,36 +38,42 @@ public class MoveBike : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         // check if we have somewere to walk
+        
         if (currentWayPoint < this.wayPointList.Length)
         {
             if (targetWayPoint == null)
                 targetWayPoint = wayPointList[currentWayPoint];
+
             walk();
         }
+         
     }
 
     void walk()
     {
-        float aux = (transform.position - targetWayPoint.transform.position).magnitude;
-        // rotate towards the target
-        transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
+        
+            float aux = (transform.position - targetWayPoint.transform.position).magnitude;
+            // rotate towards the target
+            transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
 
-        // move towards the target
-        transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
+            // move towards the target
+            transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
 
-        if (aux <= 1)
-        {
-            if (currentWayPoint == 7)
+            if (aux <= 1)
             {
-                currentWayPoint = 0;
-                targetWayPoint = wayPointList[currentWayPoint];
+                if (currentWayPoint == 9)
+                {
+                    currentWayPoint = 0;
+                    targetWayPoint = wayPointList[currentWayPoint];
+                }
+                else
+                {
+                    currentWayPoint++;
+                    targetWayPoint = wayPointList[currentWayPoint];
+                }
             }
-            else
-            {
-                currentWayPoint++;
-                targetWayPoint = wayPointList[currentWayPoint];
-            }
-        }
-    }
+     }
+    
 }
