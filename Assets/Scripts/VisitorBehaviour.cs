@@ -10,6 +10,7 @@ public class VisitorBehaviour : MonoBehaviour
     private SteeringQueue queue;
     private SteeringArrive arrive;
     private Action visitor_action;
+    private float time_waiting = 3.0f;
 
     public GameObject queue_1;
     public GameObject queue_2;
@@ -56,10 +57,10 @@ public class VisitorBehaviour : MonoBehaviour
         food_3t = GameObject.Find("Food3_Trigger"); 
         
         stadium_1t = GameObject.Find("Entrance1_Trigger"); 
-        stadium_2t = GameObject.Find("Entrance2_Trigger)"); 
-        stadium_3t = GameObject.Find("Entrance3_Trigger)"); 
-        stadium_4t = GameObject.Find("Entrance4_Trigger)"); 
-        stadium_5t = GameObject.Find("Entrance5_Trigger)"); 
+        stadium_2t = GameObject.Find("Entrance2_Trigger"); 
+        stadium_3t = GameObject.Find("Entrance3_Trigger"); 
+        stadium_4t = GameObject.Find("Entrance4_Trigger"); 
+        stadium_5t = GameObject.Find("Entrance5_Trigger"); 
 
         SetInitialTarget();
     }
@@ -67,16 +68,21 @@ public class VisitorBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (visitor_action == Action.Doing_queue)
+        switch(visitor_action)
         {
-            queue.wants_to_queue = true;
-            OnDoingQueue();
+            case Action.Doing_queue:
+                OnDoingQueue();
+                break;
+
+            case Action.Buying_ticket:
+                OnBuyingTicket();
+                break;
         }
     }
 
     void SetInitialTarget()
     {
-        int position = Random.Range(1, 4);
+        int position = Random.Range(1, 5);
         switch (position)
         {
             case 1:
@@ -98,11 +104,14 @@ public class VisitorBehaviour : MonoBehaviour
 
     void OnDoingQueue()
     {
+        queue.wants_to_queue = true;
+
         if (move.target == queue_1 && arrive.arrived && !ticket_1t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             move.target = ticket_1t;
             nav_move.SetDestination(move.target.transform.position);
             visitor_action = Action.Buying_ticket;
+            
         }
         else if (move.target == queue_2 && arrive.arrived && !ticket_2t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
@@ -122,5 +131,49 @@ public class VisitorBehaviour : MonoBehaviour
             nav_move.SetDestination(move.target.transform.position);
             visitor_action = Action.Buying_ticket;
         }
+    }
+
+    void OnBuyingTicket()
+    {
+        if (arrive.arrived)
+        {
+            time_waiting -= Time.deltaTime;
+
+            if (time_waiting <= 0)
+            {
+                int position = Random.Range(1, 6);
+                switch (position)
+                {
+                    case 1:
+                        move.target = stadium_1t;
+                        nav_move.SetDestination(move.target.transform.position);
+                        queue.wants_to_queue = false;
+                        break;
+                    case 2:
+                        move.target = stadium_2t;
+                        nav_move.SetDestination(move.target.transform.position);
+                        queue.wants_to_queue = false;
+                        break;
+                    case 3:
+                        move.target = stadium_3t;
+                        nav_move.SetDestination(move.target.transform.position);
+                        queue.wants_to_queue = false;
+                        break;
+                    case 4:
+                        move.target = stadium_4t;
+                        nav_move.SetDestination(move.target.transform.position);
+                        queue.wants_to_queue = false;
+                        break;
+                    case 5:
+                        move.target = stadium_5t;
+                        nav_move.SetDestination(move.target.transform.position);
+                        queue.wants_to_queue = false;
+                        break;
+                }
+
+                visitor_action = Action.Going_stadium;
+                time_waiting = 3.0f;
+            }
+        }       
     }
 }

@@ -9,20 +9,18 @@ public class SteeringSeparation : MonoBehaviour
 
     private Move move;
     private SteeringQueue queue;
-    private SphereCollider collider;
 
     // Start is called before the first frame update
     void Start()
     {
         move = GetComponent<Move>();
         queue = GetComponent<SteeringQueue>();
-        collider = GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        int layer_id = 8;
+        int layer_id = 9;
         int layer_mask = 1 << layer_id;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, search_radius, layer_mask);
 
@@ -31,7 +29,7 @@ public class SteeringSeparation : MonoBehaviour
             Vector3 steering_force = Vector3.zero;
             for (int i = 0; i < hitColliders.Length; i++)
             {
-                Vector3 force = hitColliders[i].transform.position - collider.transform.position;
+                Vector3 force = hitColliders[i].transform.position - transform.position;
                 force = force * -max_repulsion;
                 steering_force += force;
             }

@@ -46,7 +46,6 @@ public class SteeringAvoidance : MonoBehaviour
                 {
                     Vector3 steering_force = hit.normal * max_avoid_force;
                     move.AddVelocity(steering_force);
-                    nav_move.SetDestination(move.target.transform.position);
                     break;
                 }
             }

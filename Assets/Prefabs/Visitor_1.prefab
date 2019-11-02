@@ -455,8 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1957ad2d42199ed41ba62deeaafb04b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  search_radius: 1.5
-  max_repulsion: 0.1
+  search_radius: 1
+  max_repulsion: 0.07
 --- !u!114 &623182038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,8 +508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_in_queue: 0
+  wants_to_queue: 0
   max_queue_ahead: 5
-  queue_radius: 0
   max_brake_force: 3
   rays:
   - length: 2
@@ -528,6 +528,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f403c664ecbafe243927b1d4c6adc114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  queue_1: {fileID: 0}
+  queue_2: {fileID: 0}
+  queue_3: {fileID: 0}
+  queue_4: {fileID: 0}
+  ticket_1t: {fileID: 0}
+  ticket_2t: {fileID: 0}
+  ticket_3t: {fileID: 0}
+  ticket_4t: {fileID: 0}
+  food_1t: {fileID: 0}
+  food_2t: {fileID: 0}
+  food_3t: {fileID: 0}
+  stadium_1t: {fileID: 0}
+  stadium_2t: {fileID: 0}
+  stadium_3t: {fileID: 0}
+  stadium_4t: {fileID: 0}
+  stadium_5t: {fileID: 0}
 --- !u!95 &623182036
 Animator:
   serializedVersion: 3

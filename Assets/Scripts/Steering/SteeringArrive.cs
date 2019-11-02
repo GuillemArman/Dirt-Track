@@ -41,8 +41,9 @@ public class SteeringArrive : MonoBehaviour
                 arrived = true;
             }
             else
-            {           
+            {
                 // Finding desired velocity
+                arrived = false;
                 Vector3 desired_velocity = dist.normalized * move.max_velocity;
 
                 // Finding desired deceleration
