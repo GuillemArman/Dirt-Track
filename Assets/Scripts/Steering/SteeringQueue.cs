@@ -6,10 +6,10 @@ public class SteeringQueue : MonoBehaviour
 {
     [Header("------ Read Only -------")]
     public bool is_in_queue = false;
+    public bool wants_to_queue = false;
 
     [Header("------ Set Values -------")]
     public float max_queue_ahead;
-    public float queue_radius;
     public float max_brake_force;
     public my_ray[] rays;
 
@@ -36,17 +36,13 @@ public class SteeringQueue : MonoBehaviour
             direction.x += ray.direction_offset;
 
             if (Physics.Raycast(transform.position, q * direction.normalized, out hit, ray.length)
-                && !hit.collider.CompareTag("Obstacle"))
+                && !hit.collider.CompareTag("Obstacle") && wants_to_queue)
             {
                 is_in_queue = true;
+                move.SetVelocity(Vector3.zero);
                 break;
             }
             else is_in_queue = false;
-        }
-
-        if (is_in_queue)
-        {          
-            move.SetVelocity(Vector3.zero);       
         }
     }
             
