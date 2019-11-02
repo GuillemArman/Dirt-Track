@@ -8,7 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class NightCycle : MonoBehaviour
 {
-    
+
+    public Material skybox1;
+    public Material skybox2;
+
 
     public float time;
     public TimeSpan current_time;
@@ -36,6 +39,15 @@ public class NightCycle : MonoBehaviour
         days = 1;
         day = true;
         night = false;
+
+        if(day)
+        {
+            RenderSettings.skybox = skybox1;
+        }
+        if(night)
+        {
+            RenderSettings.skybox = skybox2;
+        }
        
     }
 
@@ -44,7 +56,7 @@ public class NightCycle : MonoBehaviour
     {
         ChangeTime();
         ParkLights();
-
+        SkyboxChange();
     }
 
     public void ChangeTime()
@@ -120,7 +132,17 @@ public class NightCycle : MonoBehaviour
 
     }
 
-
+    void SkyboxChange()
+    {
+        if (day)
+        {
+            RenderSettings.skybox = skybox1;
+        }
+        if (night)
+        {
+            RenderSettings.skybox = skybox2;
+        }
+    }
 
 
 
@@ -146,7 +168,7 @@ public class NightCycle : MonoBehaviour
 
         while (light_Getout.GetComponent<Light>().intensity >= 0.3f)
         {
-            light_Getout.GetComponent<Light>().intensity -= 0.02f;
+            light_Getout.GetComponent<Light>().intensity -= 0.04f;
             duration -= interval;
             yield return new WaitForSeconds(interval);//the coroutine will wait for 0.1 secs
         }
