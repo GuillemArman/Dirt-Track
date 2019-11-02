@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VisitorBehaviour : MonoBehaviour
 {
-    public enum Action { To_queue, Doing_queue, Buying_ticket, Hungry, Go_stadium, Go_home, Just_walking };
+    public enum Action { Stuck, To_queue, Doing_queue, Buying_ticket, Hungry, Go_stadium, Go_home, Just_walking };
     public Action visitor_action;
 
     private Move move;

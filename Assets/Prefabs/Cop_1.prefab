@@ -1591,6 +1591,7 @@ GameObject:
   - component: {fileID: 5893424743076429912}
   - component: {fileID: 8144436413099705096}
   - component: {fileID: 3925089628330817836}
+  - component: {fileID: -8054978288557824672}
   - component: {fileID: 8944707447485321648}
   - component: {fileID: -1395820932729774399}
   m_Layer: 0
@@ -1733,7 +1734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7d1011a5f132043a09d98ac2b37fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 0}
   progress: 0
   path_point_distance: 1.5
 --- !u!114 &8144436413099705096
@@ -1766,6 +1766,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walk_radius: 10
+--- !u!114 &-8054978288557824672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944707447494681200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c71a13089e35b942a7c91412771644a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &8944707447485321648
 Animator:
   serializedVersion: 3

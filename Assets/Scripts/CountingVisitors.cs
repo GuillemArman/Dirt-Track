@@ -14,7 +14,7 @@ public class CountingVisitors : MonoBehaviour
     public GameObject stadium_crowd8;
     public GameObject stadium_crowd9;
 
-    private int num_visitors = 20;
+    private int num_visitors = 0;
 
     // Start is called before the first frame update
     void Start()
