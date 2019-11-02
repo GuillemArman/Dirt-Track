@@ -8,7 +8,7 @@ public class MoveNavMesh : MonoBehaviour
     private Move move;
     private SteeringArrive arrive;
     private SteeringQueue queue;
-    private NavMeshAgent nav_agent;
+    private NavMeshAgent nav_agent = null;
 
     private Vector3[] path;
 
@@ -33,7 +33,7 @@ public class MoveNavMesh : MonoBehaviour
         nav_agent.isStopped = true;
         nav_agent.updateRotation = false;
 
-        if (nav_agent.hasPath && !queue.is_in_queue)
+        if (nav_agent != null && nav_agent.hasPath && !queue.is_in_queue)
         {
             if (!nav_agent.pathEndPosition.Equals(path[path.Length - 1]))
                 path = nav_agent.path.corners;
@@ -70,7 +70,7 @@ public class MoveNavMesh : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        if (nav_agent.hasPath)
+        if (nav_agent != null && nav_agent.hasPath)
         {
             for (int i = 0; i < nav_agent.path.corners.Length - 1; i++)
                 Debug.DrawLine(nav_agent.path.corners[i], nav_agent.path.corners[i + 1], Color.red);

@@ -16,6 +16,9 @@ public class MechanicBehaviour : MonoBehaviour
     {
         move = GetComponent<Move>();
         nav_move = GetComponent<MoveNavMesh>();
+
+        move.SetCurrTarget(transform.position);
+        cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
     }
 
     // Update is called once per frame
