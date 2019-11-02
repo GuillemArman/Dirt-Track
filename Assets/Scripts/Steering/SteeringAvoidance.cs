@@ -12,7 +12,7 @@ public class my_ray
 public class SteeringAvoidance : MonoBehaviour
 {
     public my_ray[] rays;
-    public float max_avoid_force = 0.1f;
+    public float max_avoid_force = 0.05f;
 
     private Move move;
     private MoveNavMesh nav_move;

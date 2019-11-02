@@ -42,27 +42,18 @@ public class SteeringMechanic : MonoBehaviour
 
     void Investigate()
     {
-
         if (isDay)
         {
-            nav_move.SetDestination(investigate_pos.transform.position);
-
-            move.target = investigate_pos;
+            nav_move.SetDestination(investigate_pos);
         }
-
-
-
     }
 
     void CheckVehicles()
     {
         if (isNight)
         {
-            nav_move.SetDestination(check_pos.transform.position);
-            move.target = check_pos;
-
+            nav_move.SetDestination(check_pos);
         }
-
     }
 }
 

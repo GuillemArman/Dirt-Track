@@ -118,15 +118,15 @@ public class NightCycle : MonoBehaviour
         {
 
             Park_Light.SetActive(false);
-            Open.SetActive(false);
-            Closed.SetActive(true);
+            //Open.SetActive(false);
+            //Closed.SetActive(true);
             Spawner.SetActive(true);
         }
         if (night)
         {
             Park_Light.SetActive(true);
-            Open.SetActive(true);
-            Closed.SetActive(false);
+            //Open.SetActive(true);
+            //Closed.SetActive(false);
             Spawner.SetActive(false);
         }
 

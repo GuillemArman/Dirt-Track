@@ -11,7 +11,6 @@ public class MoveNavMesh : MonoBehaviour
     private NavMeshAgent nav_agent;
 
     private Vector3[] path;
-    private Vector3 final_target;
 
     [Header("------ Read Only -------")]
     public int progress = 0;
@@ -26,9 +25,6 @@ public class MoveNavMesh : MonoBehaviour
         arrive = GetComponent<SteeringArrive>();
         queue = GetComponent<SteeringQueue>();
         nav_agent = GetComponent<NavMeshAgent>();
-
-        final_target = move.target.transform.position;
-        SetDestination(final_target);
     }
 
     // Update is called once per frame
@@ -50,7 +46,7 @@ public class MoveNavMesh : MonoBehaviour
                 }
                 if (progress < path.Length)
                 {
-                    move.target.transform.position = path[progress];
+                    move.SetCurrTarget(path[progress]);
                 }
             }
         }
@@ -61,19 +57,23 @@ public class MoveNavMesh : MonoBehaviour
         return (progress >= path.Length - 1);
     }
 
-    public void SetDestination(Vector3 dest)
+    public void SetDestination(GameObject dest)
     {
         progress = 0;
-        final_target = dest;
+        move.final_target = dest;
+
         NavMeshPath nav_path = new NavMeshPath();
-        nav_agent.SetDestination(final_target);
-        nav_agent.CalculatePath(final_target, nav_path);
+        nav_agent.SetDestination(dest.transform.position);
+        nav_agent.CalculatePath(dest.transform.position, nav_path);
         path = nav_agent.path.corners;
     }
 
     public void OnDrawGizmos()
     {
-        for (int i = 0; i < nav_agent.path.corners.Length - 1; i++)
-            Debug.DrawLine(nav_agent.path.corners[i], nav_agent.path.corners[i + 1], Color.red);
+        if (nav_agent.hasPath)
+        {
+            for (int i = 0; i < nav_agent.path.corners.Length - 1; i++)
+                Debug.DrawLine(nav_agent.path.corners[i], nav_agent.path.corners[i + 1], Color.red);
+        }
     }
 }

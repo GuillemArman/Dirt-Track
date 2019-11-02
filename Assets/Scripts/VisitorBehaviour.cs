@@ -90,39 +90,39 @@ public class VisitorBehaviour : MonoBehaviour
         switch (position)
         {
             case 1:
-                move.target = queue_1;
+                move.final_target = queue_1;
                 break;
             case 2:
-                move.target = queue_2;
+                move.final_target = queue_2;
                 break;
             case 3:
-                move.target = queue_3;
+                move.final_target = queue_3;
                 break;
             case 4:
-                move.target = queue_4;
+                move.final_target = queue_4;
                 break;
         }
 
-        nav_move.SetDestination(move.target.transform.position);
+        nav_move.SetDestination(move.final_target);
     }
 
     void OnDoingQueue()
     {
         queue.wants_to_queue = true;
 
-        if (move.target == queue_1 && arrive.arrived && !ticket_1t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
+        if (move.final_target == queue_1 && arrive.arrived && !ticket_1t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             QueueToTicket(ticket_1t);            
         }
-        else if (move.target == queue_2 && arrive.arrived && !ticket_2t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
+        else if (move.final_target == queue_2 && arrive.arrived && !ticket_2t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             QueueToTicket(ticket_2t);
         }
-        else if (move.target == queue_3 && arrive.arrived && !ticket_3t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
+        else if (move.final_target == queue_3 && arrive.arrived && !ticket_3t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             QueueToTicket(ticket_3t);
         }
-        else if (move.target == queue_4 && arrive.arrived && !ticket_4t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
+        else if (move.final_target == queue_4 && arrive.arrived && !ticket_4t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             QueueToTicket(ticket_4t);
         }
@@ -130,8 +130,7 @@ public class VisitorBehaviour : MonoBehaviour
 
     void QueueToTicket(GameObject target)
     {
-        move.target = target;
-        nav_move.SetDestination(move.target.transform.position);
+        nav_move.SetDestination(target);
         visitor_action = Action.Buying_ticket;
     }
 
@@ -218,8 +217,7 @@ public class VisitorBehaviour : MonoBehaviour
 
     void ToStadium(GameObject target)
     {
-        move.target = target;
-        nav_move.SetDestination(move.target.transform.position);
+        nav_move.SetDestination(target);
         queue.wants_to_queue = false;
 
         visitor_action = Action.Going_stadium;
@@ -228,8 +226,7 @@ public class VisitorBehaviour : MonoBehaviour
 
     void ToFood(GameObject target)
     {
-        move.target = target;
-        nav_move.SetDestination(move.target.transform.position);
+        nav_move.SetDestination(target);
 
         visitor_action = Action.Hungry;
         time_waiting = 3.0f;

@@ -13,7 +13,7 @@ public class SteeringArrive : MonoBehaviour
     public float distance = 0;
 
     [Header("------ Set Values ------")]
-    public float stop_area_radius = 0.3f;
+    public float stop_area_radius = 0.5f;
     public float slow_area_radius = 3.0f;
     public float time_to_target = 50f;
 
@@ -28,7 +28,7 @@ public class SteeringArrive : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        Vector3 dist = move.target.transform.position - transform.position;
+        Vector3 dist = move.GetCurrTarget() - transform.position;
         distance = dist.magnitude;
         float slow_factor = dist.magnitude / slow_area_radius;
 
@@ -71,11 +71,8 @@ public class SteeringArrive : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if (nav_move.IsPathFinishing())
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(move.target.transform.position, slow_area_radius);
-            Gizmos.DrawWireSphere(move.target.transform.position, stop_area_radius);
-        }
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(move.final_target.transform.position, slow_area_radius);
+        Gizmos.DrawWireSphere(move.final_target.transform.position, stop_area_radius);
     }
 }

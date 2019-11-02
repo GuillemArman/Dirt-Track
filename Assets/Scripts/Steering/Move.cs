@@ -5,16 +5,17 @@ using UnityEngine;
 public class Move : MonoBehaviour 
 {
     private Animator animator;
+    private Vector3 curr_target;
 
     [Header("------ Read Only -------")]
-    public GameObject target;
+    public GameObject final_target;
     public Vector3 velocity = Vector3.zero;
     public float rotation = 0.0f;
 
     [Header("------ Set Values ------")]
     public float max_velocity = 3.0f;
     public float max_rotation = 2.0f;
-    public float max_acceleration = 0.1f;
+    public float max_acceleration = 3.0f;
 
     public void AddVelocity(Vector3 steering_force)
     {
@@ -36,9 +37,14 @@ public class Move : MonoBehaviour
         rotation = new_rotation;
     }
 
-    public void SetTarget(GameObject new_target)
+    public void SetCurrTarget(Vector3 new_target)
     {
-        target = new_target;
+        curr_target = new_target;
+    }
+
+    public Vector3 GetCurrTarget()
+    {
+        return curr_target;
     }
 
     // Use this for initialization
