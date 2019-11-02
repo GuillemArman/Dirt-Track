@@ -6,42 +6,28 @@ public class MechanicBehaviour : MonoBehaviour
 {
     private Move move;
     private MoveNavMesh nav_move;
-
-    NightCycle cycle;
-    public bool isDay;
-    public bool isNight;
+    private NightCycle cycle;
 
     public GameObject investigate_pos;
-
     public GameObject check_pos;
-
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-        isDay = GameObject.Find("_Game Manager").GetComponent<NightCycle>().day;
-        isNight = GameObject.Find("_Game Manager").GetComponent<NightCycle>().night;
-
         move = GetComponent<Move>();
         nav_move = GetComponent<MoveNavMesh>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        isDay = GameObject.Find("_Game Manager").GetComponent<NightCycle>().day;
-        isNight = GameObject.Find("_Game Manager").GetComponent<NightCycle>().night;
-
         Investigate();
         CheckVehicles();
     }
 
     void Investigate()
     {
-        if (isDay)
+        if (cycle.day || cycle.noon)
         {
             nav_move.SetDestination(investigate_pos);
         }
@@ -49,7 +35,7 @@ public class MechanicBehaviour : MonoBehaviour
 
     void CheckVehicles()
     {
-        if (isNight)
+        if (cycle.night)
         {
             nav_move.SetDestination(check_pos);
         }
