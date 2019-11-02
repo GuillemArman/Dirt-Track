@@ -51,7 +51,7 @@ public class SteeringQueue : MonoBehaviour
         float angle = Mathf.Atan2(transform.forward.x, transform.forward.z);
         Quaternion q = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
 
-        Gizmos.color = Color.white;
+        Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, (q * Vector3.forward) * max_queue_ahead);
     }
 }

@@ -339,9 +339,9 @@ GameObject:
   - component: {fileID: 623182039}
   - component: {fileID: 623182038}
   - component: {fileID: 623182037}
+  - component: {fileID: 1651348793542482383}
   - component: {fileID: 623182036}
   - component: {fileID: 623182035}
-  - component: {fileID: 1651348793542482383}
   m_Layer: 0
   m_Name: Visitor_1
   m_TagString: Untagged
@@ -494,6 +494,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progress: 0
   path_point_distance: 1.5
+--- !u!114 &1651348793542482383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623182034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f33d5e6ce1f1e4f8f0d35cd1359dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_in_queue: 0
+  max_queue_ahead: 5
+  max_queue_radius: 0
+  max_brake_force: 4
 --- !u!95 &623182036
 Animator:
   serializedVersion: 3
@@ -535,22 +551,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 0
---- !u!114 &1651348793542482383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623182034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f33d5e6ce1f1e4f8f0d35cd1359dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_in_queue: 1
-  max_queue_ahead: 0
-  max_queue_radius: 0
-  max_brake_force: 0
 --- !u!1 &625753625
 GameObject:
   m_ObjectHideFlags: 0

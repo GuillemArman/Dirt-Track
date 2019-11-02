@@ -32,8 +32,8 @@ public class SteeringArrive : MonoBehaviour
         distance = dist.magnitude;
         float slow_factor = dist.magnitude / slow_area_radius;
 
-        //if (!queue.is_in_queue)
-        //{
+        if (!queue.is_in_queue)
+        {
             if (dist.magnitude <= stop_area_radius)
             {
                 // Path is completed
@@ -65,7 +65,7 @@ public class SteeringArrive : MonoBehaviour
                 Vector3 steering_force = desired_accel;
                 move.AddVelocity(steering_force);
             }        
-        //}     
+        }     
     }
 
     void OnDrawGizmos()
