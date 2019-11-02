@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CameraSwitching.cs" />
     <Compile Include="Assets\Scripts\EntranceTrigger.cs" />
+    <Compile Include="Assets\Scripts\MechanicBehaviour.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\MoveBike.cs" />
     <Compile Include="Assets\Scripts\NightCycle.cs" />
@@ -105,7 +106,6 @@
     <Compile Include="Assets\Scripts\Steering\SteeringQueue.cs" />
     <Compile Include="Assets\Scripts\Steering\SteeringSeparation.cs" />
     <Compile Include="Assets\Scripts\Steering\SteeringWander.cs" />
-    <Compile Include="Assets\Scripts\SteeringMechanic.cs" />
     <Compile Include="Assets\Scripts\TicketTrigger.cs" />
     <Compile Include="Assets\Scripts\VisitorBehaviour.cs" />
     <Compile Include="Assets\Scripts\VisitorSpawn.cs" />

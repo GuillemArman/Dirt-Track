@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SteeringMechanic : MonoBehaviour
+public class MechanicBehaviour : MonoBehaviour
 {
-
     private Move move;
     private MoveNavMesh nav_move;
 

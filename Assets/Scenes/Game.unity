@@ -12721,6 +12721,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8944707447494681200, guid: bd7edd3f53586994484eafd67f1a622c,
+        type: 3}
+      propertyPath: m_Name
+      value: Cop_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8944707447494681200, guid: bd7edd3f53586994484eafd67f1a622c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1395820932729774399, guid: bd7edd3f53586994484eafd67f1a622c,
         type: 3}
       propertyPath: m_Radius
@@ -12770,11 +12780,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WalkableMask
       value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8944707447494681200, guid: bd7edd3f53586994484eafd67f1a622c,
-        type: 3}
-      propertyPath: m_Name
-      value: Cop_1
       objectReference: {fileID: 0}
     - target: {fileID: 8944707447494393424, guid: bd7edd3f53586994484eafd67f1a622c,
         type: 3}
@@ -15322,20 +15327,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73d427470e17ca47ab73bf572ad75d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  day: 0
+  noon: 0
+  night: 0
   skybox1: {fileID: 2100000, guid: 7d1430089afb5854892670b854d1d684, type: 2}
   skybox2: {fileID: 2100000, guid: 5ce75119787234e4aae0598fcc619b45, type: 2}
-  time: 0
   timetext: {fileID: 1153744109}
-  days: 0
-  day: 0
-  night: 0
   Park_Light: {fileID: 171663176}
   light_Getout: {fileID: 1282208740}
   Open: {fileID: 0}
   Closed: {fileID: 0}
-  Spawner: {fileID: 879878419}
-  speed: 0
-  havetofade: 1
 --- !u!1 &879878419
 GameObject:
   m_ObjectHideFlags: 0
@@ -36965,5 +36966,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2559593544750178845, guid: 506e9eade4b19f648b9e52313764c6cd,
+        type: 3}
+      propertyPath: investigate_pos
+      value: 
+      objectReference: {fileID: 1689056953}
+    - target: {fileID: 2559593544750178845, guid: 506e9eade4b19f648b9e52313764c6cd,
+        type: 3}
+      propertyPath: check_pos
+      value: 
+      objectReference: {fileID: 2085721317}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 506e9eade4b19f648b9e52313764c6cd, type: 3}
