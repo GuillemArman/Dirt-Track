@@ -7,6 +7,7 @@ public class MoveNavMesh : MonoBehaviour
 {
     private Move move;
     private SteeringArrive arrive;
+    private SteeringQueue queue;
     private NavMeshAgent nav_agent;
 
     private Vector3[] path;
@@ -23,6 +24,7 @@ public class MoveNavMesh : MonoBehaviour
     {
         move = GetComponent<Move>();
         arrive = GetComponent<SteeringArrive>();
+        queue = GetComponent<SteeringQueue>();
         nav_agent = GetComponent<NavMeshAgent>();
 
         final_target = move.target.transform.position;
@@ -35,7 +37,7 @@ public class MoveNavMesh : MonoBehaviour
         nav_agent.isStopped = true;
         nav_agent.updateRotation = false;
 
-        if (nav_agent.hasPath)
+        if (nav_agent.hasPath && !queue.is_in_queue)
         {
             if (!nav_agent.pathEndPosition.Equals(path[path.Length - 1]))
                 path = nav_agent.path.corners;

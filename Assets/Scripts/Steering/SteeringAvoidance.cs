@@ -15,6 +15,7 @@ public class SteeringAvoidance : MonoBehaviour
     public float max_avoid_force = 0.1f;
 
     private Move move;
+    private MoveNavMesh nav_move;
     private SteeringArrive arrive;
     private SteeringQueue queue;
 
@@ -22,6 +23,7 @@ public class SteeringAvoidance : MonoBehaviour
     void Start()
     {
         move = GetComponent<Move>();
+        nav_move = GetComponent<MoveNavMesh>();
         queue = GetComponent<SteeringQueue>();
     }
 
@@ -44,6 +46,7 @@ public class SteeringAvoidance : MonoBehaviour
                 {
                     Vector3 steering_force = hit.normal * max_avoid_force;
                     move.AddVelocity(steering_force);
+                    nav_move.SetDestination(move.target.transform.position);
                     break;
                 }
             }

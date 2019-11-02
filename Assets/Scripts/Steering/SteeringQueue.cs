@@ -9,8 +9,9 @@ public class SteeringQueue : MonoBehaviour
 
     [Header("------ Set Values -------")]
     public float max_queue_ahead;
-    public float max_queue_radius;
+    public float queue_radius;
     public float max_brake_force;
+    public my_ray[] rays;
 
     private Move move; 
 
@@ -22,28 +23,31 @@ public class SteeringQueue : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {      
         Vector3 ahead = transform.position + (move.velocity.normalized * max_queue_ahead);
 
         RaycastHit hit;
         float angle = Mathf.Atan2(transform.forward.x, transform.forward.z);
         Quaternion q = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
 
-        if (Physics.Raycast(transform.position, q * Vector3.forward, out hit, max_queue_ahead))
+        foreach (my_ray ray in rays)
         {
-            if (!hit.collider.gameObject.CompareTag("Obstacle"))
+            Vector3 direction = Vector3.forward;
+            direction.x += ray.direction_offset;
+
+            if (Physics.Raycast(transform.position, q * direction.normalized, out hit, ray.length)
+                && !hit.collider.CompareTag("Obstacle"))
             {
                 is_in_queue = true;
-
-                if (move.velocity.magnitude > 0.2)
-                {
-                    Vector3 brake_force = -Vector3.forward * (max_brake_force / 100);
-                    move.AddVelocity(brake_force);
-                }
-                else move.SetVelocity(Vector3.zero);
+                break;
             }
+            else is_in_queue = false;
         }
-        else is_in_queue = false;
+
+        if (is_in_queue)
+        {          
+            move.SetVelocity(Vector3.zero);       
+        }
     }
             
     void OnDrawGizmos()
@@ -51,7 +55,13 @@ public class SteeringQueue : MonoBehaviour
         float angle = Mathf.Atan2(transform.forward.x, transform.forward.z);
         Quaternion q = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, (q * Vector3.forward) * max_queue_ahead);
+        foreach (my_ray ray in rays)
+        {
+            Vector3 direction = Vector3.forward;
+            direction.x += ray.direction_offset;
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(transform.position, (q * direction.normalized) * ray.length);
+        }
     }
 }

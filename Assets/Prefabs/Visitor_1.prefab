@@ -390,8 +390,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.07
-  m_Center: {x: 0, y: 0.78, z: 0}
+  m_Radius: 1.4
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &623182042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,8 +508,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_in_queue: 0
   max_queue_ahead: 5
-  max_queue_radius: 0
-  max_brake_force: 4
+  queue_radius: 0
+  max_brake_force: 3
+  rays:
+  - length: 2
+    direction_offset: 0.1
+  - length: 2
+    direction_offset: -0.1
 --- !u!95 &623182036
 Animator:
   serializedVersion: 3
@@ -538,7 +543,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 623182034}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 2
   m_Speed: 0
   m_Acceleration: 0
   avoidancePriority: 0
