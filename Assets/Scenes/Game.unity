@@ -40436,6 +40436,7 @@ GameObject:
   - component: {fileID: 2559593545406055575}
   - component: {fileID: 2559593545407055447}
   - component: {fileID: 2559593545416387415}
+  - component: {fileID: 2559593546755991478}
   - component: {fileID: 2559593546755991473}
   - component: {fileID: 2559593546755991472}
   - component: {fileID: 2559593546755991475}
@@ -40443,7 +40444,6 @@ GameObject:
   - component: {fileID: 2559593546755991477}
   - component: {fileID: 2559593546755991476}
   - component: {fileID: 2559593546755991479}
-  - component: {fileID: 2559593546755991478}
   - component: {fileID: 2559593546755991368}
   m_Layer: 0
   m_Name: Mechanic_1
@@ -40522,8 +40522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc77a9ff3440654ca2fa24bd3932a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDay: 0
-  isNight: 0
   investigate_pos: {fileID: 1689056953}
   check_pos: {fileID: 2085721317}
 --- !u!114 &2559593546755991474
