@@ -77,6 +77,10 @@ public class VisitorBehaviour : MonoBehaviour
             case Action.Buying_ticket:
                 OnBuyingTicket();
                 break;
+
+            case Action.Hungry:
+                OnHungry();
+                break;
         }
     }
 
@@ -108,29 +112,27 @@ public class VisitorBehaviour : MonoBehaviour
 
         if (move.target == queue_1 && arrive.arrived && !ticket_1t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
-            move.target = ticket_1t;
-            nav_move.SetDestination(move.target.transform.position);
-            visitor_action = Action.Buying_ticket;
-            
+            QueueToTicket(ticket_1t);            
         }
         else if (move.target == queue_2 && arrive.arrived && !ticket_2t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
-            move.target = ticket_2t;
-            nav_move.SetDestination(move.target.transform.position);
-            visitor_action = Action.Buying_ticket;
+            QueueToTicket(ticket_2t);
         }
         else if (move.target == queue_3 && arrive.arrived && !ticket_3t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
-            move.target = ticket_3t;
-            nav_move.SetDestination(move.target.transform.position);
-            visitor_action = Action.Buying_ticket;
+            QueueToTicket(ticket_3t);
         }
         else if (move.target == queue_4 && arrive.arrived && !ticket_4t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
-            move.target = ticket_4t;
-            nav_move.SetDestination(move.target.transform.position);
-            visitor_action = Action.Buying_ticket;
+            QueueToTicket(ticket_4t);
         }
+    }
+
+    void QueueToTicket(GameObject target)
+    {
+        move.target = target;
+        nav_move.SetDestination(move.target.transform.position);
+        visitor_action = Action.Buying_ticket;
     }
 
     void OnBuyingTicket()
@@ -138,42 +140,99 @@ public class VisitorBehaviour : MonoBehaviour
         if (arrive.arrived)
         {
             time_waiting -= Time.deltaTime;
+            int is_hungry = Random.Range(1, 6);
 
-            if (time_waiting <= 0)
+            // Going to stadium
+            if (time_waiting <= 0 && is_hungry != 1)
             {
                 int position = Random.Range(1, 6);
                 switch (position)
                 {
                     case 1:
-                        move.target = stadium_1t;
-                        nav_move.SetDestination(move.target.transform.position);
-                        queue.wants_to_queue = false;
+                        ToStadium(stadium_1t);
                         break;
                     case 2:
-                        move.target = stadium_2t;
-                        nav_move.SetDestination(move.target.transform.position);
-                        queue.wants_to_queue = false;
+                        ToStadium(stadium_2t);
                         break;
                     case 3:
-                        move.target = stadium_3t;
-                        nav_move.SetDestination(move.target.transform.position);
-                        queue.wants_to_queue = false;
+                        ToStadium(stadium_3t);
                         break;
                     case 4:
-                        move.target = stadium_4t;
-                        nav_move.SetDestination(move.target.transform.position);
-                        queue.wants_to_queue = false;
+                        ToStadium(stadium_4t);
                         break;
                     case 5:
-                        move.target = stadium_5t;
-                        nav_move.SetDestination(move.target.transform.position);
-                        queue.wants_to_queue = false;
+                        ToStadium(stadium_5t);
                         break;
                 }
-
-                visitor_action = Action.Going_stadium;
-                time_waiting = 3.0f;
             }
-        }       
+
+            // Going to buy food
+            if (time_waiting <= 0 && is_hungry == 1)
+            {
+                int position = Random.Range(1, 4);
+                switch (position)
+                {
+                    case 1:
+                        ToFood(food_1t);
+                        break;
+                    case 2:
+                        ToFood(food_2t);
+                        break;
+                    case 3:
+                        ToFood(food_3t);
+                        break;
+                }
+            }
+        }
+    }
+
+    void OnHungry()
+    {
+        if (arrive.arrived)
+        {
+            time_waiting -= Time.deltaTime;
+
+            // Going to stadium
+            if (time_waiting <= 0)
+            {
+                GameObject[] targets = { stadium_2t, stadium_3t, stadium_4t, stadium_5t };
+
+                GameObject final_target = stadium_1t;
+                float smaller_distance = Vector3.Distance(transform.position, stadium_1t.transform.position);
+
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    float distance = Vector3.Distance(transform.position, targets[i].transform.position);
+
+                    if (smaller_distance > distance)
+                    {
+                        smaller_distance = distance;
+                        final_target = targets[i];
+                    }
+                }
+
+                ToStadium(final_target);
+            }
+        }
+    }
+
+    void ToStadium(GameObject target)
+    {
+        move.target = target;
+        nav_move.SetDestination(move.target.transform.position);
+        queue.wants_to_queue = false;
+
+        visitor_action = Action.Going_stadium;
+        time_waiting = 3.0f;
+    }
+
+    void ToFood(GameObject target)
+    {
+        move.target = target;
+        nav_move.SetDestination(move.target.transform.position);
+
+        visitor_action = Action.Hungry;
+        time_waiting = 3.0f;
     }
 }
+
