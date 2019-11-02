@@ -61,6 +61,8 @@ public class MoveNavMesh : MonoBehaviour
     {
         progress = 0;
         move.final_target = dest;
+        move.SetCurrTarget(dest.transform.position);
+        arrive.arrived = false;
 
         NavMeshPath nav_path = new NavMeshPath();
         nav_agent.SetDestination(dest.transform.position);

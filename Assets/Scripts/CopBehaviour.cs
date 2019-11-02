@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CopBehaviour : MonoBehaviour
 {
+    private Move move;
     private MoveNavMesh nav_move;
     private SteeringWander wander;
     private SteeringArrive arrive;
@@ -15,6 +16,7 @@ public class CopBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        move = GetComponent<Move>();
         wander = GetComponent<SteeringWander>();
         nav_move = GetComponent<MoveNavMesh>();
         arrive = GetComponent<SteeringArrive>();
@@ -34,13 +36,17 @@ public class CopBehaviour : MonoBehaviour
         else
         {
             wander.enabled = false;
+            GameObject target = new GameObject();
+            target.transform.position = start_pos;
+
             if (!go_start)
             {
-                GameObject target = new GameObject();
-                target.transform.position = start_pos;
+                Destroy(move.final_target);
                 nav_move.SetDestination(target);
-                go_start = true;
             }
+            else Destroy(target);
+
+            go_start = true;
         }
     }
 }

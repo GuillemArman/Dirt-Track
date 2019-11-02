@@ -18,8 +18,8 @@ public class SteeringWander : MonoBehaviour
         nav_move = GetComponent<MoveNavMesh>();
         arrive = GetComponent<SteeringArrive>();
 
-        move.SetCurrTarget(transform.position);
-        Wander();
+        if (arrive.arrived)
+            Wander();
     }
 
     // Update is called once per frame

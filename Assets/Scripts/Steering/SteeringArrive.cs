@@ -34,16 +34,9 @@ public class SteeringArrive : MonoBehaviour
 
         if (!queue.is_in_queue)
         {
-            if (dist.magnitude <= stop_area_radius)
-            {
-                // Path is completed
-                move.SetVelocity(Vector3.zero);
-                arrived = true;
-            }
-            else
+            if (dist.magnitude >= stop_area_radius)
             {
                 // Finding desired velocity
-                arrived = false;
                 Vector3 desired_velocity = dist.normalized * move.max_velocity;
 
                 // Finding desired deceleration
@@ -65,6 +58,12 @@ public class SteeringArrive : MonoBehaviour
                 // Add steering force
                 Vector3 steering_force = desired_accel;
                 move.AddVelocity(steering_force);
+            }
+            else
+            {
+                // Path is completed
+                move.SetVelocity(Vector3.zero);
+                arrived = true;
             }        
         }     
     }
