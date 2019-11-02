@@ -4,8 +4,24 @@ using UnityEngine;
 
 public class EntranceTrigger : MonoBehaviour
 {
-    void OnTriggerEnter(Collider collider)
+    private CountingVisitors stadium_visitors;
+
+    void Start()
     {
-        Destroy(collider.gameObject);
+        stadium_visitors = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
+    }
+
+    void Update()
+    {
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Agent"))
+        {
+            Destroy(other.gameObject);
+            stadium_visitors.AddVisitor();
+        }
     }
 }

@@ -93,6 +93,7 @@
     <Compile Include="Assets\Fantasy Skybox FREE\Demo\Scripts\GE_FantasySkyboxFREE_UIs.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CameraSwitching.cs" />
+    <Compile Include="Assets\Scripts\CountingVisitors.cs" />
     <Compile Include="Assets\Scripts\EntranceTrigger.cs" />
     <Compile Include="Assets\Scripts\MechanicBehaviour.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
