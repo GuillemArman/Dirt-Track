@@ -4,24 +4,38 @@ using UnityEngine;
 
 public class EntranceTrigger : MonoBehaviour
 {
-    private CountingVisitors stadium_visitors;
+    public GameObject visitor_1;
+    public float duration_spawn = 10;
 
+    private float next_spawn;
+    private NightCycle cycle;
+
+    // Use this for initialization
     void Start()
     {
-        stadium_visitors = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
-    }
-
-    void Update()
-    {
-
+        next_spawn = duration_spawn;
+        cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Agent"))
+        if (other.gameObject.CompareTag("Agent") && cycle.night)
         {
             Destroy(other.gameObject);
-            stadium_visitors.AddVisitor();
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        next_spawn -= Time.deltaTime;
+
+        if (next_spawn <= 0 && cycle.day)
+        {
+            // Clone enemy
+            GameObject objectInstance = Instantiate(visitor_1, transform.position, Quaternion.identity);
+            visitor_1.GetComponent<VisitorBehaviour>().visitor_action = VisitorBehaviour.Action.To_queue;
+            next_spawn = duration_spawn;
         }
     }
 }

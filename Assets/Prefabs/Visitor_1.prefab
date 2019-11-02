@@ -333,6 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 623182044}
   - component: {fileID: 623182043}
+  - component: {fileID: -7168030819566494854}
   - component: {fileID: 623182042}
   - component: {fileID: 623182041}
   - component: {fileID: 623182040}
@@ -340,7 +341,6 @@ GameObject:
   - component: {fileID: 623182038}
   - component: {fileID: 623182037}
   - component: {fileID: 1651348793542482383}
-  - component: {fileID: -7168030819566494854}
   - component: {fileID: 623182036}
   - component: {fileID: 623182035}
   m_Layer: 0
@@ -393,6 +393,37 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.4
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &-7168030819566494854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623182034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f403c664ecbafe243927b1d4c6adc114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visitor_action: 5
+  queue_1: {fileID: 0}
+  queue_2: {fileID: 0}
+  queue_3: {fileID: 0}
+  queue_4: {fileID: 0}
+  ticket_1t: {fileID: 0}
+  ticket_2t: {fileID: 0}
+  ticket_3t: {fileID: 0}
+  ticket_4t: {fileID: 0}
+  food_1t: {fileID: 0}
+  food_2t: {fileID: 0}
+  food_3t: {fileID: 0}
+  stadium_1t: {fileID: 0}
+  stadium_2t: {fileID: 0}
+  stadium_3t: {fileID: 0}
+  stadium_4t: {fileID: 0}
+  stadium_5t: {fileID: 0}
+  entrance_1t: {fileID: 0}
+  entrance_2t: {fileID: 0}
 --- !u!114 &623182042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,34 +547,6 @@ MonoBehaviour:
     direction_offset: 0.1
   - length: 2
     direction_offset: -0.1
---- !u!114 &-7168030819566494854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623182034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f403c664ecbafe243927b1d4c6adc114, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  queue_1: {fileID: 0}
-  queue_2: {fileID: 0}
-  queue_3: {fileID: 0}
-  queue_4: {fileID: 0}
-  ticket_1t: {fileID: 0}
-  ticket_2t: {fileID: 0}
-  ticket_3t: {fileID: 0}
-  ticket_4t: {fileID: 0}
-  food_1t: {fileID: 0}
-  food_2t: {fileID: 0}
-  food_3t: {fileID: 0}
-  stadium_1t: {fileID: 0}
-  stadium_2t: {fileID: 0}
-  stadium_3t: {fileID: 0}
-  stadium_4t: {fileID: 0}
-  stadium_5t: {fileID: 0}
 --- !u!95 &623182036
 Animator:
   serializedVersion: 3

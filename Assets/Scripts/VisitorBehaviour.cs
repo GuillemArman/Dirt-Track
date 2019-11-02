@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class VisitorBehaviour : MonoBehaviour
 {
-    private enum Action { Doing_queue, Buying_ticket, Hungry, Going_stadium };
+    public enum Action { To_queue, Doing_queue, Buying_ticket, Hungry, Go_stadium, Go_home, Just_walking };
+    public Action visitor_action;
+
     private Move move;
     private MoveNavMesh nav_move;
     private SteeringQueue queue;
     private SteeringArrive arrive;
-    private Action visitor_action;
     private float time_waiting = 3.0f;
 
     public GameObject queue_1;
@@ -32,6 +33,9 @@ public class VisitorBehaviour : MonoBehaviour
     public GameObject stadium_4t;
     public GameObject stadium_5t;
 
+    public GameObject entrance_1t;
+    public GameObject entrance_2t;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +43,6 @@ public class VisitorBehaviour : MonoBehaviour
         nav_move = GetComponent<MoveNavMesh>();
         queue = GetComponent<SteeringQueue>();
         arrive = GetComponent<SteeringArrive>();
-        visitor_action = Action.Doing_queue;
 
         // Setting triggers
         queue_1 = GameObject.Find("Queue1_Target"); 
@@ -56,13 +59,14 @@ public class VisitorBehaviour : MonoBehaviour
         food_2t = GameObject.Find("Food2_Trigger"); 
         food_3t = GameObject.Find("Food3_Trigger"); 
         
-        stadium_1t = GameObject.Find("Entrance1_Trigger"); 
-        stadium_2t = GameObject.Find("Entrance2_Trigger"); 
-        stadium_3t = GameObject.Find("Entrance3_Trigger"); 
-        stadium_4t = GameObject.Find("Entrance4_Trigger"); 
-        stadium_5t = GameObject.Find("Entrance5_Trigger"); 
+        stadium_1t = GameObject.Find("Stadium1_Trigger"); 
+        stadium_2t = GameObject.Find("Stadium2_Trigger"); 
+        stadium_3t = GameObject.Find("Stadium3_Trigger"); 
+        stadium_4t = GameObject.Find("Stadium4_Trigger"); 
+        stadium_5t = GameObject.Find("Stadium5_Trigger");
 
-        SetInitialTarget();
+        entrance_1t = GameObject.Find("Entrance1_Trigger");
+        entrance_2t = GameObject.Find("Entrance2_Trigger");
     }
 
     // Update is called once per frame
@@ -70,6 +74,10 @@ public class VisitorBehaviour : MonoBehaviour
     {
         switch(visitor_action)
         {
+            case Action.To_queue:
+                OnToQueue();
+                break;
+
             case Action.Doing_queue:
                 OnDoingQueue();
                 break;
@@ -81,60 +89,56 @@ public class VisitorBehaviour : MonoBehaviour
             case Action.Hungry:
                 OnHungry();
                 break;
+
+            case Action.Go_home:
+                OnGoHome();
+                break;
         }
     }
 
-    void SetInitialTarget()
+    private void OnToQueue()
     {
         int position = Random.Range(1, 5);
         switch (position)
         {
             case 1:
-                move.final_target = queue_1;
+                ToQueue(queue_1);
                 break;
             case 2:
-                move.final_target = queue_2;
+                ToQueue(queue_2);
                 break;
             case 3:
-                move.final_target = queue_3;
+                ToQueue(queue_3);
                 break;
             case 4:
-                move.final_target = queue_4;
+                ToQueue(queue_4);
                 break;
         }
-
-        nav_move.SetDestination(move.final_target);
     }
 
-    void OnDoingQueue()
+    private void OnDoingQueue()
     {
         queue.wants_to_queue = true;
 
         if (move.final_target == queue_1 && arrive.arrived && !ticket_1t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
-            QueueToTicket(ticket_1t);            
+            ToTicket(ticket_1t);            
         }
         else if (move.final_target == queue_2 && arrive.arrived && !ticket_2t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
-            QueueToTicket(ticket_2t);
+            ToTicket(ticket_2t);
         }
         else if (move.final_target == queue_3 && arrive.arrived && !ticket_3t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
-            QueueToTicket(ticket_3t);
+            ToTicket(ticket_3t);
         }
         else if (move.final_target == queue_4 && arrive.arrived && !ticket_4t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
-            QueueToTicket(ticket_4t);
+            ToTicket(ticket_4t);
         }
     }
 
-    void QueueToTicket(GameObject target)
-    {
-        nav_move.SetDestination(target);
-        visitor_action = Action.Buying_ticket;
-    }
-
-    void OnBuyingTicket()
+    private void OnBuyingTicket()
     {
         if (arrive.arrived)
         {
@@ -185,7 +189,7 @@ public class VisitorBehaviour : MonoBehaviour
         }
     }
 
-    void OnHungry()
+    private void OnHungry()
     {
         if (arrive.arrived)
         {
@@ -215,16 +219,44 @@ public class VisitorBehaviour : MonoBehaviour
         }
     }
 
-    void ToStadium(GameObject target)
+    private void OnGoHome()
+    {
+        int position = Random.Range(1, 3);
+        switch (position)
+        {
+            case 1:
+                nav_move.SetDestination(entrance_1t);
+                visitor_action = Action.Just_walking;
+                break;
+            case 2:
+                nav_move.SetDestination(entrance_2t);
+                visitor_action = Action.Just_walking;
+                break;
+        }
+    }
+
+    private void ToQueue(GameObject target)
+    {
+        nav_move.SetDestination(target);
+        visitor_action = Action.Doing_queue;
+    }
+
+    private void ToTicket(GameObject target)
+    {
+        nav_move.SetDestination(target);
+        visitor_action = Action.Buying_ticket;
+    }
+
+    private void ToStadium(GameObject target)
     {
         nav_move.SetDestination(target);
         queue.wants_to_queue = false;
 
-        visitor_action = Action.Going_stadium;
+        visitor_action = Action.Go_stadium;
         time_waiting = 3.0f;
     }
 
-    void ToFood(GameObject target)
+    private void ToFood(GameObject target)
     {
         nav_move.SetDestination(target);
 

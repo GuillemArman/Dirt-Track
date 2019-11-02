@@ -61,7 +61,7 @@ public class NightCycle : MonoBehaviour
             days += 1;
             time = 0;
         }
-        else if (time > 28800 && time < 61200) // 8:00  to 21:00
+        else if (time > 28800 && time < 57600) // 8:00  to 16:00
         {
             if (havetofade)
             {
@@ -73,7 +73,7 @@ public class NightCycle : MonoBehaviour
             noon = false;
             night = false;      
         }
-        else if (time > 61200 && time < 75600) // 17:00  to 21:00
+        else if (time > 57600 && time < 75600) // 16:00  to 21:00
         {
             speed = 350;
             day = false;
