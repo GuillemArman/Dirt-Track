@@ -44,32 +44,39 @@ public class MoveBike : MonoBehaviour
         {
             if (targetWayPoint == null)
                 targetWayPoint = wayPointList[currentWayPoint];
-            if (isDay)
+           
                 walk();
         }
     }
 
     void walk()
     {
-        float aux = (transform.position - targetWayPoint.transform.position).magnitude;
-        // rotate towards the target
-        transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
+      
+            float aux = (transform.position - targetWayPoint.transform.position).magnitude;
+            // rotate towards the target
+            transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
 
-        // move towards the target
-        transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
-
-        if (aux <= 1)
+            // move towards the target
+            transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
+        if (isDay)
         {
-            if (currentWayPoint == 10)
+            if (aux <= 1)
             {
-                currentWayPoint = 0;
-                targetWayPoint = wayPointList[currentWayPoint];
+                if (currentWayPoint == 10)
+                {
+                    currentWayPoint = 0;
+                    targetWayPoint = wayPointList[currentWayPoint];
+                }
+                else
+                {
+                    currentWayPoint++;
+                    targetWayPoint = wayPointList[currentWayPoint];
+                }
             }
-            else
-            {
-                currentWayPoint++;
-                targetWayPoint = wayPointList[currentWayPoint];
-            }
+        }
+        if(!isDay)
+        {
+            targetWayPoint = wayPointList[0];
         }
     }
 }
