@@ -8,47 +8,40 @@ using UnityEngine.SceneManagement;
 
 public class NightCycle : MonoBehaviour
 {
-
+    public bool day;
+    public bool noon;
+    public bool night;
     public Material skybox1;
     public Material skybox2;
-
-
-    public float time;
-    public TimeSpan current_time;
     public Text timetext;
-    public int days;
-    public bool day;
-    public bool night;
-
     public GameObject Park_Light;
     public GameObject light_Getout;
-
     public GameObject Open;
     public GameObject Closed;
 
-    public GameObject Spawner;
+    private float time;
+    private TimeSpan current_time;
+    private int days;
+    private int speed;
+    private bool havetofade = true;
 
-
-    public int speed;
-
-    public bool havetofade = true;
     // Use this for initialization
     void Start()
     {
-        time = 18000; // We begin the first journey at 16:00 (3600 * 16)
+        time = 18000; // We begin the first journey at 16:00 (3600 * 5)
         days = 1;
         day = true;
+        noon = false;
         night = false;
 
-        if(day)
+        if(day || noon)
         {
             RenderSettings.skybox = skybox1;
         }
         if(night)
         {
             RenderSettings.skybox = skybox2;
-        }
-       
+        }      
     }
 
     // Update is called once per frame
@@ -61,28 +54,31 @@ public class NightCycle : MonoBehaviour
 
     public void ChangeTime()
     {
-
         time += Time.deltaTime * speed;
+
         if (time > 86400)
-        {
-         
+        {   
             days += 1;
             time = 0;
-
         }
-
-        else if (time > 28800 && time < 75600) // 8:00  to 21:00
+        else if (time > 28800 && time < 61200) // 8:00  to 21:00
         {
             if (havetofade)
             {
                 havetofade = false;
                 StartCoroutine("FadeIn");
-
             }
-            speed = 1500;
+            speed = 350;
             day = true;
+            noon = false;
+            night = false;      
+        }
+        else if (time > 61200 && time < 75600) // 17:00  to 21:00
+        {
+            speed = 350;
+            day = false;
+            noon = true;
             night = false;
-           
         }
         else if (time > 75600 || time < 28800) //21:00 to 8:00
         {
@@ -92,13 +88,11 @@ public class NightCycle : MonoBehaviour
                 StartCoroutine("FadeOut");
 
             }
-            speed = 800;
-            night = true;
+            speed = 600;
             day = false;
-          
+            noon = false;
+            night = true;
         }
-
-
         else if (time > 86350) // 23:59 AM
         {
             days += 1;
@@ -107,29 +101,22 @@ public class NightCycle : MonoBehaviour
         current_time = TimeSpan.FromSeconds(time);
         string[] temptime = current_time.ToString().Split(":"[0]);
         timetext.text = temptime[0] + ":" + temptime[1];
-
-
-
     }
 
     public void ParkLights()
     {
         if (day)
         {
-
             Park_Light.SetActive(false);
             //Open.SetActive(false);
             //Closed.SetActive(true);
-            Spawner.SetActive(true);
         }
         if (night)
         {
             Park_Light.SetActive(true);
             //Open.SetActive(true);
             //Closed.SetActive(false);
-            Spawner.SetActive(false);
         }
-
     }
 
     void SkyboxChange()
@@ -143,10 +130,6 @@ public class NightCycle : MonoBehaviour
             RenderSettings.skybox = skybox2;
         }
     }
-
-
-
-
 
     IEnumerator FadeIn()
     {

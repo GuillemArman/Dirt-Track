@@ -10,6 +10,7 @@ public class VisitorSpawn : MonoBehaviour
     private float next_spawn;
     private Move move;
     private MoveNavMesh nav_move;
+    private NightCycle cycle;
 
     // Use this for initialization
     void Start()
@@ -17,7 +18,8 @@ public class VisitorSpawn : MonoBehaviour
         next_spawn = duration_spawn;
 
         move = visitor_1.GetComponent<Move>();
-        nav_move = visitor_1.GetComponent<MoveNavMesh>();       
+        nav_move = visitor_1.GetComponent<MoveNavMesh>();
+        cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class VisitorSpawn : MonoBehaviour
     {
         next_spawn -= Time.deltaTime;
 
-        if (next_spawn <= 0)
+        if (next_spawn <= 0 && cycle.day)
         {
             // Clone enemy
             GameObject objectInstance = Instantiate(visitor_1, transform.position, Quaternion.identity);
