@@ -38,7 +38,7 @@ public class SteeringWander : MonoBehaviour
         Vector3 randomDirection = Random.insideUnitSphere * walk_radius;
         randomDirection += transform.position;
         NavMeshHit hit;
-        NavMesh.SamplePosition(randomDirection, out hit, walk_radius, 1);
+        NavMesh.SamplePosition(randomDirection, out hit, walk_radius, 8);
 
         // Creating new GO target
         GameObject final_target = new GameObject();
