@@ -14,6 +14,7 @@ public class CameraSwitching : MonoBehaviour
         cams[0].enabled = true;
         cams[1].enabled = false;
         cams[2].enabled = false;
+        cams[3].enabled = false;
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class CameraSwitching : MonoBehaviour
         cams[0].enabled = true;
         cams[1].enabled = false;
         cams[2].enabled = false;
-
+        cams[3].enabled = false;
 
     }
 
@@ -37,7 +38,7 @@ public class CameraSwitching : MonoBehaviour
         cams[0].enabled = false;
         cams[1].enabled = true;
         cams[2].enabled = false;
-
+        cams[3].enabled = false;
     }
 
     public void Camera3()
@@ -45,6 +46,14 @@ public class CameraSwitching : MonoBehaviour
         cams[0].enabled = false;
         cams[1].enabled = false;
         cams[2].enabled = true;
+        cams[3].enabled = false;
+    }
 
+    public void Camera4()
+    {
+        cams[0].enabled = false;
+        cams[1].enabled = false;
+        cams[2].enabled = false;
+        cams[3].enabled = true;
     }
 }
