@@ -24,7 +24,7 @@ public class SteeringSeparation : MonoBehaviour
         int layer_mask = 1 << layer_id;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, search_radius, layer_mask);
 
-        if (!queue.is_in_queue)
+        if (!queue.wants_to_queue && !queue.is_in_queue)
         {
             Vector3 steering_force = Vector3.zero;
             for (int i = 0; i < hitColliders.Length; i++)
