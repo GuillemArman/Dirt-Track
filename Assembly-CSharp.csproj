@@ -62,35 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestCamera.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestCurveChange.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestCurveClosestPoint.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestCurveDynamic.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestCurveMath.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestCurveRuntime.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestCurveShowcase.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestCurveStatic.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Examples\Scripts\BGTestPerformance.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcCursor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcCursorChangeLinear.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcCursorObjectRotate.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcCursorObjectRotateAroundPoint.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcCursorObjectTranslate.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcMath.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcVisualizationLineRenderer.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcWithCursor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcWithCursorObject.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Cc\BGCcWithMath.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Curve\BGCc.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Curve\BGCurve.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Curve\BGCurveBaseMath.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Curve\BGCurveCalculatorClosestPoint.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Curve\BGCurveChangedArgs.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Curve\BGCurveFormulas.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Curve\BGCurvePoint.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Curve\BGCurveSettings.cs" />
-    <Compile Include="Assets\Fantasy Skybox FREE\Demo\Scripts\GE_FantasySkyboxFREE_Demo.cs" />
-    <Compile Include="Assets\Fantasy Skybox FREE\Demo\Scripts\GE_FantasySkyboxFREE_UIs.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CameraSwitching.cs" />
     <Compile Include="Assets\Scripts\CopBehaviour.cs" />
@@ -119,7 +90,6 @@
     <None Include="Assets\SimpleWorld\SimpleMilitary\Materials\UnlitVertexColour_Alpha.shader" />
     <None Include="Assets\SimpleWorld\SimpleCitizens\Changelog.txt" />
     <None Include="Assets\SimpleRacer\_FX\UnlitVertexColour_Alpha.shader" />
-    <None Include="Assets\BansheeGz\BGCurve\readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

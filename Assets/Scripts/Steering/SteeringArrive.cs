@@ -34,8 +34,10 @@ public class SteeringArrive : MonoBehaviour
 
         if (!queue.is_in_queue)
         {
-            if (dist.magnitude >= stop_area_radius)
+            if (dist.magnitude > stop_area_radius)
             {
+                arrived = false;
+
                 // Finding desired velocity
                 Vector3 desired_velocity = dist.normalized * move.max_velocity;
 

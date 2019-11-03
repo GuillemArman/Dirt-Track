@@ -108,14 +108,14 @@ public class NightCycle : MonoBehaviour
         if (day)
         {
             Park_Light.SetActive(false);
-            //Open.SetActive(false);
-            //Closed.SetActive(true);
+           Closed.SetActive(false);
+           Open.SetActive(true);
         }
         if (night)
         {
             Park_Light.SetActive(true);
-            //Open.SetActive(true);
-            //Closed.SetActive(false);
+          Closed.SetActive(true);
+          Open.SetActive(false);
         }
     }
 
