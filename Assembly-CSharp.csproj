@@ -82,9 +82,7 @@
     <Compile Include="Assets\Scripts\Steering\SteeringWander.cs" />
     <Compile Include="Assets\Scripts\TicketTrigger.cs" />
     <Compile Include="Assets\Scripts\VisitorBehaviour.cs" />
-    <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\SimpleWorld\SimpleTown\Changelog.txt" />
-    <None Include="Assets\Fantasy Skybox FREE\Fog and Ambient references.txt" />
     <None Include="Assets\SimpleWorld\SimpleCitizens\Changelog.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

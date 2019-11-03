@@ -18,6 +18,7 @@ public class SteeringWander : MonoBehaviour
         nav_move = GetComponent<MoveNavMesh>();
         arrive = GetComponent<SteeringArrive>();
 
+        move.SetCurrTarget(transform.position);
         if (arrive.arrived)
             Wander();
     }
