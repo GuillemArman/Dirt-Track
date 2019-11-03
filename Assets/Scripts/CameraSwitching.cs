@@ -15,6 +15,11 @@ public class CameraSwitching : MonoBehaviour
         cams[1].enabled = false;
         cams[2].enabled = false;
         cams[3].enabled = false;
+
+        cams[0].GetComponent<AudioListener>().enabled = true;
+        cams[1].GetComponent<AudioListener>().enabled = false;
+        cams[2].GetComponent<AudioListener>().enabled = false;
+        cams[3].GetComponent<AudioListener>().enabled = false;
     }
 
     // Update is called once per frame
@@ -31,6 +36,11 @@ public class CameraSwitching : MonoBehaviour
         cams[2].enabled = false;
         cams[3].enabled = false;
 
+        cams[0].GetComponent<AudioListener>().enabled = true;
+        cams[1].GetComponent<AudioListener>().enabled = false;
+        cams[2].GetComponent<AudioListener>().enabled = false;
+        cams[3].GetComponent<AudioListener>().enabled = false;
+
     }
 
     public void Camera2()
@@ -39,6 +49,11 @@ public class CameraSwitching : MonoBehaviour
         cams[1].enabled = true;
         cams[2].enabled = false;
         cams[3].enabled = false;
+
+        cams[0].GetComponent<AudioListener>().enabled = false;
+        cams[1].GetComponent<AudioListener>().enabled = true;
+        cams[2].GetComponent<AudioListener>().enabled = false;
+        cams[3].GetComponent<AudioListener>().enabled = false;
     }
 
     public void Camera3()
@@ -47,6 +62,11 @@ public class CameraSwitching : MonoBehaviour
         cams[1].enabled = false;
         cams[2].enabled = true;
         cams[3].enabled = false;
+
+        cams[0].GetComponent<AudioListener>().enabled = false;
+        cams[1].GetComponent<AudioListener>().enabled = false;
+        cams[2].GetComponent<AudioListener>().enabled = true;
+        cams[3].GetComponent<AudioListener>().enabled = false;
     }
 
     public void Camera4()
@@ -55,5 +75,10 @@ public class CameraSwitching : MonoBehaviour
         cams[1].enabled = false;
         cams[2].enabled = false;
         cams[3].enabled = true;
+
+        cams[0].GetComponent<AudioListener>().enabled = false;
+        cams[1].GetComponent<AudioListener>().enabled = false;
+        cams[2].GetComponent<AudioListener>().enabled = false;
+        cams[3].GetComponent<AudioListener>().enabled = true;
     }
 }
