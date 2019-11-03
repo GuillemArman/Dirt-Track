@@ -28,7 +28,7 @@ public class NightCycle : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        time = 18000; // We begin the first journey at 16:00 (3600 * 5)
+        time = 25200; // We begin the first journey at 7:00 (3600 * 7)
         days = 1;
         day = true;
         noon = false;
