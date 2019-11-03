@@ -41,7 +41,6 @@ public class StadiumTrigger : MonoBehaviour
         {
             // Clone enemy
             GameObject objectInstance = Instantiate(visitor_1, transform.position, Quaternion.identity);
-            visitor_1.GetComponent<VisitorBehaviour>().visitor_action = VisitorBehaviour.Action.Go_home;
             next_spawn = duration_spawn;
             stadium_visitors.VisitorLeft();
         }

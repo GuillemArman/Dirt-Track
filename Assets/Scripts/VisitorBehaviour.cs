@@ -12,6 +12,7 @@ public class VisitorBehaviour : MonoBehaviour
     private SteeringQueue queue;
     private SteeringArrive arrive;
     private float time_waiting = 3.0f;
+    private NightCycle cycle;
 
     public GameObject queue_1;
     public GameObject queue_2;
@@ -43,6 +44,7 @@ public class VisitorBehaviour : MonoBehaviour
         nav_move = GetComponent<MoveNavMesh>();
         queue = GetComponent<SteeringQueue>();
         arrive = GetComponent<SteeringArrive>();
+        cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
 
         // Setting triggers
         queue_1 = GameObject.Find("Queue1_Target"); 
@@ -67,6 +69,10 @@ public class VisitorBehaviour : MonoBehaviour
 
         entrance_1t = GameObject.Find("Entrance1_Trigger");
         entrance_2t = GameObject.Find("Entrance2_Trigger");
+
+        // Setting first action
+        if (cycle.day || cycle.noon) visitor_action = Action.To_queue;
+        else visitor_action = Action.Go_home;
     }
 
     // Update is called once per frame

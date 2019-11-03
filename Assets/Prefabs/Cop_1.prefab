@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1454b5169bd7aa4e8cd2699587ca76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk_radius: 10
+  walk_radius: 15
 --- !u!114 &-8054978288557824672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,7 +1817,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 0.1
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 10
   m_ObstacleAvoidanceType: 0
 --- !u!1 &8944707447494681202
 GameObject:

@@ -34,7 +34,6 @@ public class EntranceTrigger : MonoBehaviour
         {
             // Clone enemy
             GameObject objectInstance = Instantiate(visitor_1, transform.position, Quaternion.identity);
-            visitor_1.GetComponent<VisitorBehaviour>().visitor_action = VisitorBehaviour.Action.To_queue;
             next_spawn = duration_spawn;
         }
     }
