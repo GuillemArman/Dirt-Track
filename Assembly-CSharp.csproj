@@ -84,12 +84,8 @@
     <Compile Include="Assets\Scripts\VisitorBehaviour.cs" />
     <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
     <None Include="Assets\SimpleWorld\SimpleTown\Changelog.txt" />
-    <None Include="Assets\SimpleWorld\SimpleMilitary\ReadMe.txt" />
-    <None Include="Assets\SimpleWorld\SimpleMilitary\Changelog.txt" />
     <None Include="Assets\Fantasy Skybox FREE\Fog and Ambient references.txt" />
-    <None Include="Assets\SimpleWorld\SimpleMilitary\Materials\UnlitVertexColour_Alpha.shader" />
     <None Include="Assets\SimpleWorld\SimpleCitizens\Changelog.txt" />
-    <None Include="Assets\SimpleRacer\_FX\UnlitVertexColour_Alpha.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
