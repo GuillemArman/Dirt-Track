@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class CameraSwitching : MonoBehaviour
 {
-
     public Camera[] cams;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        cams[0].enabled = true;
-        cams[1].enabled = false;
-        cams[2].enabled = false;
-        cams[3].enabled = false;
-
-        cams[0].GetComponent<AudioListener>().enabled = true;
-        cams[1].GetComponent<AudioListener>().enabled = false;
-        cams[2].GetComponent<AudioListener>().enabled = false;
-        cams[3].GetComponent<AudioListener>().enabled = false;
+        UpdateCamera(0);
     }
 
     // Update is called once per frame
@@ -28,57 +18,40 @@ public class CameraSwitching : MonoBehaviour
         
     }
 
-
     public void Camera1()
     {
-        cams[0].enabled = true;
-        cams[1].enabled = false;
-        cams[2].enabled = false;
-        cams[3].enabled = false;
-
-        cams[0].GetComponent<AudioListener>().enabled = true;
-        cams[1].GetComponent<AudioListener>().enabled = false;
-        cams[2].GetComponent<AudioListener>().enabled = false;
-        cams[3].GetComponent<AudioListener>().enabled = false;
-
+        UpdateCamera(0);
     }
 
     public void Camera2()
     {
-        cams[0].enabled = false;
-        cams[1].enabled = true;
-        cams[2].enabled = false;
-        cams[3].enabled = false;
-
-        cams[0].GetComponent<AudioListener>().enabled = false;
-        cams[1].GetComponent<AudioListener>().enabled = true;
-        cams[2].GetComponent<AudioListener>().enabled = false;
-        cams[3].GetComponent<AudioListener>().enabled = false;
+        UpdateCamera(1);
     }
 
     public void Camera3()
     {
-        cams[0].enabled = false;
-        cams[1].enabled = false;
-        cams[2].enabled = true;
-        cams[3].enabled = false;
-
-        cams[0].GetComponent<AudioListener>().enabled = false;
-        cams[1].GetComponent<AudioListener>().enabled = false;
-        cams[2].GetComponent<AudioListener>().enabled = true;
-        cams[3].GetComponent<AudioListener>().enabled = false;
+        UpdateCamera(2);
     }
 
     public void Camera4()
     {
-        cams[0].enabled = false;
-        cams[1].enabled = false;
-        cams[2].enabled = false;
-        cams[3].enabled = true;
+        UpdateCamera(3);
+    }
 
-        cams[0].GetComponent<AudioListener>().enabled = false;
-        cams[1].GetComponent<AudioListener>().enabled = false;
-        cams[2].GetComponent<AudioListener>().enabled = false;
-        cams[3].GetComponent<AudioListener>().enabled = true;
+    private void UpdateCamera(int index)
+    {
+        for (int i = 0; i < cams.Length; i++)
+        {
+            if (i == index)
+            {
+                cams[i].enabled = true;
+                cams[i].GetComponent<AudioListener>().enabled = true;
+            }
+            else
+            {
+                cams[i].enabled = false;
+                cams[i].GetComponent<AudioListener>().enabled = false;
+            }
+        }
     }
 }
