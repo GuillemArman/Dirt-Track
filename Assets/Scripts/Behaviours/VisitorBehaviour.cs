@@ -14,28 +14,32 @@ public class VisitorBehaviour : MonoBehaviour
     private float time_waiting = 3.0f;
     private NightCycle cycle;
 
-    public GameObject queue_1;
-    public GameObject queue_2;
-    public GameObject queue_3;
-    public GameObject queue_4;
+    private GameObject queue_1;
+    private GameObject queue_2;
+    private GameObject queue_3;
+    private GameObject queue_4;
 
-    public GameObject ticket_1t;
-    public GameObject ticket_2t;
-    public GameObject ticket_3t;
-    public GameObject ticket_4t;
+    private GameObject ticket_1t;
+    private GameObject ticket_2t;
+    private GameObject ticket_3t;
+    private GameObject ticket_4t;
 
-    public GameObject food_1t;
-    public GameObject food_2t;
-    public GameObject food_3t;
+    private GameObject food_1t;
+    private GameObject food_2t;
+    private GameObject food_3t;
 
-    public GameObject stadium_1t;
-    public GameObject stadium_2t;
-    public GameObject stadium_3t;
-    public GameObject stadium_4t;
-    public GameObject stadium_5t;
+    private GameObject stadium_1t;
+    private GameObject stadium_2t;
+    private GameObject stadium_3t;
+    private GameObject stadium_4t;
+    private GameObject stadium_5t;
 
-    public GameObject entrance_1t;
-    public GameObject entrance_2t;
+    private GameObject entrance_1t;
+    private GameObject entrance_2t;
+
+    private GameObject sad;
+    private GameObject happy;
+    private GameObject food;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +50,7 @@ public class VisitorBehaviour : MonoBehaviour
         arrive = GetComponent<SteeringArrive>();
         cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
 
-        // Setting triggers
+        // Setting triggers and targets
         queue_1 = GameObject.Find("Queue1_Target"); 
         queue_2 = GameObject.Find("Queue2_Target"); 
         queue_3 = GameObject.Find("Queue3_Target"); 
@@ -69,6 +73,11 @@ public class VisitorBehaviour : MonoBehaviour
 
         entrance_1t = GameObject.Find("Entrance1_Trigger");
         entrance_2t = GameObject.Find("Entrance2_Trigger");
+
+        // Billboarding 
+        happy = transform.Find("Happy").gameObject; happy.SetActive(false);
+        sad = transform.Find("Sad").gameObject; sad.SetActive(false);
+        food = transform.Find("Food").gameObject; food.SetActive(false);
 
         // Setting first action
         if (cycle.day || cycle.noon) visitor_action = Action.To_queue;
@@ -197,13 +206,15 @@ public class VisitorBehaviour : MonoBehaviour
 
     private void OnHungry()
     {
+        food.SetActive(true);
+
         if (arrive.arrived)
         {
             time_waiting -= Time.deltaTime;
 
             // Going to stadium
             if (time_waiting <= 0)
-            {
+            {              
                 GameObject[] targets = { stadium_2t, stadium_3t, stadium_4t, stadium_5t };
 
                 GameObject final_target = stadium_1t;
@@ -219,7 +230,7 @@ public class VisitorBehaviour : MonoBehaviour
                         final_target = targets[i];
                     }
                 }
-
+                food.SetActive(false);
                 ToStadium(final_target);
             }
         }
@@ -237,6 +248,18 @@ public class VisitorBehaviour : MonoBehaviour
             case 2:
                 nav_move.SetDestination(entrance_2t);
                 visitor_action = Action.Just_walking;
+                break;
+        }
+
+        // Deciding randomly visitor's mood
+        position = Random.Range(1, 10);
+        switch (position)
+        {
+            case 1:
+                happy.SetActive(true);
+                break;
+            case 2:
+                sad.SetActive(true);
                 break;
         }
     }
