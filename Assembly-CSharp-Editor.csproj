@@ -62,94 +62,66 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Cc\BGCcCursorChangeLinearEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Cc\BGCcCursorDrawer.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Cc\BGCcCursorEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Cc\BGCcCursorObjectEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Cc\BGCcCursorObjectRotateEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Cc\BGCcCursorObjectTranslateEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Cc\BGCcMathEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Cc\BGCcVisualizationLineRendererEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCcEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCurveEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCurveEditorComponents.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCurveEditorFields.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCurveEditorPoint.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCurveEditorPoints.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCurveEditorPointsSelection.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCurveEditorSettings.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGCurveEditorTab.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGNewPointPositionManager.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Curve\BGRectangularSelection.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGCcAddWindow.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGCcChangeNameWindow.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGCcChoseDrawer.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGCcChoseWindow.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGCurvePainterGizmo.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGCurvePainterHandles.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGHandlesSettingsDrawer.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGPropertyDrawer.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Infra\BGTransformMonitor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGOverlayMessage.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGPopupMenu.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGSceneViewOverlay.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGSceneViewOverlayMenu.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGSceneViewOverlayMenuPoint.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGSceneViewOverlayMenuSelection.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGSceneViewOverlayPointAdd.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGSceneViewOverlayPointAddAtDistance.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGSceneViewOverlayPointAddSnap2D.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Overlay\BGSceneViewOverlayPointAddSnap3D.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Settings\BGCurveSettingsForEditor.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Settings\BGCurveSettingsForEditorWindow.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Settings\BGCurveSettingsOperations.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Settings\BGCurveSettingsSO.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Utils\BGEditorUtility.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Utils\BGPrivateField.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Utils\BGStartUp.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Utils\BGTransition.cs" />
-    <Compile Include="Assets\BansheeGz\BGCurve\Scripts\Editor\Utils\BGTreeView.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Commands.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\BlackboardInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GlobalBlackboardInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GraphInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GraphOwnerInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\ExternalInspectorWindow.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\GraphConsole.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\GraphEditor.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\GraphEditor_Events.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\GraphEditor_Panels.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\GraphEditor_Toolbar.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\GraphFinder.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\QuickPopup.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\TaskWizardWindow.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\WelcomeWindow.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\ActionListPlayer\Editor\ActionListPlayerInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\BehaviourTrees\Editor\BehaviourTreeOwnerInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Editor\DialogueTreeControllerInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Editor\DialogueTreeInspector.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -349,26 +321,23 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.OSXStandalone.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/familia/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/Marc/Documents/GitHub/Dirt-Track/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
