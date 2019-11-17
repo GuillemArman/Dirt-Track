@@ -1464,7 +1464,7 @@ GameObject:
   - component: {fileID: 5870537485847469243}
   - component: {fileID: 5870537485847469244}
   - component: {fileID: 5870537485847469245}
-  - component: {fileID: 5870537485847469246}
+  - component: {fileID: -4629807676136000151}
   - component: {fileID: 5870537485847469247}
   - component: {fileID: 5870537485847469248}
   m_Layer: 9
@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walk_radius: 20
---- !u!114 &5870537485847469246
+--- !u!114 &-4629807676136000151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
