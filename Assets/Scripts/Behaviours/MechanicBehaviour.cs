@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MechanicBehaviour : MonoBehaviour
 {
-    private Move move;
     private MoveNavMesh nav_move;
     private NightCycle cycle;
 
@@ -14,10 +13,9 @@ public class MechanicBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        move = GetComponent<Move>();
         nav_move = GetComponent<MoveNavMesh>();
 
-        move.SetCurrTarget(transform.position);
+        nav_move.curr_target = transform.position;
         cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
     }
 
@@ -32,7 +30,7 @@ public class MechanicBehaviour : MonoBehaviour
     {
         if (cycle.day || cycle.noon)
         {
-            nav_move.SetDestination(investigate_pos);
+            nav_move.SetDestination(investigate_pos.transform.position);
         }
     }
 
@@ -40,7 +38,7 @@ public class MechanicBehaviour : MonoBehaviour
     {
         if (cycle.night)
         {
-            nav_move.SetDestination(check_pos);
+            nav_move.SetDestination(check_pos.transform.position);
         }
     }
 }

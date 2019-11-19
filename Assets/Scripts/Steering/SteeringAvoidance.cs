@@ -15,15 +15,12 @@ public class SteeringAvoidance : MonoBehaviour
     public float max_avoid_force = 0.05f;
 
     private Move move;
-    private MoveNavMesh nav_move;
-    private SteeringArrive arrive;
     private SteeringQueue queue;
 
     // Use this for initialization
     void Start()
     {
         move = GetComponent<Move>();
-        nav_move = GetComponent<MoveNavMesh>();
         queue = GetComponent<SteeringQueue>();
     }
 

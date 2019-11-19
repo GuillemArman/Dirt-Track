@@ -24,8 +24,6 @@ public class SteeringQueue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {      
-        Vector3 ahead = transform.position + (move.velocity.normalized * max_queue_ahead);
-
         RaycastHit hit;
         float angle = Mathf.Atan2(transform.forward.x, transform.forward.z);
         Quaternion q = Quaternion.AngleAxis(Mathf.Rad2Deg * angle, Vector3.up);
@@ -36,7 +34,7 @@ public class SteeringQueue : MonoBehaviour
             direction.x += ray.direction_offset;
 
             if (Physics.Raycast(transform.position, q * direction.normalized, out hit, ray.length)
-                && !hit.collider.CompareTag("Obstacle") && wants_to_queue)
+                && !hit.collider.CompareTag("Obstacle") && wants_to_queue && !hit.collider.gameObject.GetComponent<SteeringQueue>().is_in_queue)
             {
                 is_in_queue = true;
                 move.SetVelocity(Vector3.zero);

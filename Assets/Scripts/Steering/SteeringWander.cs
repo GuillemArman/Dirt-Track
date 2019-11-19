@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SteeringWander : MonoBehaviour
 {
-    private Move move;
     private MoveNavMesh nav_move;
     private SteeringArrive arrive;
 
@@ -14,11 +13,10 @@ public class SteeringWander : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        move = GetComponent<Move>();
         nav_move = GetComponent<MoveNavMesh>();
         arrive = GetComponent<SteeringArrive>();
 
-        move.SetCurrTarget(transform.position);
+        nav_move.curr_target = transform.position;
         if (arrive.arrived)
             Wander();
     }
@@ -27,24 +25,17 @@ public class SteeringWander : MonoBehaviour
     void Update()
     {
         if (arrive.arrived)
-        {
-            // Deleting prev GO target
-            Destroy(move.final_target);
             Wander();
-        }
     }
 
     void Wander()
     {
         Vector3 randomDirection = Random.insideUnitSphere * walk_radius;
         randomDirection += transform.position;
+
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDirection, out hit, walk_radius, 8);
-
-        // Creating new GO target
-        GameObject final_target = new GameObject();
-        final_target.transform.position = hit.position;
-        nav_move.SetDestination(final_target);
+        nav_move.SetDestination(hit.position);
     }
 
     void OnDrawGizmos()

@@ -7,12 +7,11 @@ public class VisitorBehaviour : MonoBehaviour
     public enum Action { To_queue, Doing_queue, Buying_ticket, Hungry, Go_stadium, Go_home, Just_walking };
     public Action visitor_action;
 
-    private Move move;
     private MoveNavMesh nav_move;
     private SteeringQueue queue;
     private SteeringArrive arrive;
-    private float time_waiting = 3.0f;
     private NightCycle cycle;
+    private float time_waiting = 3.0f;
 
     private GameObject queue_1;
     private GameObject queue_2;
@@ -44,7 +43,6 @@ public class VisitorBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        move = GetComponent<Move>();
         nav_move = GetComponent<MoveNavMesh>();
         queue = GetComponent<SteeringQueue>();
         arrive = GetComponent<SteeringArrive>();
@@ -52,23 +50,23 @@ public class VisitorBehaviour : MonoBehaviour
 
         // Setting triggers and targets
         queue_1 = GameObject.Find("Queue1_Target"); 
-        queue_2 = GameObject.Find("Queue2_Target"); 
-        queue_3 = GameObject.Find("Queue3_Target"); 
-        queue_4 = GameObject.Find("Queue4_Target"); 
-        
-        ticket_1t = GameObject.Find("Ticket1_Trigger"); 
-        ticket_2t = GameObject.Find("Ticket2_Trigger"); 
-        ticket_3t = GameObject.Find("Ticket3_Trigger"); 
-        ticket_4t = GameObject.Find("Ticket4_Trigger"); 
-        
-        food_1t = GameObject.Find("Food1_Trigger"); 
-        food_2t = GameObject.Find("Food2_Trigger"); 
-        food_3t = GameObject.Find("Food3_Trigger"); 
-        
-        stadium_1t = GameObject.Find("Stadium1_Trigger"); 
-        stadium_2t = GameObject.Find("Stadium2_Trigger"); 
-        stadium_3t = GameObject.Find("Stadium3_Trigger"); 
-        stadium_4t = GameObject.Find("Stadium4_Trigger"); 
+        queue_2 = GameObject.Find("Queue2_Target");
+        queue_3 = GameObject.Find("Queue3_Target");
+        queue_4 = GameObject.Find("Queue4_Target");
+
+        ticket_1t = GameObject.Find("Ticket1_Trigger");
+        ticket_2t = GameObject.Find("Ticket2_Trigger");
+        ticket_3t = GameObject.Find("Ticket3_Trigger");
+        ticket_4t = GameObject.Find("Ticket4_Trigger");
+
+        food_1t = GameObject.Find("Food1_Trigger");
+        food_2t = GameObject.Find("Food2_Trigger");
+        food_3t = GameObject.Find("Food3_Trigger");
+
+        stadium_1t = GameObject.Find("Stadium1_Trigger");
+        stadium_2t = GameObject.Find("Stadium2_Trigger");
+        stadium_3t = GameObject.Find("Stadium3_Trigger");
+        stadium_4t = GameObject.Find("Stadium4_Trigger");
         stadium_5t = GameObject.Find("Stadium5_Trigger");
 
         entrance_1t = GameObject.Find("Entrance1_Trigger");
@@ -135,19 +133,19 @@ public class VisitorBehaviour : MonoBehaviour
     {
         queue.wants_to_queue = true;
 
-        if (move.final_target == queue_1 && arrive.arrived && !ticket_1t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
+        if (nav_move.final_target == queue_1.transform.position && arrive.arrived && !ticket_1t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             ToTicket(ticket_1t);            
         }
-        else if (move.final_target == queue_2 && arrive.arrived && !ticket_2t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
+        else if (nav_move.final_target == queue_2.transform.position && arrive.arrived && !ticket_2t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             ToTicket(ticket_2t);
         }
-        else if (move.final_target == queue_3 && arrive.arrived && !ticket_3t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
+        else if (nav_move.final_target == queue_3.transform.position && arrive.arrived && !ticket_3t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             ToTicket(ticket_3t);
         }
-        else if (move.final_target == queue_4 && arrive.arrived && !ticket_4t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
+        else if (nav_move.final_target == queue_4.transform.position && arrive.arrived && !ticket_4t.GetComponent<TicketTrigger>().IsTriggerOcuppied())
         {
             ToTicket(ticket_4t);
         }
@@ -242,11 +240,11 @@ public class VisitorBehaviour : MonoBehaviour
         switch (position)
         {
             case 1:
-                nav_move.SetDestination(entrance_1t);
+                nav_move.SetDestination(entrance_1t.transform.position);
                 visitor_action = Action.Just_walking;
                 break;
             case 2:
-                nav_move.SetDestination(entrance_2t);
+                nav_move.SetDestination(entrance_2t.transform.position);
                 visitor_action = Action.Just_walking;
                 break;
         }
@@ -266,19 +264,19 @@ public class VisitorBehaviour : MonoBehaviour
 
     private void ToQueue(GameObject target)
     {
-        nav_move.SetDestination(target);
+        nav_move.SetDestination(target.transform.position);
         visitor_action = Action.Doing_queue;
     }
 
     private void ToTicket(GameObject target)
     {
-        nav_move.SetDestination(target);
+        nav_move.SetDestination(target.transform.position);
         visitor_action = Action.Buying_ticket;
     }
 
     private void ToStadium(GameObject target)
     {
-        nav_move.SetDestination(target);
+        nav_move.SetDestination(target.transform.position);
         queue.wants_to_queue = false;
 
         visitor_action = Action.Go_stadium;
@@ -287,7 +285,7 @@ public class VisitorBehaviour : MonoBehaviour
 
     private void ToFood(GameObject target)
     {
-        nav_move.SetDestination(target);
+        nav_move.SetDestination(target.transform.position);
 
         visitor_action = Action.Hungry;
         time_waiting = 3.0f;

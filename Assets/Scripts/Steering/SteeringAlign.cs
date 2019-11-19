@@ -5,7 +5,6 @@ using UnityEngine;
 public class SteeringAlign : MonoBehaviour
 {
     private Move move;
-    //private SteeringQueue queue;
 
     public float stop_angle = 0.2f;
 	public float slow_angle = 30.0f;
@@ -15,7 +14,6 @@ public class SteeringAlign : MonoBehaviour
     void Start()
     {
         move = GetComponent<Move>();
-        //queue = GetComponent<SteeringQueue>();
 	}
 	
 	// Update is called once per frame
@@ -25,7 +23,7 @@ public class SteeringAlign : MonoBehaviour
         float velocity_orientation = Mathf.Atan2(move.velocity.x, move.velocity.z) * Mathf.Rad2Deg;
         float diff = Mathf.DeltaAngle(my_orientation, velocity_orientation);
 
-		if(Mathf.Abs(diff) - move.max_rotation < stop_angle || move.velocity == Vector3.zero) // || queue.is_in_queue) 
+		if(Mathf.Abs(diff) - move.max_rotation < stop_angle || move.velocity == Vector3.zero)
 		{
 			move.SetRotation(0.0f);
 		} 

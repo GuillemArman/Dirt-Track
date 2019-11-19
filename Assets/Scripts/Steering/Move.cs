@@ -5,10 +5,8 @@ using UnityEngine;
 public class Move : MonoBehaviour 
 {
     private Animator animator;
-    private Vector3 curr_target;
 
     [Header("------ Read Only -------")]
-    public GameObject final_target;
     public Vector3 velocity = Vector3.zero;
     public float rotation = 0.0f;
 
@@ -35,16 +33,6 @@ public class Move : MonoBehaviour
     public void SetRotation(float new_rotation)
     {
         rotation = new_rotation;
-    }
-
-    public void SetCurrTarget(Vector3 new_target)
-    {
-        curr_target = new_target;
-    }
-
-    public Vector3 GetCurrTarget()
-    {
-        return curr_target;
     }
 
     // Use this for initialization

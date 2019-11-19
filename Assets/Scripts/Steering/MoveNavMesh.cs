@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MoveNavMesh : MonoBehaviour
 {
-    private Move move;
     private SteeringArrive arrive;
     private SteeringQueue queue;
     private NavMeshAgent nav_agent = null;
@@ -13,6 +12,8 @@ public class MoveNavMesh : MonoBehaviour
     private Vector3[] path;
 
     [Header("------ Read Only -------")]
+    public Vector3 final_target;
+    public Vector3 curr_target;
     public int progress = 0;
 
     [Header("------ Set Values ------")]
@@ -21,7 +22,6 @@ public class MoveNavMesh : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        move = GetComponent<Move>();
         arrive = GetComponent<SteeringArrive>();
         queue = GetComponent<SteeringQueue>();
         nav_agent = GetComponent<NavMeshAgent>();
@@ -46,7 +46,7 @@ public class MoveNavMesh : MonoBehaviour
                 }
                 if (progress < path.Length)
                 {
-                    move.SetCurrTarget(path[progress]);
+                    curr_target = path[progress];
                 }
             }
         }
@@ -57,16 +57,16 @@ public class MoveNavMesh : MonoBehaviour
         return (progress >= path.Length - 1);
     }
 
-    public void SetDestination(GameObject dest)
+    public void SetDestination(Vector3 dest)
     {
         progress = 0;
-        move.final_target = dest;
-        move.SetCurrTarget(dest.transform.position);
+        final_target = dest;
+        curr_target = dest;
         arrive.arrived = false;
 
         NavMeshPath nav_path = new NavMeshPath();
-        nav_agent.SetDestination(dest.transform.position);
-        nav_agent.CalculatePath(dest.transform.position, nav_path);
+        nav_agent.SetDestination(dest);
+        nav_agent.CalculatePath(dest, nav_path);
         path = nav_agent.path.corners;
     }
 
