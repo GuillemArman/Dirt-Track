@@ -1529,7 +1529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb15eb1b4eb2a1f4a871c0917ce06f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  final_target: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   rotation: 0
   max_velocity: 3
@@ -1619,6 +1618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7d1011a5f132043a09d98ac2b37fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  final_target: {x: 0, y: 0, z: 0}
+  curr_target: {x: 0, y: 0, z: 0}
   progress: 0
   path_point_distance: 1.5
 --- !u!114 &5870537485847469244
@@ -1658,7 +1659,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5870537485847469249}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c71a13089e35b942a7c91412771644a, type: 3}
   m_Name: 
