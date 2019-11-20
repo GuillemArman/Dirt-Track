@@ -22440,6 +22440,7 @@ GameObject:
   - component: {fileID: 876797064}
   - component: {fileID: 876797066}
   - component: {fileID: 876797067}
+  - component: {fileID: 876797068}
   m_Layer: 0
   m_Name: _Game Manager
   m_TagString: Untagged
@@ -22512,6 +22513,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42340d52c76964b4e86fb1d4f15b4066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &876797068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876797063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c826e5ac9620494cb6ad5e239e17083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: 0
+  score: 0
+  completedCycles: 0
+  winCondition: 0
+  winCycles: 3
+  Spawner: {fileID: 0}
+  Currency: {fileID: 0}
+  Currency_string: 
+  Days: 1
+  loaded: 0
 --- !u!1 &879878419
 GameObject:
   m_ObjectHideFlags: 0
@@ -24718,7 +24741,7 @@ Transform:
   - {fileID: 1718007745}
   - {fileID: 1872732022}
   m_Father: {fileID: 1539747017}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989359872
 GameObject:
@@ -39029,12 +39052,12 @@ Transform:
   - {fileID: 498755139}
   - {fileID: 1049261813}
   - {fileID: 2079136767}
-  - {fileID: 447560386}
+  - {fileID: 989359871}
   - {fileID: 1056972079}
   - {fileID: 1062033384}
   - {fileID: 393000300}
   - {fileID: 553130335}
-  - {fileID: 989359871}
+  - {fileID: 447560386}
   - {fileID: 12270236}
   - {fileID: 161009907}
   - {fileID: 723669961}
