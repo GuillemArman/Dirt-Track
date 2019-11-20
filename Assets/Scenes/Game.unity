@@ -22441,6 +22441,7 @@ GameObject:
   - component: {fileID: 876797066}
   - component: {fileID: 876797067}
   - component: {fileID: 876797068}
+  - component: {fileID: 876797069}
   m_Layer: 0
   m_Name: _Game Manager
   m_TagString: Untagged
@@ -22491,6 +22492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73d427470e17ca47ab73bf572ad75d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Global_BB: {fileID: 0}
+  _GameManager: {fileID: 0}
   day: 0
   noon: 0
   night: 0
@@ -22535,6 +22538,24 @@ MonoBehaviour:
   Currency_string: 
   Days: 1
   loaded: 0
+--- !u!114 &876797069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876797063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac615fbde4bf32f4cb6ddf377a286d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serializedBlackboard: '{"_variables":{"Day":{"_name":"Day","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Noon":{"_name":"Noon","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"Night":{"_name":"Night","$type":"NodeCanvas.Framework.Variable`1[[System.Boolean,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}}}'
+  _objectReferences: []
+  dontDestroy: 1
 --- !u!1 &879878419
 GameObject:
   m_ObjectHideFlags: 0

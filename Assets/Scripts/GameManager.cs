@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
 
     public static GameManager gameManager;
-    public enum gameStates { Day, Night, GameOver };
+    public enum gameStates { Day, Night, Noon, GameOver };
     public gameStates gameState = gameStates.Day;
 
     public int score = 0; //total score = money

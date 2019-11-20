@@ -4,10 +4,14 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using NodeCanvas.Framework;
 
 
 public class NightCycle : MonoBehaviour
 {
+    public Blackboard Global_BB;
+    public GameObject _GameManager;
+
     public bool day;
     public bool noon;
     public bool night;
@@ -25,9 +29,14 @@ public class NightCycle : MonoBehaviour
     private int speed;
     private bool havetofade = true;
 
+    
+
     // Use this for initialization
     void Start()
     {
+        _GameManager = GameObject.Find("_Game Manager");
+        Global_BB = _GameManager.GetComponent<GlobalBlackboard>();
+
         time = 25200; // We begin the first journey at 7:00 (3600 * 7)
         days = 1;
         day = true;
@@ -71,7 +80,11 @@ public class NightCycle : MonoBehaviour
             speed = 350;
             day = true;
             noon = false;
-            night = false;      
+            night = false;
+            GameManager.gameManager.gameState = GameManager.gameStates.Day;
+            Global_BB.SetValue("Day", day);
+            Global_BB.SetValue("Noon", noon);
+            Global_BB.SetValue("Night", night);
         }
         else if (time > 55800 && time < 75600) // 15:30  to 21:00
         {
@@ -79,6 +92,11 @@ public class NightCycle : MonoBehaviour
             day = false;
             noon = true;
             night = false;
+
+            GameManager.gameManager.gameState = GameManager.gameStates.Noon;
+            Global_BB.SetValue("Day", day);
+            Global_BB.SetValue("Noon", noon);
+            Global_BB.SetValue("Night", night);
         }
         else if (time > 75600 || time < 28800) //21:00 to 8:00
         {
@@ -92,6 +110,10 @@ public class NightCycle : MonoBehaviour
             day = false;
             noon = false;
             night = true;
+            GameManager.gameManager.gameState = GameManager.gameStates.Night;
+            Global_BB.SetValue("Day", day);
+            Global_BB.SetValue("Noon", noon);
+            Global_BB.SetValue("Night", night);
         }
         else if (time > 86350) // 23:59 AM
         {
