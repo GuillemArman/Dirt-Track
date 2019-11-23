@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
     public Text Currency;
     public string Currency_string;
 
-    int Money = 0;
+    public int Money = 0;
+    public int Investigating_Points = 0;
     public int Days = 1;
 
     bool first_time;
@@ -92,11 +93,13 @@ public class GameManager : MonoBehaviour
         bb = GetComponent<GlobalBlackboard>();
 
 
-        Money = 0;
+        Money = 20;
+        Investigating_Points = 0;
         Days = 1;
 
 
         bb.SetValue("Money", Money);
+        bb.SetValue("Investigating_Points", Investigating_Points);
         bb.SetValue("Days", 0);
 
         Spawner = GameObject.Find("Spawner");
