@@ -10,7 +10,7 @@ public class InitGlobal_BB : MonoBehaviour
     Blackboard Global_BB;
 
 
-    int Money = 20;
+    int Money = 0;
 
     public string Currency_string;
     public Text Currency;
@@ -26,15 +26,14 @@ public class InitGlobal_BB : MonoBehaviour
 
 
         //currency
-        Global_BB.SetValue("    ", Money);
-        Currency = GameObject.Find("Currency").GetComponent<Text>();
-       
+        Global_BB.SetValue("Money", Money);
+        Currency = GameObject.Find("Money Text").GetComponent<Text>();
 
         Currency_string = Global_BB.GetValue<int>("Money").ToString();
         Currency.text = Currency_string;
 
-        Investigating_Point_string = Global_BB.GetValue<int>("Investigating_Points").ToString();
-        Investigating_Point.text = Investigating_Point_string;
+      // Investigating_Point_string = Global_BB.GetValue<int>("Investigating_Points").ToString();
+      // Investigating_Point.text = Investigating_Point_string;
 
 
     }
@@ -61,7 +60,7 @@ public class InitGlobal_BB : MonoBehaviour
 
         
         //currency
-        Global_BB.SetValue("Money", Money);
+        Global_BB.SetValue("currency", Money);
       
 
 

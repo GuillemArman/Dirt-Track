@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     public Text Currency;
     public string Currency_string;
 
+    public Text Currency_Inv;
+    public string Currency_Inv_string;
+
     public int Money = 0;
     public int Investigating_Points = 0;
     public int Days = 1;
@@ -49,6 +52,13 @@ public class GameManager : MonoBehaviour
         }
 
         bb.SetValue("Days", Days);
+
+        tmp = bb.GetValue<int>("Money");
+        Currency_string = bb.GetValue<int>("Money").ToString();
+        Currency.text = Currency_string;
+
+        Currency_Inv_string = bb.GetValue<int>("Investgating_Points").ToString();
+        Currency_Inv.text = Currency_Inv_string;
 
         switch (gameState)
         {
@@ -103,6 +113,12 @@ public class GameManager : MonoBehaviour
         bb.SetValue("Days", 0);
 
         Spawner = GameObject.Find("Spawner");
+
+        Currency = GameObject.Find("Money Text").GetComponent<Text>();
+        Currency.color = Color.white;
+
+        Currency_Inv = GameObject.Find("Investigating Text").GetComponent<Text>();
+        Currency_Inv.color = Color.white;
 
         loaded = true;
 
