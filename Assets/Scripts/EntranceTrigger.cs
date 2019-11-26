@@ -30,7 +30,7 @@ public class EntranceTrigger : MonoBehaviour
     {
         next_spawn -= Time.deltaTime;
 
-        if (next_spawn <= 0 && cycle.day && visitor_1.GetComponent<VisitorBehaviour>() != null)
+        if (next_spawn <= 0 && cycle.day)
         {
             // Clone enemy
             GameObject prefab = Instantiate(visitor_1, transform.position, Quaternion.identity);

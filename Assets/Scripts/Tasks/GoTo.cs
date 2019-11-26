@@ -12,10 +12,14 @@ public class GoTo : ActionTask
 
     protected override void OnExecute()
     {   
-        nav_move = agent.GetComponent<MoveNavMesh>();
+        if (bb_target.value != new_target)
+        {
+            nav_move = agent.GetComponent<MoveNavMesh>();
 
-        new_target = bb_target.value;
-        nav_move.SetDestination(new_target);
+            new_target = bb_target.value;
+            nav_move.SetDestination(new_target);
+        }
+
         EndAction();
     }
 }

@@ -1464,7 +1464,6 @@ GameObject:
   - component: {fileID: 5870537485847469243}
   - component: {fileID: 5870537485847469244}
   - component: {fileID: 5870537485847469245}
-  - component: {fileID: -4629807676136000151}
   - component: {fileID: 5870537485847469247}
   - component: {fileID: 5870537485847469248}
   m_Layer: 9
@@ -1652,18 +1651,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walk_radius: 20
---- !u!114 &-4629807676136000151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5870537485847469249}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c71a13089e35b942a7c91412771644a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &5870537485847469247
 Animator:
   serializedVersion: 3
