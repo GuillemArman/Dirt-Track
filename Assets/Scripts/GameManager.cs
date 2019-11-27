@@ -25,10 +25,14 @@ public class GameManager : MonoBehaviour
     public Text Currency;
     public string Currency_string;
 
+    public Text Ticket;
+    public string Ticket_string;
+
     public Text Currency_Inv;
     public string Currency_Inv_string;
 
     public int Money = 0;
+    public int TicketCost = 0;
     public int Investigating_Points = 0;
     public int Days = 1;
 
@@ -54,13 +58,20 @@ public class GameManager : MonoBehaviour
         }
 
         bb.SetValue("Days", Days);
-
+        bb.SetValue("TicketPrice", TicketCost);
         tmp = bb.GetValue<int>("Money");
+       
+
         Currency_string = bb.GetValue<int>("Money").ToString();
         Currency.text = Currency_string;
 
         Currency_Inv_string = bb.GetValue<int>("Investgating_Points").ToString();
         Currency_Inv.text = Currency_Inv_string;
+
+        Ticket_string = bb.GetValue<int>("TicketPrice").ToString();
+        Ticket.text = Ticket_string;
+
+        CheckMoney();
 
         switch (gameState)
         {
@@ -106,13 +117,17 @@ public class GameManager : MonoBehaviour
 
 
         Money = 0;
+        TicketCost = 10;
         Investigating_Points = 0;
         Days = 1;
+        
 
 
         bb.SetValue("Money", Money);
+        bb.SetValue("TicketPrice", TicketCost);
         bb.SetValue("Investigating_Points", Investigating_Points);
         bb.SetValue("Days", 0);
+       
 
         Spawner = GameObject.Find("Spawner");
 
@@ -122,8 +137,30 @@ public class GameManager : MonoBehaviour
         Currency_Inv = GameObject.Find("Investigating Text").GetComponent<Text>();
         Currency_Inv.color = Color.white;
 
+        Ticket = GameObject.Find("TicketPrice").GetComponent<Text>();
+        Ticket.color = Color.white;
+
         loaded = true;
 
     }
 
+    public void ChangeTicketPrice()
+    {
+        TicketCost += 5;
+        bb.SetValue("TicketPrice", TicketCost);
+    }
+
+    public void LessTicketPrice()
+    {
+        TicketCost -= 5;
+        bb.SetValue("TicketPrice", TicketCost);
+
+    }
+
+    public void CheckMoney()
+    {
+        Money = bb.GetValue<int>("Money");
+        TicketCost = bb.GetValue<int>("TicketPrice");
+
+    }
  }

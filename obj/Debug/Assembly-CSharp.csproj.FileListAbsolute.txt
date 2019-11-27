@@ -122,7 +122,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Analytics.Stan
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Analytics.Tracker.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Locator.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.TextMeshPro.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEditor.dll
@@ -132,7 +131,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.Animatio
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ARModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.AudioModule.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.BaselibModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ClothModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
@@ -142,7 +140,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.Director
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.GridModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
@@ -150,7 +147,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.IMGUIMod
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.InputModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.Networking.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
@@ -170,8 +166,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TestRunn
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TextCoreModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TilemapModule.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.Timeline.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TimelineModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TLSModule.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.UI.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
@@ -197,15 +191,11 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.SerializationL
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.DataContract.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\ExCSS.Unity.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.UNetWeaver.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.IvyParser.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.CecilTools.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Cecil.Pdb.dll
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Cecil.Mdb.dll
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEditor.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.TextMeshPro.Editor.pdb
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.PackageManagerUI.Editor.pdb
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.CollabProxy.Editor.pdb
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.TextMeshPro.pdb
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Analytics.DataPrivacy.pdb
@@ -215,7 +205,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.Accessib
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.AnimationModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.AudioModule.xml
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.BaselibModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ClothModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
@@ -249,7 +238,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TerrainP
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TextCoreModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TilemapModule.xml
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TimelineModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.UIModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.UNETModule.xml
@@ -271,10 +259,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.XRModule
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TestRunner.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\nunit.framework.xml
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.Timeline.xml
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.Networking.xml
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
-C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\familia\Documents\GitHub\Dirt-Track\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\familia\Documents\GitHub\Dirt-Track\obj\Debug\Assembly-CSharp.csproj.CopyComplete
@@ -563,3 +547,20 @@ C:\Users\Marc\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.WindModule.
 C:\Users\Marc\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.XRModule.xml
 C:\Users\Marc\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\Marc\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TestRunner.xml
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\com.unity.multiplayer-hlapi.Editor.dll
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\com.unity.multiplayer-hlapi.Runtime.dll
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\com.unity.multiplayer-weaver.Editor.dll
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Timeline.dll
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Timeline.Editor.dll
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEditor.SpatialTracking.dll
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEditor.XR.LegacyInputHelpers.dll
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.XR.LegacyInputHelpers.dll
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Timeline.Editor.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\com.unity.multiplayer-hlapi.Editor.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\Unity.Timeline.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\com.unity.multiplayer-weaver.Editor.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.XR.LegacyInputHelpers.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEditor.SpatialTracking.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.SpatialTracking.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEditor.XR.LegacyInputHelpers.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\com.unity.multiplayer-hlapi.Runtime.pdb
