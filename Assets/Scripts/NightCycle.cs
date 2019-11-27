@@ -5,12 +5,14 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using NodeCanvas.Framework;
+using UnityEngine.SceneManagement;
 
 
 public class NightCycle : MonoBehaviour
 {
     public Blackboard Global_BB;
     public GameObject _GameManager;
+    MenuManager mm;
 
     public bool day;
     public bool noon;
@@ -18,14 +20,18 @@ public class NightCycle : MonoBehaviour
     public Material skybox1;
     public Material skybox2;
     public Text timetext;
+
     public GameObject Park_Light;
     public GameObject light_Getout;
     public GameObject Open;
     public GameObject Closed;
 
+    public GameObject button1;
+
     private float time;
     private TimeSpan current_time;
-    private int days;
+    public int days;
+    public int money;
     private int speed;
     private bool havetofade = true;
 
@@ -36,6 +42,8 @@ public class NightCycle : MonoBehaviour
     {
         _GameManager = GameObject.Find("_Game Manager");
         Global_BB = _GameManager.GetComponent<GlobalBlackboard>();
+
+        money = Global_BB.GetValue<int>("Money");
 
         time = 25200; // We begin the first journey at 7:00 (3600 * 7)
         days = 1;
@@ -50,7 +58,9 @@ public class NightCycle : MonoBehaviour
         if(night)
         {
             RenderSettings.skybox = skybox2;
-        }      
+        }
+
+        button1.SetActive(true);
     }
 
     // Update is called once per frame
@@ -59,16 +69,22 @@ public class NightCycle : MonoBehaviour
         ChangeTime();
         ParkLights();
         SkyboxChange();
+        CheckMoney();
+
     }
 
     public void ChangeTime()
     {
         time += Time.deltaTime * speed;
+        money = Global_BB.GetValue<int>("Money");
+       
 
         if (time > 86400)
         {   
             days += 1;
+            money -= 500;
             time = 0;
+            Global_BB.SetValue("Money", money);
         }
         else if (time > 28800 && time < 55800) // 8:00  to 15:30
         {
@@ -123,6 +139,24 @@ public class NightCycle : MonoBehaviour
         current_time = TimeSpan.FromSeconds(time);
         string[] temptime = current_time.ToString().Split(":"[0]);
         timetext.text = temptime[0] + ":" + temptime[1];
+    }
+
+    public void CheckMoney()
+    {
+
+        if (money < 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (money > 1000)
+        {
+            button1.SetActive(false);
+
+        }
+        else
+            button1.SetActive(true);
+
+
     }
 
     public void ParkLights()

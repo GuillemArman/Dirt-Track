@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject BuyPanel;
 
+    public GameObject Mechanic;
+    public GameObject Truck;
+    public GameObject BoxesCar;
+
     public Text Currency;
     public string Currency_string;
 
@@ -52,11 +56,23 @@ public class GameManager : MonoBehaviour
         LoadEverything();
 
         bb = GetComponent<GlobalBlackboard>();
-        //
-       // bb.SetValue("Buy Panel", GameObject.Find("Panel Buy"));
         BuyPanel = GameObject.Find("Panel Buy");
         bb.SetValue("Buy Panel", BuyPanel);
+
         BuyPanel.SetActive(false);
+
+        Mechanic = GameObject.Find("Mechanic_3");
+        Truck = GameObject.Find("MonsterTruck");
+        BoxesCar = GameObject.Find("Yellow Car");
+
+        bb.SetValue("Mechanic", Mechanic);
+        bb.SetValue("Truck", Truck);
+        bb.SetValue("BoxesCar", BoxesCar);
+
+        Mechanic.SetActive(false);
+        Truck.SetActive(false);
+        BoxesCar.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -108,7 +124,11 @@ public class GameManager : MonoBehaviour
         bb.SetValue("TicketPrice", TicketCost);
         bb.SetValue("Investigating_Points", Investigating_Points);
         bb.SetValue("Days", 0);
-       
+
+        bb.SetValue("Mechanic", Mechanic);
+        bb.SetValue("Truck", Truck);
+        bb.SetValue("BoxesCar", BoxesCar);
+
 
         Spawner = GameObject.Find("Spawner");
 
@@ -178,6 +198,15 @@ public class GameManager : MonoBehaviour
     {
         Money = bb.GetValue<int>("Money");
         TicketCost = bb.GetValue<int>("TicketPrice");
+
+    }
+
+    public void BuyMechanic()
+    {
+        Money -= 1000;
+        Mechanic.SetActive(true);
+        Truck.SetActive(true);
+        BoxesCar.SetActive(true);
 
     }
  }
