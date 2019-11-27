@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
 
     GlobalBlackboard bb;
-
+    CountingVisitors CV;
 
     public static GameManager gameManager;
     public enum gameStates { Day, Night, Noon, GameOver };
@@ -37,9 +37,13 @@ public class GameManager : MonoBehaviour
     public Text Currency_Inv;
     public string Currency_Inv_string;
 
+    public Text Visitors_Text;
+    public string Visitors_String;
+
     public int Money = 0;
     public int TicketCost = 0;
     public int Investigating_Points = 0;
+    public int Visitors = 0;
     public int Days = 1;
 
     bool first_time;
@@ -55,23 +59,7 @@ public class GameManager : MonoBehaviour
     {
         LoadEverything();
 
-        bb = GetComponent<GlobalBlackboard>();
-        BuyPanel = GameObject.Find("Panel Buy");
-        bb.SetValue("Buy Panel", BuyPanel);
-
-        BuyPanel.SetActive(false);
-
-        Mechanic = GameObject.Find("Mechanic_3");
-        Truck = GameObject.Find("MonsterTruck");
-        BoxesCar = GameObject.Find("Yellow Car");
-
-        bb.SetValue("Mechanic", Mechanic);
-        bb.SetValue("Truck", Truck);
-        bb.SetValue("BoxesCar", BoxesCar);
-
-        Mechanic.SetActive(false);
-        Truck.SetActive(false);
-        BoxesCar.SetActive(false);
+        PostLoad();
 
     }
 
@@ -83,25 +71,14 @@ public class GameManager : MonoBehaviour
             LoadEverything();
         }
 
-        bb.SetValue("Days", Days);
-        bb.SetValue("TicketPrice", TicketCost);
-        tmp = bb.GetValue<int>("Money");
-       
 
-        Currency_string = bb.GetValue<int>("Money").ToString();
-        Currency.text = Currency_string;
-
-        Currency_Inv_string = bb.GetValue<int>("Investgating_Points").ToString();
-        Currency_Inv.text = Currency_Inv_string;
-
-        Ticket_string = bb.GetValue<int>("TicketPrice").ToString();
-        Ticket.text = Ticket_string;
-
+        Values_To_String();
         CheckMoney();
         CycleDay();
-       
+        GetVisitorsnumber();
 
-    
+
+
 
     }
 
@@ -116,6 +93,7 @@ public class GameManager : MonoBehaviour
         Money = 0;
         TicketCost = 10;
         Investigating_Points = 0;
+        Visitors = 0;
         Days = 1;
         
 
@@ -123,6 +101,7 @@ public class GameManager : MonoBehaviour
         bb.SetValue("Money", Money);
         bb.SetValue("TicketPrice", TicketCost);
         bb.SetValue("Investigating_Points", Investigating_Points);
+        bb.SetValue("Visitors", Visitors);
         bb.SetValue("Days", 0);
 
         bb.SetValue("Mechanic", Mechanic);
@@ -143,8 +122,53 @@ public class GameManager : MonoBehaviour
         Ticket = GameObject.Find("TicketPrice").GetComponent<Text>();
         Ticket.color = Color.white;
 
+        Visitors_Text = GameObject.Find("Audience Text").GetComponent<Text>();
+        Visitors_Text.color = Color.white;
+
         loaded = true;
 
+    }
+
+    void Values_To_String()
+    {
+        bb.SetValue("Days", Days);
+        bb.SetValue("TicketPrice", TicketCost);
+        tmp = bb.GetValue<int>("Money");
+
+
+        Currency_string = bb.GetValue<int>("Money").ToString();
+        Currency.text = Currency_string;
+
+        Currency_Inv_string = bb.GetValue<int>("Investgating_Points").ToString();
+        Currency_Inv.text = Currency_Inv_string;
+
+        Ticket_string = bb.GetValue<int>("TicketPrice").ToString();
+        Ticket.text = Ticket_string;
+
+        Visitors_String = bb.GetValue<int>("Visitors").ToString();
+        Visitors_Text.text = Visitors_String;
+
+    }
+
+    void PostLoad()
+    {
+        bb = GetComponent<GlobalBlackboard>();
+        BuyPanel = GameObject.Find("Panel Buy");
+        bb.SetValue("Buy Panel", BuyPanel);
+
+        BuyPanel.SetActive(false);
+
+        Mechanic = GameObject.Find("Mechanic_3");
+        Truck = GameObject.Find("MonsterTruck");
+        BoxesCar = GameObject.Find("Yellow Car");
+
+        bb.SetValue("Mechanic", Mechanic);
+        bb.SetValue("Truck", Truck);
+        bb.SetValue("BoxesCar", BoxesCar);
+
+        Mechanic.SetActive(false);
+        Truck.SetActive(false);
+        BoxesCar.SetActive(false);
     }
 
     void CycleDay()
@@ -208,5 +232,12 @@ public class GameManager : MonoBehaviour
         Truck.SetActive(true);
         BoxesCar.SetActive(true);
 
+    }
+
+    public void GetVisitorsnumber()
+    {
+        CV.GetComponent<CountingVisitors>();
+        Visitors = CV.num_visitors;
+        bb.SetValue("Visitors", Visitors);
     }
  }

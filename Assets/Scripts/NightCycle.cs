@@ -5,7 +5,7 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using NodeCanvas.Framework;
-using UnityEngine.SceneManagement;
+
 
 
 public class NightCycle : MonoBehaviour
