@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     bool first_time;
 
     int tmp;
+
+    public bool Modify;
     public bool loaded = false;
 
     // Start is called before the first frame update
@@ -103,7 +105,7 @@ public class GameManager : MonoBehaviour
         bb = GetComponent<GlobalBlackboard>();
 
 
-        Money = 20;
+        Money = 0;
         Investigating_Points = 0;
         Days = 1;
 
