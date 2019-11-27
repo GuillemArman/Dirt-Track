@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject Spawner;
 
+    public GameObject BuyPanel;
+
     public Text Currency;
     public string Currency_string;
 
@@ -43,10 +45,18 @@ public class GameManager : MonoBehaviour
     public bool Modify;
     public bool loaded = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
         LoadEverything();
+
+        bb = GetComponent<GlobalBlackboard>();
+        //
+       // bb.SetValue("Buy Panel", GameObject.Find("Panel Buy"));
+        BuyPanel = GameObject.Find("Panel Buy");
+        bb.SetValue("Buy Panel", BuyPanel);
+        BuyPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -72,37 +82,8 @@ public class GameManager : MonoBehaviour
         Ticket.text = Ticket_string;
 
         CheckMoney();
-
-        switch (gameState)
-        {
-            case gameStates.Day:
-
-                if (first_time == true)
-                {
-                    
-                   
-                    Days += 1;
-                   
-                    first_time = false;
-
-                }
-               
-
-
-                Spawner.SetActive(false);
-                break;
-            case gameStates.Night:
-
-                Spawner.SetActive(true);
-
-                first_time = true;
-
-           
-                break;
-            case gameStates.GameOver:
-                break;
-
-        }
+        CycleDay();
+       
 
     
 
@@ -131,6 +112,8 @@ public class GameManager : MonoBehaviour
 
         Spawner = GameObject.Find("Spawner");
 
+       
+
         Currency = GameObject.Find("Money Text").GetComponent<Text>();
         Currency.color = Color.white;
 
@@ -142,6 +125,40 @@ public class GameManager : MonoBehaviour
 
         loaded = true;
 
+    }
+
+    void CycleDay()
+    {
+        switch (gameState)
+        {
+            case gameStates.Day:
+
+                if (first_time == true)
+                {
+
+
+                    Days += 1;
+
+                    first_time = false;
+
+                }
+
+
+
+                Spawner.SetActive(false);
+                break;
+            case gameStates.Night:
+
+                Spawner.SetActive(true);
+
+                first_time = true;
+
+
+                break;
+            case gameStates.GameOver:
+                break;
+
+        }
     }
 
     public void ChangeTicketPrice()
