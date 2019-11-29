@@ -88,12 +88,12 @@ public class GameManager : MonoBehaviour
             gameManager = gameObject.GetComponent<GameManager>();
 
         bb = GetComponent<GlobalBlackboard>();
-
+        CV = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
 
         Money = 0;
         TicketCost = 10;
         Investigating_Points = 0;
-        Visitors = 0;
+        Visitors = CV.num_visitors;
         Days = 1;
         
 
@@ -110,8 +110,8 @@ public class GameManager : MonoBehaviour
 
 
         Spawner = GameObject.Find("Spawner");
-
        
+
 
         Currency = GameObject.Find("Money Text").GetComponent<Text>();
         Currency.color = Color.white;
@@ -236,7 +236,7 @@ public class GameManager : MonoBehaviour
 
     public void GetVisitorsnumber()
     {
-        CV.GetComponent<CountingVisitors>();
+        CV = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
         Visitors = CV.num_visitors;
         bb.SetValue("Visitors", Visitors);
     }
