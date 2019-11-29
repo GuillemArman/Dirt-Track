@@ -10,17 +10,6 @@ public class GameManager : MonoBehaviour
     private GlobalBlackboard bb;
     private CountingVisitors count_visitors;
 
-    public GameObject BuyPanel;
-    public GameObject Mechanic;
-    public GameObject Truck;
-    public GameObject BoxesCar;
-    public GameObject cantbuymechanic;
-
-    public Text Money_Text;
-    public Text TicketPrice_Text;
-    //public Text Currency_Inv;
-    public Text Visitors_Text;
-
     private int Money = 0;
     private int TicketCost = 10;
     //private int Investigating_Points = 0;
@@ -30,11 +19,17 @@ public class GameManager : MonoBehaviour
     private bool Modify;
     private bool loaded = false;
 
+    public GameObject cantbuymechanic;
+    public Text Money_Text;
+    public Text uiTicketPrice_Text;
+    public Text TicketPrice_Text;
+    //public Text Currency_Inv;
+    public Text Visitors_Text;
+
     // Start is called before the first frame update
     void Start()
     {
         LoadEverything();
-        PostLoad();
     }
 
     // Update is called once per frame
@@ -45,9 +40,7 @@ public class GameManager : MonoBehaviour
         CheckMoney();
 
         if (loaded == false)
-        {
             LoadEverything();
-        }
     }
 
     void LoadEverything()
@@ -66,15 +59,6 @@ public class GameManager : MonoBehaviour
         bb.SetValue("Visitors", Visitors);
         bb.SetValue("Days", 0);
 
-        bb.SetValue("Mechanic", Mechanic);
-        bb.SetValue("Truck", Truck);
-        bb.SetValue("BoxesCar", BoxesCar);
-
-        Money_Text.color = Color.white;
-        //Currency_Inv.color = Color.white;
-        TicketPrice_Text.color = Color.white;
-        Visitors_Text.color = Color.white;
-
         loaded = true;
     }
 
@@ -84,29 +68,10 @@ public class GameManager : MonoBehaviour
 
         Money_Text.text = Money.ToString();
         //Currency_Inv.text = bb.GetValue<int>("Investgating_Points").ToString();      
-        TicketPrice_Text.text = TicketCost.ToString();   
+        uiTicketPrice_Text.text = TicketCost.ToString();
+        TicketPrice_Text.text = TicketCost.ToString();
+        TicketPrice_Text.color = Color.black;
         Visitors_Text.text = Visitors.ToString();
-    }
-
-    void PostLoad()
-    {
-        bb = GetComponent<GlobalBlackboard>();
-        BuyPanel = GameObject.Find("Panel Buy");
-        bb.SetValue("Buy Panel", BuyPanel);
-
-        BuyPanel.SetActive(false);
-
-        Mechanic = GameObject.Find("Mechanic_3");
-        Truck = GameObject.Find("MonsterTruck");
-        BoxesCar = GameObject.Find("Yellow Car");
-
-        bb.SetValue("Mechanic", Mechanic);
-        bb.SetValue("Truck", Truck);
-        bb.SetValue("BoxesCar", BoxesCar);
-
-        Mechanic.SetActive(false);
-        Truck.SetActive(false);
-        BoxesCar.SetActive(false);
     }
 
     public void ChangeTicketPrice()
@@ -121,10 +86,15 @@ public class GameManager : MonoBehaviour
         bb.SetValue("TicketPrice", TicketCost);
     }
 
+    public void PayFixedCosts()
+    {
+        Money -= 500;
+        bb.SetValue("Money", Money);
+    }
+
     public void CheckMoney()
     {
         Money = bb.GetValue<int>("Money");
-        TicketCost = bb.GetValue<int>("TicketPrice");
 
         if (Money < 0)
         {
@@ -143,9 +113,7 @@ public class GameManager : MonoBehaviour
     public void BuyMechanic()
     {
         Money -= 1000;
-        Mechanic.SetActive(true);
-        Truck.SetActive(true);
-        BoxesCar.SetActive(true);
+        // Create mechanic
     }
 
     public void GetVisitorsnumber()

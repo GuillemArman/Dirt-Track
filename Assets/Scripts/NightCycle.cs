@@ -12,9 +12,16 @@ public class NightCycle : MonoBehaviour
     private GameObject GameManager;
     private MenuManager mm;
 
+    private float time;
+    private TimeSpan current_time;
+    private int speed;
+    private bool havetofade = true;
+
     public bool day;
     public bool noon;
     public bool night;
+    public int days;
+
     public Material skybox1;
     public Material skybox2;
     public Text timetext;
@@ -23,12 +30,6 @@ public class NightCycle : MonoBehaviour
     public GameObject light_Getout;
     public GameObject Open;
     public GameObject Closed;
-
-    private float time;
-    private TimeSpan current_time;
-    public int days;
-    private int speed;
-    private bool havetofade = true;
 
     void Start()
     {
@@ -116,6 +117,8 @@ public class NightCycle : MonoBehaviour
         current_time = TimeSpan.FromSeconds(time);
         string[] temptime = current_time.ToString().Split(":"[0]);
         timetext.text = temptime[0] + ":" + temptime[1];
+
+        Global_BB.SetValue("Days", days);
     }
 
     public void ParkLights()
@@ -137,13 +140,10 @@ public class NightCycle : MonoBehaviour
     void SkyboxChange()
     {
         if (day)
-        {
             RenderSettings.skybox = skybox1;
-        }
+
         if (night)
-        {
             RenderSettings.skybox = skybox2;
-        }
     }
 
     IEnumerator FadeIn()
