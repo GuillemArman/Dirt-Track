@@ -439,14 +439,15 @@
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\DebugCondition.cs" />
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\Probability.cs" />
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\Timeout.cs" />
-    <Compile Include="Assets\Scripts\Behaviours\InitVisitorBB.cs" />
     <Compile Include="Assets\Scripts\Behaviours\MechanicBehaviour.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CameraSwitching.cs" />
     <Compile Include="Assets\Scripts\CountingVisitors.cs" />
     <Compile Include="Assets\Scripts\EntranceTrigger.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\InitCopBB.cs" />
     <Compile Include="Assets\Scripts\InitGlobal_BB.cs" />
+    <Compile Include="Assets\Scripts\InitVisitorBB.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\MoveBike.cs" />
     <Compile Include="Assets\Scripts\NightCycle.cs" />
