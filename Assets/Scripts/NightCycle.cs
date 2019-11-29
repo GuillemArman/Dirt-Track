@@ -6,13 +6,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using NodeCanvas.Framework;
 
-
-
 public class NightCycle : MonoBehaviour
 {
-    public Blackboard Global_BB;
-    public GameObject _GameManager;
-    MenuManager mm;
+    private Blackboard Global_BB;
+    private GameObject GameManager;
+    private MenuManager mm;
 
     public bool day;
     public bool noon;
@@ -26,24 +24,16 @@ public class NightCycle : MonoBehaviour
     public GameObject Open;
     public GameObject Closed;
 
-    public GameObject button1;
-
     private float time;
     private TimeSpan current_time;
     public int days;
-    public int money;
     private int speed;
     private bool havetofade = true;
 
-    
-
-    // Use this for initialization
     void Start()
     {
-        _GameManager = GameObject.Find("_Game Manager");
-        Global_BB = _GameManager.GetComponent<GlobalBlackboard>();
-
-        money = Global_BB.GetValue<int>("Money");
+        GameManager = GameObject.Find("_Game Manager");
+        Global_BB = GameManager.GetComponent<GlobalBlackboard>();
 
         time = 25200; // We begin the first journey at 7:00 (3600 * 7)
         days = 1;
@@ -59,8 +49,6 @@ public class NightCycle : MonoBehaviour
         {
             RenderSettings.skybox = skybox2;
         }
-
-        button1.SetActive(true);
     }
 
     // Update is called once per frame
@@ -69,22 +57,16 @@ public class NightCycle : MonoBehaviour
         ChangeTime();
         ParkLights();
         SkyboxChange();
-        CheckMoney();
-
     }
 
     public void ChangeTime()
     {
         time += Time.deltaTime * speed;
-        money = Global_BB.GetValue<int>("Money");
        
-
         if (time > 86400)
         {   
             days += 1;
-            money -= 500;
             time = 0;
-            Global_BB.SetValue("Money", money);
         }
         else if (time > 28800 && time < 55800) // 8:00  to 15:30
         {
@@ -97,7 +79,7 @@ public class NightCycle : MonoBehaviour
             day = true;
             noon = false;
             night = false;
-            GameManager.gameManager.gameState = GameManager.gameStates.Day;
+
             Global_BB.SetValue("Day", day);
             Global_BB.SetValue("Noon", noon);
             Global_BB.SetValue("Night", night);
@@ -109,7 +91,6 @@ public class NightCycle : MonoBehaviour
             noon = true;
             night = false;
 
-            GameManager.gameManager.gameState = GameManager.gameStates.Noon;
             Global_BB.SetValue("Day", day);
             Global_BB.SetValue("Noon", noon);
             Global_BB.SetValue("Night", night);
@@ -126,14 +107,10 @@ public class NightCycle : MonoBehaviour
             day = false;
             noon = false;
             night = true;
-            GameManager.gameManager.gameState = GameManager.gameStates.Night;
+
             Global_BB.SetValue("Day", day);
             Global_BB.SetValue("Noon", noon);
             Global_BB.SetValue("Night", night);
-        }
-        else if (time > 86350) // 23:59 AM
-        {
-            days += 1;
         }
 
         current_time = TimeSpan.FromSeconds(time);
@@ -141,37 +118,19 @@ public class NightCycle : MonoBehaviour
         timetext.text = temptime[0] + ":" + temptime[1];
     }
 
-    public void CheckMoney()
-    {
-
-        if (money < 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else if (money > 1000)
-        {
-            button1.SetActive(false);
-
-        }
-        else
-            button1.SetActive(true);
-
-
-    }
-
     public void ParkLights()
     {
         if (day)
         {
             Park_Light.SetActive(false);
-           Closed.SetActive(false);
-           Open.SetActive(true);
+            Closed.SetActive(false);
+            Open.SetActive(true);
         }
         if (night)
         {
             Park_Light.SetActive(true);
-          Closed.SetActive(true);
-          Open.SetActive(false);
+            Closed.SetActive(true);
+            Open.SetActive(false);
         }
     }
 
@@ -212,5 +171,4 @@ public class NightCycle : MonoBehaviour
             yield return new WaitForSeconds(interval);//the coroutine will wait for 0.1 secs
         }
     }
-
 }

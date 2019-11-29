@@ -6,10 +6,7 @@ using UnityEngine.UI;
 
 public class InitGlobal_BB : MonoBehaviour
 {
-
     Blackboard Global_BB;
-
-
     int Money = 0;
 
     public string Currency_string;
@@ -34,18 +31,13 @@ public class InitGlobal_BB : MonoBehaviour
 
       // Investigating_Point_string = Global_BB.GetValue<int>("Investigating_Points").ToString();
       // Investigating_Point.text = Investigating_Point_string;
-
-
     }
-    // Use this for initialization
+
     void Start()
     {
-       // Global_BB.SetValue("Spawner", GameObject.Find("Spawner"));
-
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -53,23 +45,11 @@ public class InitGlobal_BB : MonoBehaviour
 
     public void ResetBB()
     {
-
-
         Money = 50;
-        
-
-        
+                
         //currency
-        Global_BB.SetValue("currency", Money);
-      
-
-
-
+        Global_BB.SetValue("currency", Money);    
     }
-
- 
-
-
 }
 
 

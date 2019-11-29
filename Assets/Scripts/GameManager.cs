@@ -7,100 +7,62 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-    GlobalBlackboard bb;
-    CountingVisitors CV;
-
-    public static GameManager gameManager;
-    public enum gameStates { Day, Night, Noon, GameOver };
-    public gameStates gameState = gameStates.Day;
-
-    public int score = 0; //total score = money
-    public int completedCycles = 0; //Day+Night cycles
-    public bool winCondition = false;
-    public int winCycles = 3; //number of completed cycles needed to beat the game
-
-    public GameObject Spawner;
+    private GlobalBlackboard bb;
+    private CountingVisitors count_visitors;
 
     public GameObject BuyPanel;
-
     public GameObject Mechanic;
     public GameObject Truck;
     public GameObject BoxesCar;
+    public GameObject cantbuymechanic;
 
-    public Text Currency;
-    public string Currency_string;
-
-    public Text Ticket;
-    public string Ticket_string;
-
-    public Text Currency_Inv;
-    public string Currency_Inv_string;
-
+    public Text Money_Text;
+    public Text TicketPrice_Text;
+    //public Text Currency_Inv;
     public Text Visitors_Text;
-    public string Visitors_String;
 
-    public int Money = 0;
-    public int TicketCost = 0;
-    public int Investigating_Points = 0;
-    public int Visitors = 0;
-    public int Days = 1;
+    private int Money = 0;
+    private int TicketCost = 10;
+    //private int Investigating_Points = 0;
+    private int Visitors = 0;
 
-    bool first_time;
-
-    int tmp;
-
-    public bool Modify;
-    public bool loaded = false;
-
+    private bool first_time;
+    private bool Modify;
+    private bool loaded = false;
 
     // Start is called before the first frame update
     void Start()
     {
         LoadEverything();
-
         PostLoad();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (loaded != true)
+        GetVisitorsnumber();
+        Values_To_String();
+        CheckMoney();
+
+        if (loaded == false)
         {
             LoadEverything();
         }
-
-
-        Values_To_String();
-        CheckMoney();
-        CycleDay();
-        GetVisitorsnumber();
-
-
-
-
     }
 
     void LoadEverything()
     {
-        if (gameManager == null)
-            gameManager = gameObject.GetComponent<GameManager>();
-
         bb = GetComponent<GlobalBlackboard>();
-        CV = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
+        count_visitors = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
 
         Money = 0;
+        Visitors = 0;
         TicketCost = 10;
-        Investigating_Points = 0;
-        Visitors = CV.num_visitors;
-        Days = 1;
-        
-
-
+        //Investigating_Points = 0;
+       
         bb.SetValue("Money", Money);
         bb.SetValue("TicketPrice", TicketCost);
-        bb.SetValue("Investigating_Points", Investigating_Points);
+        //bb.SetValue("Investigating_Points", Investigating_Points);
         bb.SetValue("Visitors", Visitors);
         bb.SetValue("Days", 0);
 
@@ -108,46 +70,22 @@ public class GameManager : MonoBehaviour
         bb.SetValue("Truck", Truck);
         bb.SetValue("BoxesCar", BoxesCar);
 
-
-        Spawner = GameObject.Find("Spawner");
-       
-
-
-        Currency = GameObject.Find("Money Text").GetComponent<Text>();
-        Currency.color = Color.white;
-
-        Currency_Inv = GameObject.Find("Investigating Text").GetComponent<Text>();
-        Currency_Inv.color = Color.white;
-
-        Ticket = GameObject.Find("TicketPrice").GetComponent<Text>();
-        Ticket.color = Color.white;
-
-        Visitors_Text = GameObject.Find("Audience Text").GetComponent<Text>();
+        Money_Text.color = Color.white;
+        //Currency_Inv.color = Color.white;
+        TicketPrice_Text.color = Color.white;
         Visitors_Text.color = Color.white;
 
         loaded = true;
-
     }
 
     void Values_To_String()
     {
-        bb.SetValue("Days", Days);
         bb.SetValue("TicketPrice", TicketCost);
-        tmp = bb.GetValue<int>("Money");
 
-
-        Currency_string = bb.GetValue<int>("Money").ToString();
-        Currency.text = Currency_string;
-
-        Currency_Inv_string = bb.GetValue<int>("Investgating_Points").ToString();
-        Currency_Inv.text = Currency_Inv_string;
-
-        Ticket_string = bb.GetValue<int>("TicketPrice").ToString();
-        Ticket.text = Ticket_string;
-
-        Visitors_String = bb.GetValue<int>("Visitors").ToString();
-        Visitors_Text.text = Visitors_String;
-
+        Money_Text.text = Money.ToString();
+        //Currency_Inv.text = bb.GetValue<int>("Investgating_Points").ToString();      
+        TicketPrice_Text.text = TicketCost.ToString();   
+        Visitors_Text.text = Visitors.ToString();
     }
 
     void PostLoad()
@@ -171,40 +109,6 @@ public class GameManager : MonoBehaviour
         BoxesCar.SetActive(false);
     }
 
-    void CycleDay()
-    {
-        switch (gameState)
-        {
-            case gameStates.Day:
-
-                if (first_time == true)
-                {
-
-
-                    Days += 1;
-
-                    first_time = false;
-
-                }
-
-
-
-                Spawner.SetActive(false);
-                break;
-            case gameStates.Night:
-
-                Spawner.SetActive(true);
-
-                first_time = true;
-
-
-                break;
-            case gameStates.GameOver:
-                break;
-
-        }
-    }
-
     public void ChangeTicketPrice()
     {
         TicketCost += 5;
@@ -215,7 +119,6 @@ public class GameManager : MonoBehaviour
     {
         TicketCost -= 5;
         bb.SetValue("TicketPrice", TicketCost);
-
     }
 
     public void CheckMoney()
@@ -223,6 +126,18 @@ public class GameManager : MonoBehaviour
         Money = bb.GetValue<int>("Money");
         TicketCost = bb.GetValue<int>("TicketPrice");
 
+        if (Money < 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (Money > 1000)
+        {
+            cantbuymechanic.SetActive(false);
+        }
+        else
+        {
+            cantbuymechanic.SetActive(true);
+        }
     }
 
     public void BuyMechanic()
@@ -231,13 +146,11 @@ public class GameManager : MonoBehaviour
         Mechanic.SetActive(true);
         Truck.SetActive(true);
         BoxesCar.SetActive(true);
-
     }
 
     public void GetVisitorsnumber()
     {
-        CV = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
-        Visitors = CV.num_visitors;
+        Visitors = count_visitors.num_visitors;
         bb.SetValue("Visitors", Visitors);
     }
- }
+}
