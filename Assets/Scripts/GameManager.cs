@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void PayFixedCosts()
     {
-        Money -= 500;
+        Money -= 300;
         bb.SetValue("Money", Money);
     }
 
