@@ -11,12 +11,12 @@ public class GoTo : ActionTask
     public BBParameter<Vector3> bb_target;
 
     protected override void OnExecute()
-    {   
-        if (bb_target.value != new_target)
-        {
-            nav_move = agent.GetComponent<MoveNavMesh>();
+    {
+        nav_move = agent.GetComponent<MoveNavMesh>();
+        new_target = bb_target.value;
 
-            new_target = bb_target.value;
+        if (nav_move.final_target != new_target)
+        {
             nav_move.SetDestination(new_target);
         }
 

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private int TicketCost = 10;
     //private int Investigating_Points = 0;
     private int Visitors = 0;
-    private int mechanic_cost = 1;
+    private int mechanic_cost = 250;
 
     private bool first_time;
     private bool Modify;
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         Money = 0;
         Visitors = 0;
         TicketCost = 10;
-        mechanic_cost = 1;
+        mechanic_cost = 250;
         //Investigating_Points = 0;
        
         bb.SetValue("Money", Money);
@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
     public void BuyMechanic()
     {
         Money -= mechanic_cost;
+        bb.SetValue("Money", Money);
 
         if (yellow_team.activeSelf == false) yellow_team.SetActive(true);
         else if (yellow_team.activeSelf == true)
