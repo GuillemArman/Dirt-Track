@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private int TicketCost = 10;
     private int num_mechanics = 2;
     private int Visitors = 0;
-    private int mechanic_cost = 250;
+    private int mechanic_cost = 1;
 
     private bool first_time;
     private bool Modify;
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         Money = 0;
         Visitors = 0;
         TicketCost = 10;
-        mechanic_cost = 250;
+        mechanic_cost = 1;
         num_mechanics = 2;
        
         bb.SetValue("Money", Money);
