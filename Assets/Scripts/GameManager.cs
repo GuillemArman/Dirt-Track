@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private int Money = 0;
     private int TicketCost = 10;
-    //private int Investigating_Points = 0;
+    private int num_mechanics = 2;
     private int Visitors = 0;
     private int mechanic_cost = 250;
 
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public Text Money_Text;
     public Text uiTicketPrice_Text;
     public Text TicketPrice_Text;
-    //public Text Currency_Inv;
+    public Text num_mechanics_text;
     public Text Visitors_Text;
 
     // Start is called before the first frame update
@@ -55,11 +55,11 @@ public class GameManager : MonoBehaviour
         Visitors = 0;
         TicketCost = 10;
         mechanic_cost = 250;
-        //Investigating_Points = 0;
+        num_mechanics = 2;
        
         bb.SetValue("Money", Money);
         bb.SetValue("TicketPrice", TicketCost);
-        //bb.SetValue("Investigating_Points", Investigating_Points);
+        bb.SetValue("Mechanics", num_mechanics);
         bb.SetValue("Visitors", Visitors);
         bb.SetValue("Days", 0);
 
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         bb.SetValue("TicketPrice", TicketCost);
 
         Money_Text.text = Money.ToString();
-        //Currency_Inv.text = bb.GetValue<int>("Investgating_Points").ToString();      
+        num_mechanics_text.text = num_mechanics.ToString();    
         uiTicketPrice_Text.text = TicketCost.ToString();
         TicketPrice_Text.text = TicketCost.ToString();
         TicketPrice_Text.color = Color.black;
@@ -120,7 +120,9 @@ public class GameManager : MonoBehaviour
     public void BuyMechanic()
     {
         Money -= mechanic_cost;
+        num_mechanics++;
         bb.SetValue("Money", Money);
+        bb.SetValue("Mechanics", num_mechanics);
 
         if (yellow_team.activeSelf == false) yellow_team.SetActive(true);
         else if (yellow_team.activeSelf == true)
