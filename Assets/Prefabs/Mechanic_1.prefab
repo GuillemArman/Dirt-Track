@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6925519305421872850}
   - component: {fileID: 6925519306758946259}
+  - component: {fileID: 6925519306758946256}
   - component: {fileID: 6925519306758946260}
   - component: {fileID: 6925519306758946261}
   - component: {fileID: 6925519306758946262}
   - component: {fileID: 6925519306758946263}
-  - component: {fileID: 6925519306758946256}
   - component: {fileID: 6925519306758946257}
   - component: {fileID: 6925519306758946258}
   - component: {fileID: 6925519306758946093}
@@ -54,13 +54,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb15eb1b4eb2a1f4a871c0917ce06f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  final_target: {fileID: 0}
   velocity: {x: 0, y: 0, z: 0}
   rotation: 0
   max_velocity: 3
   max_rotation: 2
   max_acceleration: 0.1
---- !u!114 &6925519306758946260
+--- !u!114 &6925519306758946256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,6 +67,23 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6925519305421374194}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdcbe6b40b86d794bbf8f39a9c85919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrived: 0
+  distance: 0
+  stop_area_radius: 0.3
+  slow_area_radius: 3
+  time_to_target: 50
+--- !u!114 &6925519306758946260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925519305421374194}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bc77a9ff3440654ca2fa24bd3932a4a, type: 3}
   m_Name: 
@@ -131,23 +147,6 @@ MonoBehaviour:
   - length: 6
     direction_offset: 0.1
   max_avoid_force: 0.05
---- !u!114 &6925519306758946256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6925519305421374194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdcbe6b40b86d794bbf8f39a9c85919e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrived: 0
-  distance: 0
-  stop_area_radius: 0.3
-  slow_area_radius: 3
-  time_to_target: 50
 --- !u!114 &6925519306758946257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7d1011a5f132043a09d98ac2b37fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  final_target: {x: 0, y: 0, z: 0}
+  curr_target: {x: 0, y: 0, z: 0}
   progress: 0
   path_point_distance: 1.5
 --- !u!195 &6925519306758946093
@@ -297,6 +298,10 @@ PrefabInstance:
     - target: {fileID: 188098, guid: 1bf833184acdcf04cac7fe40850d81be, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 188098, guid: 1bf833184acdcf04cac7fe40850d81be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 122640, guid: 1bf833184acdcf04cac7fe40850d81be, type: 3}
       propertyPath: m_Layer

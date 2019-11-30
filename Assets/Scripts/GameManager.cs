@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour
     private int TicketCost = 10;
     //private int Investigating_Points = 0;
     private int Visitors = 0;
+    private int mechanic_cost = 1;
 
     private bool first_time;
     private bool Modify;
     private bool loaded = false;
 
+    public GameObject yellow_team;
+    public GameObject red_team;
     public GameObject cantbuymechanic;
     public Text Money_Text;
     public Text uiTicketPrice_Text;
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour
         Money = 0;
         Visitors = 0;
         TicketCost = 10;
+        mechanic_cost = 1;
         //Investigating_Points = 0;
        
         bb.SetValue("Money", Money);
@@ -103,7 +107,7 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        else if (Money > 1000)
+        else if (Money > mechanic_cost && red_team.activeSelf == false)
         {
             cantbuymechanic.SetActive(false);
         }
@@ -115,8 +119,15 @@ public class GameManager : MonoBehaviour
 
     public void BuyMechanic()
     {
-        Money -= 1000;
-        // Create mechanic
+        Money -= mechanic_cost;
+
+        if (yellow_team.activeSelf == false) yellow_team.SetActive(true);
+        else if (yellow_team.activeSelf == true)
+        {
+            red_team.SetActive(true);
+            cantbuymechanic.SetActive(true);
+            cantbuymechanic.GetComponentInChildren<Text>().text = "".ToString();
+        }
     }
 
     public void GetVisitorsnumber()
