@@ -82,8 +82,11 @@ public class GameManager : MonoBehaviour
 
     public void LessTicketPrice()
     {
-        TicketCost -= 5;
-        bb.SetValue("TicketPrice", TicketCost);
+        if (TicketCost != 0)
+        {
+            TicketCost -= 5;
+            bb.SetValue("TicketPrice", TicketCost);
+        }
     }
 
     public void PayFixedCosts()

@@ -9,7 +9,8 @@ using NodeCanvas.Framework;
 public class NightCycle : MonoBehaviour
 {
     private Blackboard Global_BB;
-    private GameObject GameManager;
+    private GameObject _GameManager;
+    private GameManager script_gamemanager;
     private MenuManager mm;
 
     private float time;
@@ -31,10 +32,12 @@ public class NightCycle : MonoBehaviour
     public GameObject Open;
     public GameObject Closed;
 
+    // Start is called before the first frame update
     void Start()
     {
-        GameManager = GameObject.Find("_Game Manager");
-        Global_BB = GameManager.GetComponent<GlobalBlackboard>();
+        _GameManager = GameObject.Find("_Game Manager");
+        Global_BB = _GameManager.GetComponent<GlobalBlackboard>();
+        script_gamemanager = _GameManager.GetComponent<GameManager>();
 
         time = 25200; // We begin the first journey at 7:00 (3600 * 7)
         days = 1;
@@ -65,7 +68,8 @@ public class NightCycle : MonoBehaviour
         time += Time.deltaTime * speed;
        
         if (time > 86400)
-        {   
+        {
+            script_gamemanager.PayFixedCosts();
             days += 1;
             time = 0;
         }

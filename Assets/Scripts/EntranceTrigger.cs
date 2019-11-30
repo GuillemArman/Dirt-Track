@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NodeCanvas.Framework;
 
 public class EntranceTrigger : MonoBehaviour
 {
@@ -17,14 +18,6 @@ public class EntranceTrigger : MonoBehaviour
         cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Agent") && cycle.night)
-        {
-            Destroy(other.gameObject);
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +28,14 @@ public class EntranceTrigger : MonoBehaviour
             // Clone enemy
             GameObject prefab = Instantiate(visitor_1, transform.position, Quaternion.identity);
             next_spawn = duration_spawn;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Agent") && other.gameObject.GetComponent<Blackboard>().GetValue<InitVisitorBB.Action>("visitor_state") == InitVisitorBB.Action.Go_home)
+        {
+            Destroy(other.gameObject);
         }
     }
 }

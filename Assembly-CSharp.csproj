@@ -463,6 +463,7 @@
     <Compile Include="Assets\Scripts\Tasks\EnableBillboarding.cs" />
     <Compile Include="Assets\Scripts\Tasks\EnableWander.cs" />
     <Compile Include="Assets\Scripts\Tasks\GoTo.cs" />
+    <Compile Include="Assets\Scripts\WelcomeTrigger.cs" />
     <None Include="Assets\SimpleWorld\SimpleTown\Changelog.txt" />
     <None Include="Assets\ParadoxNotion\NodeCanvas\!ReadMe!.txt" />
     <None Include="Assets\SimpleWorld\SimpleCitizens\Changelog.txt" />
