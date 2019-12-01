@@ -7,7 +7,7 @@ public class InitVisitorBB : MonoBehaviour
 {
     public Blackboard visitor_bb;
 
-    public enum Action { Buying_ticket, Checking_price, Hungry, Go_stadium, Go_home };
+    public enum Action { Buying_ticket, Checking_price, Hungry, Go_stadium, Go_direct_stadium, Go_home };
     public Action visitor_action;
 
     // Start is called before the first frame update

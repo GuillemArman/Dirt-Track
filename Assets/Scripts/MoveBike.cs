@@ -49,7 +49,6 @@ public class MoveBike : MonoBehaviour
 
     void walk()
     {
-
         float aux = (transform.position - targetWayPoint.transform.position).magnitude;
         // rotate towards the target
         transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
@@ -74,7 +73,22 @@ public class MoveBike : MonoBehaviour
         }
         if (cycle.night)
         {
-            targetWayPoint = wayPointList[0];
+            if (aux <= 1)
+            {
+                if (currentWayPoint != 0)
+                {
+                    if (currentWayPoint == 10)
+                    {
+                        currentWayPoint = 0;
+                        targetWayPoint = wayPointList[currentWayPoint];
+                    }
+                    else
+                    {
+                        currentWayPoint++;
+                        targetWayPoint = wayPointList[currentWayPoint];
+                    }
+                }
+            }
         }
     }
 }
