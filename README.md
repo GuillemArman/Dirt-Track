@@ -20,15 +20,21 @@ We have 3 agents: Visitors, Police man and Mechanics.
 ### Visitors
 
 Visitors will spend their money in your Stadium. Make sure you gain money with the tickets and that the stadium gets full!
+![](https://imgur.com/nfYGLfw.png)
+
 
 ### Police
 
-They will patrol and make sure visitors pay the entrance ticket. If someone does not pay they will take him out.
+They will patrol at night. During day they will look out the visitors.
+
+![](https://imgur.com/7G92Int.png)
 
 ### Mechanics
 
 Mechanics will be investigating during the nightime in order to create faster bikes/monster trucks so the show increases.
 Faster bikes = More money!
+
+![](https://imgur.com/xs7R538.png)
 
 ### Authors & Link ###
 
