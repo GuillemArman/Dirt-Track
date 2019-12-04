@@ -8,39 +8,40 @@ using NodeCanvas.Framework;
 
 public class NightCycle : MonoBehaviour
 {
-    private Blackboard Global_BB;
-    private GameObject _GameManager;
+    private Blackboard global_BB;
+    private GameObject game_manager;
     private GameManager script_gamemanager;
     private MenuManager mm;
 
     private float time;
-    private TimeSpan current_time;
     private int speed;
     private bool havetofade = true;
 
-    public bool day;
-    public bool noon;
-    public bool night;
-    public int days;
+    public bool day = false;
+    public bool noon = false;
+    public bool night = true;
+
+    public int days = 0;
 
     public Material skybox1;
     public Material skybox2;
     public Text timetext;
 
-    public GameObject Park_Light;
-    public GameObject light_Getout;
-    public GameObject Open;
-    public GameObject Closed;
+    public GameObject park_light;
+    public GameObject scene_light;
+    public GameObject open;
+    public GameObject closed;
 
     // Start is called before the first frame update
     void Start()
     {
-        _GameManager = GameObject.Find("_Game Manager");
-        Global_BB = _GameManager.GetComponent<GlobalBlackboard>();
-        script_gamemanager = _GameManager.GetComponent<GameManager>();
+        game_manager = GameObject.Find("_Game Manager");
+        script_gamemanager = game_manager.GetComponent<GameManager>();
+        global_BB = game_manager.GetComponent<GlobalBlackboard>();
 
-        time = 25200; // We begin the first journey at 7:00 (3600 * 7)
-        days = 1;
+
+        time = 28800; // We begin the first journey at 8:00 (3600 * 8)
+        days = 0;
         day = true;
         noon = false;
         night = false;
@@ -67,40 +68,46 @@ public class NightCycle : MonoBehaviour
     {
         time += Time.deltaTime * speed;
        
-        if (time > 86400)
+        if (time >= 86400) // 24:00
         {
-            script_gamemanager.PayFixedCosts();
-            days += 1;
             time = 0;
         }
-        else if (time > 28800 && time < 55800) // 8:00  to 15:30
+        else if (time >= 28800 && time <= 55800) // 8:00 to 15:30
         {
             if (havetofade)
             {
-                havetofade = false;
                 StartCoroutine("FadeIn");
+
+                if (days > 0)
+                {
+                    global_BB.SetValue("Days", days);
+                    script_gamemanager.EnableBalanceSheet();
+                }
+                days += 1;
+                havetofade = false;
             }
+
             speed = 350;
             day = true;
             noon = false;
             night = false;
 
-            Global_BB.SetValue("Day", day);
-            Global_BB.SetValue("Noon", noon);
-            Global_BB.SetValue("Night", night);
+            global_BB.SetValue("Day", day);
+            global_BB.SetValue("Noon", noon);
+            global_BB.SetValue("Night", night);
         }
-        else if (time > 55800 && time < 75600) // 15:30  to 21:00
+        else if (time >= 55801 && time <= 75600) // 15:30  to 21:00
         {
             speed = 350;
             day = false;
             noon = true;
             night = false;
 
-            Global_BB.SetValue("Day", day);
-            Global_BB.SetValue("Noon", noon);
-            Global_BB.SetValue("Night", night);
+            global_BB.SetValue("Day", day);
+            global_BB.SetValue("Noon", noon);
+            global_BB.SetValue("Night", night);
         }
-        else if (time > 75600 || time < 28800) //21:00 to 8:00
+        else if (time >= 75601 || time <= 28800) // 21:00 to 8:00
         {
             if (!havetofade)
             {
@@ -113,31 +120,29 @@ public class NightCycle : MonoBehaviour
             noon = false;
             night = true;
 
-            Global_BB.SetValue("Day", day);
-            Global_BB.SetValue("Noon", noon);
-            Global_BB.SetValue("Night", night);
+            global_BB.SetValue("Day", day);
+            global_BB.SetValue("Noon", noon);
+            global_BB.SetValue("Night", night);
         }
 
-        current_time = TimeSpan.FromSeconds(time);
+        TimeSpan current_time = TimeSpan.FromSeconds(time);
         string[] temptime = current_time.ToString().Split(":"[0]);
         timetext.text = temptime[0] + ":" + temptime[1];
-
-        Global_BB.SetValue("Days", days);
     }
 
     public void ParkLights()
     {
         if (day)
         {
-            Park_Light.SetActive(false);
-            Closed.SetActive(false);
-            Open.SetActive(true);
+            park_light.SetActive(false);
+            closed.SetActive(false);
+            open.SetActive(true);
         }
         if (night)
         {
-            Park_Light.SetActive(true);
-            Closed.SetActive(true);
-            Open.SetActive(false);
+            park_light.SetActive(true);
+            closed.SetActive(true);
+            open.SetActive(false);
         }
     }
 
@@ -152,27 +157,27 @@ public class NightCycle : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        float duration = 4.0f;//time you want it to run
-        float interval = 0.05f;//interval time between iterations of while loop
+        float duration = 4.0f; // Time you want it to run
+        float interval = 0.05f; // Interval time between iterations of while loop
 
-        while (light_Getout.GetComponent<Light>().intensity <= 1.6f)
+        while (scene_light.GetComponent<Light>().intensity <= 1.6f)
         {
-            light_Getout.GetComponent<Light>().intensity += 0.02f;
+            scene_light.GetComponent<Light>().intensity += 0.02f;
             duration -= interval;
-            yield return new WaitForSeconds(interval);//the coroutine will wait for 0.1 secs
+            yield return new WaitForSeconds(interval); // The coroutine will wait for 0.1 secs
         }
     }
 
     IEnumerator FadeOut()
     {
-        float duration = 4.0f;//time you want it to run
-        float interval = 0.05f;//interval time between iterations of while loop
+        float duration = 4.0f; // Time you want it to run
+        float interval = 0.05f; // Interval time between iterations of while loop
 
-        while (light_Getout.GetComponent<Light>().intensity >= 0.3f)
+        while (scene_light.GetComponent<Light>().intensity >= 0.3f)
         {
-            light_Getout.GetComponent<Light>().intensity -= 0.04f;
+            scene_light.GetComponent<Light>().intensity -= 0.04f;
             duration -= interval;
-            yield return new WaitForSeconds(interval);//the coroutine will wait for 0.1 secs
+            yield return new WaitForSeconds(interval); // The coroutine will wait for 0.1 secs
         }
     }
 }

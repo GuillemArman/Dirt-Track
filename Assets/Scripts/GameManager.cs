@@ -10,24 +10,36 @@ public class GameManager : MonoBehaviour
     private GlobalBlackboard bb;
     private CountingVisitors count_visitors;
 
-    private int Money = 0;
-    private int TicketCost = 10;
+    private int money = 0; // total
+    private int ticket_cost = 10;
     private int num_mechanics = 2;
-    private int Visitors = 0;
+    private int visitors = 0;
     private int mechanic_cost = 250;
+    private int taxes_day = 300;
+    private int income_day = 0; // per day without taking into account expenses
+    private int expenses_day = 0; 
+    private int savings_day = 0;
 
-    private bool first_time;
-    private bool Modify;
-    private bool loaded = false;
-
+    [Header("------ Race teams ------")]
     public GameObject yellow_team;
     public GameObject red_team;
-    public GameObject cantbuymechanic;
-    public Text Money_Text;
-    public Text uiTicketPrice_Text;
-    public Text TicketPrice_Text;
+    public GameObject cant_buy_mechanic;
+
+    [Header("------ Ui texts ------")]
+    public Text money_text;
+    public Text ui_ticketprice_text;
+    public Text ticketprice_text;
     public Text num_mechanics_text;
-    public Text Visitors_Text;
+    public Text visitors_text;
+
+    [Header("------ Balance sheet ------")]
+    public GameObject balance_sheet;
+    public Text day;
+    public Text savings;
+    public Text income;
+    public Text taxes;
+    public Text expenses;
+    public Text final_money;
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +51,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         GetVisitorsnumber();
-        Values_To_String();
+        UpdateDataUI();
         CheckMoney();
-
-        if (loaded == false)
-            LoadEverything();
     }
 
     void LoadEverything()
@@ -51,91 +60,130 @@ public class GameManager : MonoBehaviour
         bb = GetComponent<GlobalBlackboard>();
         count_visitors = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
 
-        Money = 0;
-        Visitors = 0;
-        TicketCost = 10;
+        money = 0;
+        visitors = 0;
+        ticket_cost = 10;
         mechanic_cost = 250;
         num_mechanics = 2;
-       
-        bb.SetValue("Money", Money);
-        bb.SetValue("TicketPrice", TicketCost);
-        bb.SetValue("Mechanics", num_mechanics);
-        bb.SetValue("Visitors", Visitors);
-        bb.SetValue("Days", 0);
+        taxes_day = 300;
+        savings_day = 0;
 
-        loaded = true;
+        bb.SetValue("Money", money);
+        bb.SetValue("Income", income_day);
+        bb.SetValue("TicketPrice", ticket_cost);
+        bb.SetValue("Mechanics", num_mechanics);
+        bb.SetValue("Visitors", visitors);
+        bb.SetValue("Days", 0);
     }
 
-    void Values_To_String()
+    void UpdateDataUI()
     {
-        bb.SetValue("TicketPrice", TicketCost);
-
-        Money_Text.text = Money.ToString();
+        money_text.text = money.ToString();
         num_mechanics_text.text = num_mechanics.ToString();    
-        uiTicketPrice_Text.text = TicketCost.ToString();
-        TicketPrice_Text.text = TicketCost.ToString();
-        TicketPrice_Text.color = Color.black;
-        Visitors_Text.text = Visitors.ToString();
+        ui_ticketprice_text.text = ticket_cost.ToString();
+        ticketprice_text.text = ticket_cost.ToString();
+        ticketprice_text.color = Color.black;
+        visitors_text.text = visitors.ToString();
     }
 
     public void ChangeTicketPrice()
     {
-        TicketCost += 5;
-        bb.SetValue("TicketPrice", TicketCost);
+        ticket_cost += 5;
+        bb.SetValue("TicketPrice", ticket_cost);
     }
 
     public void LessTicketPrice()
     {
-        if (TicketCost != 0)
+        if (ticket_cost != 0)
         {
-            TicketCost -= 5;
-            bb.SetValue("TicketPrice", TicketCost);
+            ticket_cost -= 5;
+            bb.SetValue("TicketPrice", ticket_cost);
         }
-    }
-
-    public void PayFixedCosts()
-    {
-        Money -= 300;
-        bb.SetValue("Money", Money);
     }
 
     public void CheckMoney()
     {
-        Money = bb.GetValue<int>("Money");
-
-        if (Money < 0)
+        money = bb.GetValue<int>("Money");
+        income_day = bb.GetValue<int>("Income");
+        if (money > mechanic_cost && red_team.activeSelf == false)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else if (Money > mechanic_cost && red_team.activeSelf == false)
-        {
-            cantbuymechanic.SetActive(false);
+            cant_buy_mechanic.SetActive(false);
         }
         else
         {
-            cantbuymechanic.SetActive(true);
+            cant_buy_mechanic.SetActive(true);
         }
     }
 
     public void BuyMechanic()
     {
-        Money -= mechanic_cost;
+        money -= mechanic_cost;
+        expenses_day += mechanic_cost;
+
         num_mechanics++;
-        bb.SetValue("Money", Money);
+        bb.SetValue("Money", money);
         bb.SetValue("Mechanics", num_mechanics);
 
         if (yellow_team.activeSelf == false) yellow_team.SetActive(true);
         else if (yellow_team.activeSelf == true)
         {
             red_team.SetActive(true);
-            cantbuymechanic.SetActive(true);
-            cantbuymechanic.GetComponentInChildren<Text>().text = "".ToString();
+            cant_buy_mechanic.SetActive(true);
+            cant_buy_mechanic.GetComponentInChildren<Text>().text = "".ToString();
         }
     }
 
     public void GetVisitorsnumber()
     {
-        Visitors = count_visitors.num_visitors;
-        bb.SetValue("Visitors", Visitors);
+        visitors = count_visitors.num_visitors;
+        bb.SetValue("Visitors", visitors);
+    }
+
+    // This fncs only has to be called once
+    public void EnableBalanceSheet()
+    {
+        // Change camera
+        CameraSwitching camera_switch = GetComponent<CameraSwitching>();
+        camera_switch.Camera5();
+
+        // Set active balance sheet
+        balance_sheet.SetActive(true);
+
+        // Set values to text
+        day.GetComponent<Text>().text = bb.GetValue<int>("Days").ToString();
+        income.GetComponent<Text>().text = income_day.ToString();
+        expenses.GetComponent<Text>().text = (-expenses_day).ToString();
+        taxes.GetComponent<Text>().text = (-taxes_day).ToString();
+        savings.GetComponent<Text>().text = savings_day.ToString();
+        int p = savings_day + income_day - expenses_day - taxes_day;
+        final_money.GetComponent<Text>().text = p.ToString();
+
+        // This pauses the game
+        Time.timeScale = 0;
+    }
+
+    public void ContinueGame()
+    {
+        // Continue game
+        Time.timeScale = 1;
+
+        // Change camera
+        CameraSwitching camera_switch = GetComponent<CameraSwitching>();
+        camera_switch.Camera1();
+
+        // Disable balance sheet
+        balance_sheet.SetActive(false);
+
+        // Setting values
+        money -= taxes_day;
+        bb.SetValue("Money", money);
+        income_day = 0;
+        bb.SetValue("Income", income_day);
+        savings_day = bb.GetValue<int>("Money");
+        expenses_day = 0;
+
+        // Check money to see if we lose
+        if (bb.GetValue<int>("Money") < 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -38,6 +38,11 @@ public class CameraSwitching : MonoBehaviour
         UpdateCamera(3);
     }
 
+    public void Camera5()
+    {
+        UpdateCamera(4);
+    }
+
     private void UpdateCamera(int index)
     {
         for (int i = 0; i < cams.Length; i++)
