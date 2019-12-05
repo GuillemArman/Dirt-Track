@@ -15,10 +15,11 @@ public class GameManager : MonoBehaviour
     private int num_mechanics = 2;
     private int visitors = 0;
     private int mechanic_cost = 250;
-    private int taxes_day = 300;
+    private int taxes_day = 250;
     private int income_day = 0; // per day without taking into account expenses
     private int expenses_day = 0; 
     private int savings_day = 0;
+    private float popularity = 1;
 
     [Header("------ Race teams ------")]
     public GameObject yellow_team;
@@ -50,9 +51,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetVisitorsnumber();
-        UpdateDataUI();
+        CheckVisitorsNumber();
         CheckMoney();
+        UpdateDataUI();
     }
 
     void LoadEverything()
@@ -63,16 +64,15 @@ public class GameManager : MonoBehaviour
         money = 0;
         visitors = 0;
         ticket_cost = 10;
-        mechanic_cost = 250;
+        mechanic_cost = 1;
         num_mechanics = 2;
-        taxes_day = 300;
+        taxes_day = 250;
         savings_day = 0;
+        popularity = 1;
 
         bb.SetValue("Money", money);
         bb.SetValue("Income", income_day);
         bb.SetValue("TicketPrice", ticket_cost);
-        bb.SetValue("Mechanics", num_mechanics);
-        bb.SetValue("Visitors", visitors);
         bb.SetValue("Days", 0);
     }
 
@@ -119,13 +119,16 @@ public class GameManager : MonoBehaviour
     {
         money -= mechanic_cost;
         expenses_day += mechanic_cost;
-
+        popularity += 0.5f;
+        taxes_day += 50;
         num_mechanics++;
         bb.SetValue("Money", money);
-        bb.SetValue("Mechanics", num_mechanics);
 
-        if (yellow_team.activeSelf == false) yellow_team.SetActive(true);
-        else if (yellow_team.activeSelf == true)
+        if (yellow_team.activeSelf == false)
+        {
+            yellow_team.SetActive(true);
+        }
+        else
         {
             red_team.SetActive(true);
             cant_buy_mechanic.SetActive(true);
@@ -133,10 +136,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GetVisitorsnumber()
+    public void CheckVisitorsNumber()
     {
-        visitors = count_visitors.num_visitors;
-        bb.SetValue("Visitors", visitors);
+        visitors = count_visitors.num_visitors;       
     }
 
     // This fncs only has to be called once
@@ -185,5 +187,10 @@ public class GameManager : MonoBehaviour
         // Check money to see if we lose
         if (bb.GetValue<int>("Money") < 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public float GetPopularity()
+    {
+        return popularity;
     }
 }

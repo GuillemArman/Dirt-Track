@@ -7,15 +7,17 @@ public class EntranceTrigger : MonoBehaviour
 {
     public GameObject visitor_1;
     public float duration_spawn = 10;
+    public float next_spawn;
 
-    private float next_spawn;
     private NightCycle cycle;
+    private GameManager game_manager;
 
     // Use this for initialization
     void Start()
     {
-        next_spawn = duration_spawn;
         cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
+        game_manager = GameObject.Find("_Game Manager").GetComponent<GameManager>();
+        next_spawn = duration_spawn / game_manager.GetPopularity();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class EntranceTrigger : MonoBehaviour
         {
             // Clone enemy
             GameObject prefab = Instantiate(visitor_1, transform.position, Quaternion.identity);
-            next_spawn = duration_spawn;
+            next_spawn = duration_spawn / game_manager.GetPopularity();
         }
     }
 
