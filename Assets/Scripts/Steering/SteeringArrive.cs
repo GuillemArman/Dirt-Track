@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SteeringArrive : MonoBehaviour 
 {
-    private Move move;
-    private MoveNavMesh nav_move;
-    private SteeringQueue queue;
+    private Move move = null;
+    private MoveNavMesh nav_move = null;
+    private SteeringQueue queue = null;
 
     [Header("------ Read Only ------")]
     public bool arrived = false;
@@ -72,8 +72,11 @@ public class SteeringArrive : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(nav_move.final_target, slow_area_radius);
-        Gizmos.DrawWireSphere(nav_move.final_target, stop_area_radius);
+        if(nav_move != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(nav_move.final_target, slow_area_radius);
+            Gizmos.DrawWireSphere(nav_move.final_target, stop_area_radius);
+        }
     }
 }

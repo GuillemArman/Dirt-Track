@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class MoveNavMesh : MonoBehaviour
 {
-    private SteeringArrive arrive;
-    private SteeringQueue queue;
+    private SteeringArrive arrive = null;
+    private SteeringQueue queue = null;
     private NavMeshAgent nav_agent = null;
 
     private Vector3[] path;
 
     [Header("------ Read Only -------")]
-    public Vector3 final_target;
-    public Vector3 curr_target;
+    public Vector3 final_target = Vector3.zero;
+    public Vector3 curr_target = Vector3.zero;
     public int progress = 0;
 
     [Header("------ Set Values ------")]
