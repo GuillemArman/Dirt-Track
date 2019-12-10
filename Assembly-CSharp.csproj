@@ -443,6 +443,7 @@
     <Compile Include="Assets\Scripts\CameraSwitching.cs" />
     <Compile Include="Assets\Scripts\CountingVisitors.cs" />
     <Compile Include="Assets\Scripts\EntranceTrigger.cs" />
+    <Compile Include="Assets\Scripts\FuelRemaining.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InitBB\InitCopBB.cs" />
     <Compile Include="Assets\Scripts\InitBB\InitGlobal_BB.cs" />
@@ -463,6 +464,7 @@
     <Compile Include="Assets\Scripts\Tasks\EnableBillboarding.cs" />
     <Compile Include="Assets\Scripts\Tasks\EnableWander.cs" />
     <Compile Include="Assets\Scripts\Tasks\GoTo.cs" />
+    <Compile Include="Assets\Scripts\UIFaceCamera.cs" />
     <Compile Include="Assets\Scripts\WelcomeTrigger.cs" />
     <None Include="Assets\SimpleWorld\SimpleTown\Changelog.txt" />
     <None Include="Assets\ParadoxNotion\NodeCanvas\!ReadMe!.txt" />

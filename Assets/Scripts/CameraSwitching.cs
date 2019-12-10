@@ -5,7 +5,8 @@ using UnityEngine;
 public class CameraSwitching : MonoBehaviour
 {
     public Camera[] cams;
-
+    private Camera curr_camera;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,11 @@ public class CameraSwitching : MonoBehaviour
         UpdateCamera(4);
     }
 
+    public Camera GetCurrCamera()
+    {
+        return curr_camera;
+    }
+
     private void UpdateCamera(int index)
     {
         for (int i = 0; i < cams.Length; i++)
@@ -51,6 +57,7 @@ public class CameraSwitching : MonoBehaviour
             {
                 cams[i].enabled = true;
                 cams[i].GetComponent<AudioListener>().enabled = true;
+                curr_camera = cams[i];
             }
             else
             {
