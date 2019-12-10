@@ -79,7 +79,10 @@ public class MoveBike : MonoBehaviour
                         currentWayPoint++;
                         targetWayPoint = wayPointList[currentWayPoint];
                     }
+                }
 
+                if (currentWayPoint != 0)
+                {
                     // rotate towards the target
                     transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
                     // move towards the target

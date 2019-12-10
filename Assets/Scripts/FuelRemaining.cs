@@ -12,23 +12,32 @@ public class FuelRemaining : MonoBehaviour
     public float fuel_consumption = 0.005f;
 
     private float fuel = 6.0f;
+    private NightCycle cycle;
 
     // Start is called before the first frame update
     void Start()
     {
+        cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
         mechanic_bb = mechanic.GetComponent<Blackboard>();
+        mechanic_bb.SetValue("fuel", fuel);
     }
 
     // Update is called once per frame
     void Update()
     {
+        fuel = mechanic_bb.GetValue<float>("fuel");
+
         if (fuel > 0)
         {
-            fuel -= fuel_consumption;
+            if(!cycle.night) fuel -= fuel_consumption;
             fuel_bar.rectTransform.sizeDelta = new Vector2(fuel, 0.65f);
             mechanic_bb.SetValue("bike_need_fuel", false);
+            mechanic_bb.SetValue("fuel", fuel);
         }
-        else mechanic_bb.SetValue("bike_need_fuel", true);
+        else
+        {
+            mechanic_bb.SetValue("bike_need_fuel", true);
+        }
     }
 
     public float GetFuel()
