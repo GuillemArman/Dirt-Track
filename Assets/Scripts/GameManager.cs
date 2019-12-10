@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private int num_mechanics = 2;
     private int visitors = 0;
     private int mechanic_cost = 250;
+    private int foodcart_cost = 50;
     private int taxes_day = 250;
     private int income_day = 0; // per day without taking into account expenses
     private int expenses_day = 0; 
@@ -25,6 +26,10 @@ public class GameManager : MonoBehaviour
     public GameObject yellow_team;
     public GameObject red_team;
     public GameObject cant_buy_mechanic;
+
+    [Header("------ Progression System ------")]
+    public GameObject food_cart1;
+    public GameObject cant_buy_foodcart;
 
     [Header("------ Ui texts ------")]
     public Text money_text;
@@ -52,7 +57,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckVisitorsNumber();
-        CheckMoney();
+        CheckMoneyMechanic();
+        CheckMoneyFoodCart();
         UpdateDataUI();
     }
 
@@ -65,6 +71,7 @@ public class GameManager : MonoBehaviour
         visitors = 0;
         ticket_cost = 10;
         mechanic_cost = 1;
+        foodcart_cost = 1;
         num_mechanics = 2;
         taxes_day = 250;
         savings_day = 0;
@@ -101,7 +108,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CheckMoney()
+    public void CheckMoneyMechanic()
     {
         money = bb.GetValue<int>("Money");
         income_day = bb.GetValue<int>("Income");
@@ -133,6 +140,41 @@ public class GameManager : MonoBehaviour
             red_team.SetActive(true);
             cant_buy_mechanic.SetActive(true);
             cant_buy_mechanic.GetComponentInChildren<Text>().text = "".ToString();
+        }
+    }
+
+    public void CheckMoneyFoodCart()
+    {
+        money = bb.GetValue<int>("Money");
+        income_day = bb.GetValue<int>("Income");
+        if (money > foodcart_cost)
+        {
+            cant_buy_foodcart.SetActive(false);
+        }
+        else
+        {
+            cant_buy_foodcart.SetActive(true);
+        }
+    }
+
+    public void BuyFoodCart()
+    {
+        money -= foodcart_cost;
+        expenses_day += foodcart_cost;
+        popularity += 0.5f;
+        taxes_day += 15;
+        num_mechanics++;
+        bb.SetValue("Money", money);
+
+        if (food_cart1.activeSelf == false)
+        {
+            food_cart1.SetActive(true);
+        }
+        else
+        {
+           
+            cant_buy_foodcart.SetActive(true);
+            cant_buy_foodcart.GetComponentInChildren<Text>().text = "".ToString();
         }
     }
 
