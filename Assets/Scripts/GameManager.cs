@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private int savings_day = 0;
     private float popularity = 1;
 
+    private int count = 1;
+
     [Header("------ Race teams ------")]
     public GameObject yellow_team;
     public GameObject red_team;
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     [Header("------ Progression System ------")]
     public GameObject food_cart1;
+    public GameObject food_cart2;
     public GameObject cant_buy_foodcart;
 
     [Header("------ Ui texts ------")]
@@ -71,7 +74,7 @@ public class GameManager : MonoBehaviour
         visitors = 0;
         ticket_cost = 10;
         mechanic_cost = 1;
-        foodcart_cost = 1;
+        foodcart_cost = 50;
         num_mechanics = 2;
         taxes_day = 250;
         savings_day = 0;
@@ -112,7 +115,7 @@ public class GameManager : MonoBehaviour
     {
         money = bb.GetValue<int>("Money");
         income_day = bb.GetValue<int>("Income");
-        if (money > mechanic_cost && red_team.activeSelf == false)
+        if (money >= mechanic_cost && red_team.activeSelf == false)
         {
             cant_buy_mechanic.SetActive(false);
         }
@@ -145,9 +148,11 @@ public class GameManager : MonoBehaviour
 
     public void CheckMoneyFoodCart()
     {
+        //need to deactivate everything if all foodcarts are bought
+
         money = bb.GetValue<int>("Money");
         income_day = bb.GetValue<int>("Income");
-        if (money > foodcart_cost)
+        if (money >= foodcart_cost && count <3)
         {
             cant_buy_foodcart.SetActive(false);
         }
@@ -159,23 +164,34 @@ public class GameManager : MonoBehaviour
 
     public void BuyFoodCart()
     {
+        
         money -= foodcart_cost;
         expenses_day += foodcart_cost;
         popularity += 0.5f;
         taxes_day += 15;
-        num_mechanics++;
         bb.SetValue("Money", money);
 
-        if (food_cart1.activeSelf == false)
+        if (food_cart1.activeSelf == false && count == 1)
         {
+            
             food_cart1.SetActive(true);
         }
+
+        else if (food_cart2.activeSelf == false && count == 2)
+        {
+            food_cart2.SetActive(true);
+            cant_buy_foodcart.SetActive(true);
+            cant_buy_foodcart.GetComponentInChildren<Text>().text = "".ToString();
+        }
+
         else
         {
            
             cant_buy_foodcart.SetActive(true);
-            cant_buy_foodcart.GetComponentInChildren<Text>().text = "".ToString();
+            
         }
+
+        count++;
     }
 
     public void CheckVisitorsNumber()
