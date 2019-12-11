@@ -42,7 +42,7 @@ public class MoveBike : MonoBehaviour
 
         if (cycle.day || cycle.noon)
         {
-            if (aux <= 1)
+            if (aux <= 0.3f)
             {
                 if (currentWayPoint == 10)
                 {
@@ -55,17 +55,18 @@ public class MoveBike : MonoBehaviour
                     targetWayPoint = wayPointList[currentWayPoint];
                 }
             }
+
+            // rotate towards the target
+            transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
             if (fuel_remaining.GetFuel() > 0)
             {
-                // rotate towards the target
-                transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
                 // move towards the target
                 transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
             }
         }
         if (cycle.night)
         {
-            if (aux <= 1 && fuel_remaining.GetFuel() > 0)
+            if (aux <= 0.3f)
             {
                 if (currentWayPoint != 0)
                 {
@@ -80,11 +81,20 @@ public class MoveBike : MonoBehaviour
                         targetWayPoint = wayPointList[currentWayPoint];
                     }
                 }
+            }
+
+            if (fuel_remaining.GetFuel() > 0)
+            {
+                // rotate towards the target
+                transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
 
                 if (currentWayPoint != 0)
                 {
-                    // rotate towards the target
-                    transform.forward = Vector3.RotateTowards(transform.forward, targetWayPoint.transform.position - transform.position, speed * Time.deltaTime, 0.0f);
+                    // move towards the target
+                    transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
+                }
+                else if (currentWayPoint == 0 && aux > 2)
+                {
                     // move towards the target
                     transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
                 }

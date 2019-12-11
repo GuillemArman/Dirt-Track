@@ -29,7 +29,7 @@ public class FuelRemaining : MonoBehaviour
 
         if (fuel > 0)
         {
-            if(!cycle.night) fuel -= fuel_consumption;
+            if(!cycle.night && Time.timeScale != 0) fuel -= fuel_consumption;
             fuel_bar.rectTransform.sizeDelta = new Vector2(fuel, 0.65f);
             mechanic_bb.SetValue("bike_need_fuel", false);
             mechanic_bb.SetValue("fuel", fuel);
