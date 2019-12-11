@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     public Text ticketprice_text;
     public Text num_mechanics_text;
     public Text visitors_text;
+    public Text taxes_text;
 
     [Header("------ Balance sheet ------")]
     public GameObject balance_sheet;
@@ -94,6 +95,8 @@ public class GameManager : MonoBehaviour
         ticketprice_text.text = ticket_cost.ToString();
         ticketprice_text.color = Color.black;
         visitors_text.text = visitors.ToString();
+        taxes_text.text = taxes_day.ToString();
+        
     }
 
     public void ChangeTicketPrice()
