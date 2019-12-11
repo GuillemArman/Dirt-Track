@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 {
     private GlobalBlackboard bb;
     private CountingVisitors count_visitors;
-
     
     private int ticket_cost = 10;
     private int num_mechanics = 2;
@@ -20,31 +19,25 @@ public class GameManager : MonoBehaviour
     private int expenses_day = 0; 
     private int savings_day = 0;
     private int visitors = 0;
+    private int food_carts = 1;
+    private int ticket_lines = 2;
 
     public int money = 0; // total
     public float popularity = 1;
-    
 
-
-
-    [Header("------ Race teams ------")]
+    [Header("------ Progression System ------")]
     public GameObject yellow_team;
     public GameObject red_team;
     public GameObject cant_buy_mechanic;
 
-    [Header("------ Progression System ------")]
-    public int foodcart = 0;
-
     public GameObject food_cart1;
     public GameObject food_cart2;
     public GameObject cant_buy_foodcart;
-    
 
     [Header("------ Ui texts ------")]
     public Text money_text;
     public Text ui_ticketprice_text;
     public Text ticketprice_text;
-    public Text num_mechanics_text;
     public Text visitors_text;
     public Text taxes_text;
     public Text popularity_text;
@@ -81,24 +74,27 @@ public class GameManager : MonoBehaviour
         money = 0;
         visitors = 0;
         ticket_cost = 10;
-        mechanic_cost = 250;
-        foodcart_cost = 50;
+        mechanic_cost = 1; //250
+        foodcart_cost = 1; //50
         num_mechanics = 2;
         taxes_day = 250;
         savings_day = 0;
         popularity = 1;
+        food_carts = 1;
+        ticket_lines = 2;
 
         bb.SetValue("Money", money);
         bb.SetValue("Income", income_day);
         bb.SetValue("TicketPrice", ticket_cost);
         bb.SetValue("Days", 0);
         bb.SetValue("Popularity", popularity);
+        bb.SetValue("FoodCarts", food_carts);
+        bb.SetValue("TicketLines", ticket_lines);
     }
 
     void UpdateDataUI()
     {
-        money_text.text = money.ToString();
-        num_mechanics_text.text = num_mechanics.ToString();    
+        money_text.text = money.ToString();  
         ui_ticketprice_text.text = ticket_cost.ToString();
         ticketprice_text.text = ticket_cost.ToString();
         ticketprice_text.color = Color.black;
@@ -159,11 +155,9 @@ public class GameManager : MonoBehaviour
 
     public void CheckMoneyFoodCart()
     {
-        //need to deactivate everything if all foodcarts are bought
-
         money = bb.GetValue<int>("Money");
         income_day = bb.GetValue<int>("Income");
-        if (money >= foodcart_cost && foodcart < 2)
+        if (money >= foodcart_cost && food_carts < 3)
         {
             cant_buy_foodcart.SetActive(false);
         }
@@ -174,42 +168,32 @@ public class GameManager : MonoBehaviour
     }
 
     public void BuyFoodCart()
-    {
-        
+    {    
         money -= foodcart_cost;
         expenses_day += foodcart_cost;
         popularity += 0.5f;
         taxes_day += 15;
         bb.SetValue("Money", money);
 
-        if (food_cart1.activeSelf == false && foodcart == 0)
-        {
-            
+        if (food_cart1.activeSelf == false && food_carts == 1)
+        {           
             food_cart1.SetActive(true);
         }
-
-        else if (food_cart2.activeSelf == false && foodcart == 1)
+        else
         {
             food_cart2.SetActive(true);
             cant_buy_foodcart.SetActive(true);
             cant_buy_foodcart.GetComponentInChildren<Text>().text = "SOLD OUT".ToString();
         }
 
-        else
-        {
-           
-            cant_buy_foodcart.SetActive(true);
-            
-        }
-
-        foodcart++;
+        food_carts++;
+        bb.SetValue("FoodCarts", food_carts);
     }
 
     public void Quest1Completed()
     {
         money += 50;
-        bb.SetValue("Money", money);
-        
+        bb.SetValue("Money", money);      
     }
 
     public void CheckVisitorsNumber()

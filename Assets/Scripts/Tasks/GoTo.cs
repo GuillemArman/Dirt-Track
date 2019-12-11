@@ -6,8 +6,8 @@ using NodeCanvas.Framework;
 public class GoTo : ActionTask
 {
     private MoveNavMesh nav_move;
-
     private Vector3 new_target;
+
     public BBParameter<Vector3> bb_target;
 
     protected override void OnExecute()
