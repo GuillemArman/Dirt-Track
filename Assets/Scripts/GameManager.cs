@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         money = 0;
         visitors = 0;
         ticket_cost = 10;
-        mechanic_cost = 1;
+        mechanic_cost = 250;
         foodcart_cost = 50;
         num_mechanics = 2;
         taxes_day = 250;
