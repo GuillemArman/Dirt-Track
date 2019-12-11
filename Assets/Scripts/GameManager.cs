@@ -10,19 +10,22 @@ public class GameManager : MonoBehaviour
     private GlobalBlackboard bb;
     private CountingVisitors count_visitors;
 
-    private int money = 0; // total
+    
     private int ticket_cost = 10;
     private int num_mechanics = 2;
-    private int visitors = 0;
     private int mechanic_cost = 250;
     private int foodcart_cost = 50;
     private int taxes_day = 250;
     private int income_day = 0; // per day without taking into account expenses
     private int expenses_day = 0; 
     private int savings_day = 0;
-    private float popularity = 1;
+    private int visitors = 0;
 
-    private int count = 1;
+    public int money = 0; // total
+    public float popularity = 1;
+    
+
+
 
     [Header("------ Race teams ------")]
     public GameObject yellow_team;
@@ -30,9 +33,12 @@ public class GameManager : MonoBehaviour
     public GameObject cant_buy_mechanic;
 
     [Header("------ Progression System ------")]
+    public int foodcart = 0;
+
     public GameObject food_cart1;
     public GameObject food_cart2;
     public GameObject cant_buy_foodcart;
+    
 
     [Header("------ Ui texts ------")]
     public Text money_text;
@@ -41,6 +47,7 @@ public class GameManager : MonoBehaviour
     public Text num_mechanics_text;
     public Text visitors_text;
     public Text taxes_text;
+    public Text popularity_text;
 
     [Header("------ Balance sheet ------")]
     public GameObject balance_sheet;
@@ -85,6 +92,7 @@ public class GameManager : MonoBehaviour
         bb.SetValue("Income", income_day);
         bb.SetValue("TicketPrice", ticket_cost);
         bb.SetValue("Days", 0);
+        bb.SetValue("Popularity", popularity);
     }
 
     void UpdateDataUI()
@@ -96,7 +104,7 @@ public class GameManager : MonoBehaviour
         ticketprice_text.color = Color.black;
         visitors_text.text = visitors.ToString();
         taxes_text.text = taxes_day.ToString();
-        
+        popularity_text.text = popularity.ToString();
     }
 
     public void ChangeTicketPrice()
@@ -145,7 +153,7 @@ public class GameManager : MonoBehaviour
         {
             red_team.SetActive(true);
             cant_buy_mechanic.SetActive(true);
-            cant_buy_mechanic.GetComponentInChildren<Text>().text = "".ToString();
+            cant_buy_mechanic.GetComponentInChildren<Text>().text = "SOLD OUT".ToString();
         }
     }
 
@@ -155,7 +163,7 @@ public class GameManager : MonoBehaviour
 
         money = bb.GetValue<int>("Money");
         income_day = bb.GetValue<int>("Income");
-        if (money >= foodcart_cost && count <3)
+        if (money >= foodcart_cost && foodcart < 2)
         {
             cant_buy_foodcart.SetActive(false);
         }
@@ -174,17 +182,17 @@ public class GameManager : MonoBehaviour
         taxes_day += 15;
         bb.SetValue("Money", money);
 
-        if (food_cart1.activeSelf == false && count == 1)
+        if (food_cart1.activeSelf == false && foodcart == 0)
         {
             
             food_cart1.SetActive(true);
         }
 
-        else if (food_cart2.activeSelf == false && count == 2)
+        else if (food_cart2.activeSelf == false && foodcart == 1)
         {
             food_cart2.SetActive(true);
             cant_buy_foodcart.SetActive(true);
-            cant_buy_foodcart.GetComponentInChildren<Text>().text = "".ToString();
+            cant_buy_foodcart.GetComponentInChildren<Text>().text = "SOLD OUT".ToString();
         }
 
         else
@@ -194,7 +202,14 @@ public class GameManager : MonoBehaviour
             
         }
 
-        count++;
+        foodcart++;
+    }
+
+    public void Quest1Completed()
+    {
+        money += 50;
+        bb.SetValue("Money", money);
+        
     }
 
     public void CheckVisitorsNumber()
@@ -253,5 +268,10 @@ public class GameManager : MonoBehaviour
     public float GetPopularity()
     {
         return popularity;
+    }
+
+    public float GetVisitors()
+    {
+        return visitors;
     }
 }
