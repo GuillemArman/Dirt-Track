@@ -500,6 +500,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed81477ec2653844ab986fa7491b58bf, type: 3}
+--- !u!114 &6351982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: Mechanic (3) BehaviourTree
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4766.0,"y":-5523.0},"nodes":[{"_position":{"x":4942.0,"y":5302.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":4213.0,"y":5729.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4014.0,"y":5840.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"bb_target":{"_name":"tv_pos","_targetVariableID":"49ddb023-f4cd-4899-b0e8-991e61fc5a5c"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4303.0,"y":5845.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_position":{"x":4519.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"21"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4291.0,"y":6033.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"22"},{"_action":{"actions":[{"bb_target":{"_name":"investigate_pos","_targetVariableID":"127925f1-da47-48b5-9b08-3c7d122a97ab"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4573.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5326.0,"y":5560.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"39"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5004.0,"y":5722.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"40"},{"_condition":{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4802.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"41"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4846.0,"y":5902.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"45"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"bb_target":{"_name":"fuel_pos","_targetVariableID":"72ab448a-9d83-4599-a88a-2315b2d4c796"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5067.0,"y":5910.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"54"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5187.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5122.0,"y":6076.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"63"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5240.0,"y":5962.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"75"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5410.0,"y":5842.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"85"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5344.0,"y":6075.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"86"},{"_action":{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"},"_position":{"x":5464.0,"y":5997.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"98"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5672.0,"y":5838.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"101"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5605.0,"y":6085.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"102"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"fuel","_targetVariableID":"c2ec3b8b-f759-477e-b90d-e1a7ce77f381"},"valueB":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.SetFloat"},{"boolVariable":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5747.0,"y":5953.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"114"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"101"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"98"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"114"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0
 --- !u!1 &10652124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 169098, guid: b319293155b5dcb418d2780c64e7ea81,
@@ -956,7 +976,7 @@ MonoBehaviour:
   boundGraphObjectReferences: []
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 765408992}
+  _graph: {fileID: 81344502}
   _blackboard: {fileID: 18285265}
 --- !u!1001 &21403251
 PrefabInstance:
@@ -2980,6 +3000,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1742051594}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &81344502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: Mechanic (2) BehaviourTree
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4766.0,"y":-5523.0},"nodes":[{"_position":{"x":4942.0,"y":5302.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":4213.0,"y":5729.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4014.0,"y":5840.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"bb_target":{"_name":"tv_pos","_targetVariableID":"49ddb023-f4cd-4899-b0e8-991e61fc5a5c"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4303.0,"y":5845.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_position":{"x":4519.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"21"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4291.0,"y":6033.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"22"},{"_action":{"actions":[{"bb_target":{"_name":"investigate_pos","_targetVariableID":"127925f1-da47-48b5-9b08-3c7d122a97ab"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4573.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5326.0,"y":5560.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"39"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5004.0,"y":5722.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"40"},{"_condition":{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4802.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"41"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4846.0,"y":5902.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"45"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"bb_target":{"_name":"fuel_pos","_targetVariableID":"72ab448a-9d83-4599-a88a-2315b2d4c796"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5067.0,"y":5910.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"54"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5187.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5122.0,"y":6076.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"63"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5240.0,"y":5962.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"75"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5410.0,"y":5842.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"85"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5344.0,"y":6075.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"86"},{"_action":{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"},"_position":{"x":5464.0,"y":5997.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"98"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5672.0,"y":5838.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"101"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5605.0,"y":6085.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"102"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"fuel","_targetVariableID":"c2ec3b8b-f759-477e-b90d-e1a7ce77f381"},"valueB":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.SetFloat"},{"boolVariable":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5747.0,"y":5953.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"114"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"101"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"98"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"114"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0
 --- !u!4 &82523451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 447852, guid: 821d346210bfef34a879204b018c74ab,
@@ -14249,7 +14289,7 @@ MonoBehaviour:
   boundGraphObjectReferences: []
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 1343511343}
+  _graph: {fileID: 725464064}
   _blackboard: {fileID: 445629359}
 --- !u!4 &445738124 stripped
 Transform:
@@ -17623,7 +17663,7 @@ MonoBehaviour:
   boundGraphObjectReferences: []
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 1849132525}
+  _graph: {fileID: 6351982}
   _blackboard: {fileID: 578020497}
 --- !u!4 &578452337 stripped
 Transform:
@@ -18629,26 +18669,6 @@ RectTransform:
   m_AnchoredPosition: {x: 119.6474, y: 6.898876}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &611054305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
-  m_Name: Cop_3 BehaviourTree
-  m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-2984.0,"y":-2954.0},"zoomFactor":0.6283951,"nodes":[{"_position":{"x":5472.0,"y":5033.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":5326.0,"y":5224.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4996.0,"y":5429.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"$type":"EnableWander"},{"bb_target":{"_name":"start_pos","_targetVariableID":"e21c08b7-a0ed-421f-b027-871f22e7733f"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5303.0,"y":5418.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"_position":{"x":5620.0,"y":5229.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"14"},{"_condition":{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":5510.0,"y":5417.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"15"},{"_action":{"enabled":true,"$type":"EnableWander"},"_position":{"x":5812.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"19"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
-    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _objectReferences: []
-  _deserializationFailed: 0
-  repeat: 1
-  updateInterval: 0
 --- !u!1 &611363034
 GameObject:
   m_ObjectHideFlags: 0
@@ -20377,26 +20397,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba7e35dbdc27f2f4a99fdb6ea5296e79, type: 3}
---- !u!114 &654918493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
-  m_Name: Cop_1 BehaviourTree
-  m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-2984.0,"y":-2954.0},"zoomFactor":0.6283951,"nodes":[{"_position":{"x":5472.0,"y":5033.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":5326.0,"y":5224.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4996.0,"y":5429.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"$type":"EnableWander"},{"bb_target":{"_name":"start_pos","_targetVariableID":"e21c08b7-a0ed-421f-b027-871f22e7733f"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5303.0,"y":5418.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"_position":{"x":5620.0,"y":5229.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"14"},{"_condition":{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":5510.0,"y":5417.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"15"},{"_action":{"enabled":true,"$type":"EnableWander"},"_position":{"x":5812.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"19"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
-    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _objectReferences: []
-  _deserializationFailed: 0
-  repeat: 1
-  updateInterval: 0
 --- !u!1 &655911242
 GameObject:
   m_ObjectHideFlags: 0
@@ -22954,7 +22954,7 @@ MonoBehaviour:
   boundGraphObjectReferences: []
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 1016850288}
+  _graph: {fileID: 1878684811}
   _blackboard: {fileID: 720514398}
 --- !u!114 &720514398
 MonoBehaviour:
@@ -23034,6 +23034,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 341876383}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &725464064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: Mechanic (1) BehaviourTree
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4766.0,"y":-5523.0},"nodes":[{"_position":{"x":4942.0,"y":5302.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":4213.0,"y":5729.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4014.0,"y":5840.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"bb_target":{"_name":"tv_pos","_targetVariableID":"49ddb023-f4cd-4899-b0e8-991e61fc5a5c"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4303.0,"y":5845.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_position":{"x":4519.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"21"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4291.0,"y":6033.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"22"},{"_action":{"actions":[{"bb_target":{"_name":"investigate_pos","_targetVariableID":"127925f1-da47-48b5-9b08-3c7d122a97ab"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4573.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5326.0,"y":5560.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"39"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5004.0,"y":5722.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"40"},{"_condition":{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4802.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"41"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4846.0,"y":5902.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"45"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"bb_target":{"_name":"fuel_pos","_targetVariableID":"72ab448a-9d83-4599-a88a-2315b2d4c796"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5067.0,"y":5910.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"54"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5187.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5122.0,"y":6076.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"63"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5240.0,"y":5962.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"75"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5410.0,"y":5842.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"85"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5344.0,"y":6075.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"86"},{"_action":{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"},"_position":{"x":5464.0,"y":5997.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"98"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5672.0,"y":5838.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"101"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5605.0,"y":6085.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"102"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"fuel","_targetVariableID":"c2ec3b8b-f759-477e-b90d-e1a7ce77f381"},"valueB":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.SetFloat"},{"boolVariable":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5747.0,"y":5953.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"114"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"101"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"98"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"114"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0
 --- !u!1 &726029583
 GameObject:
   m_ObjectHideFlags: 0
@@ -23213,7 +23233,7 @@ GameObject:
   - component: {fileID: 734361831}
   - component: {fileID: 734361830}
   m_Layer: 5
-  m_Name: Panel Quest
+  m_Name: Button Quest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23232,7 +23252,7 @@ RectTransform:
   m_Children:
   - {fileID: 1243766986}
   m_Father: {fileID: 872896258}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -23319,7 +23339,7 @@ GameObject:
   - component: {fileID: 736608510}
   - component: {fileID: 736608509}
   m_Layer: 5
-  m_Name: Quest_Button
+  m_Name: Quest Claim Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23332,17 +23352,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736608507}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 531442928}
-  m_Father: {fileID: 872896258}
-  m_RootOrder: 8
+  m_Father: {fileID: 1077782506}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 464.6, y: -308}
+  m_AnchoredPosition: {x: 2, y: -32}
   m_SizeDelta: {x: 115, y: 55.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736608509
@@ -24379,26 +24399,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765852449}
   m_Mesh: {fileID: 4300002, guid: 6a1c0caa31e91f64582538b466d11083, type: 3}
---- !u!114 &765408992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
-  m_Name: Mechanic (2) BehaviourTree
-  m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4766.0,"y":-5523.0},"nodes":[{"_position":{"x":4942.0,"y":5302.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":4213.0,"y":5729.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4014.0,"y":5840.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"bb_target":{"_name":"tv_pos","_targetVariableID":"49ddb023-f4cd-4899-b0e8-991e61fc5a5c"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4303.0,"y":5845.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_position":{"x":4519.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"21"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4291.0,"y":6033.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"22"},{"_action":{"actions":[{"bb_target":{"_name":"investigate_pos","_targetVariableID":"127925f1-da47-48b5-9b08-3c7d122a97ab"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4573.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5326.0,"y":5560.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"39"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5004.0,"y":5722.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"40"},{"_condition":{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4802.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"41"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4846.0,"y":5902.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"45"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"bb_target":{"_name":"fuel_pos","_targetVariableID":"72ab448a-9d83-4599-a88a-2315b2d4c796"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5067.0,"y":5910.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"54"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5187.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5122.0,"y":6076.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"63"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5240.0,"y":5962.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"75"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5410.0,"y":5842.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"85"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5344.0,"y":6075.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"86"},{"_action":{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"},"_position":{"x":5464.0,"y":5997.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"98"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5672.0,"y":5838.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"101"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5605.0,"y":6085.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"102"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"fuel","_targetVariableID":"c2ec3b8b-f759-477e-b90d-e1a7ce77f381"},"valueB":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.SetFloat"},{"boolVariable":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5747.0,"y":5953.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"114"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"101"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"98"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"114"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
-    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _objectReferences: []
-  _deserializationFailed: 0
-  repeat: 1
-  updateInterval: 0
 --- !u!4 &765604673
 Transform:
   m_ObjectHideFlags: 0
@@ -28378,7 +28378,6 @@ RectTransform:
   - {fileID: 1148803568}
   - {fileID: 1172253532}
   - {fileID: 1622600469}
-  - {fileID: 736608508}
   - {fileID: 734361829}
   - {fileID: 1077782506}
   m_Father: {fileID: 0}
@@ -30540,7 +30539,7 @@ MonoBehaviour:
   boundGraphObjectReferences: []
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 1215646646}
+  _graph: {fileID: 1536150614}
   _blackboard: {fileID: 951739575}
 --- !u!114 &951739575
 MonoBehaviour:
@@ -32435,26 +32434,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1155850277}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1016850288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
-  m_Name: Cop_2 BehaviourTree
-  m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-2984.0,"y":-2954.0},"zoomFactor":0.6283951,"nodes":[{"_position":{"x":5472.0,"y":5033.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":5326.0,"y":5224.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4996.0,"y":5429.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"$type":"EnableWander"},{"bb_target":{"_name":"start_pos","_targetVariableID":"e21c08b7-a0ed-421f-b027-871f22e7733f"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5303.0,"y":5418.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"_position":{"x":5620.0,"y":5229.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"14"},{"_condition":{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":5510.0,"y":5417.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"15"},{"_action":{"enabled":true,"$type":"EnableWander"},"_position":{"x":5812.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"19"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
-    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _objectReferences: []
-  _deserializationFailed: 0
-  repeat: 1
-  updateInterval: 0
 --- !u!1 &1021389732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5870537485847469249, guid: bd7edd3f53586994484eafd67f1a622c,
@@ -32501,7 +32480,7 @@ MonoBehaviour:
   boundGraphObjectReferences: []
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 654918493}
+  _graph: {fileID: 1421402342}
   _blackboard: {fileID: 1021389734}
 --- !u!114 &1021389736
 MonoBehaviour:
@@ -34630,12 +34609,12 @@ GameObject:
   - component: {fileID: 1077782508}
   - component: {fileID: 1077782507}
   m_Layer: 5
-  m_Name: Info Quest 1
+  m_Name: PanelQuest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1077782506
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34649,13 +34628,15 @@ RectTransform:
   m_Children:
   - {fileID: 1088982954}
   - {fileID: 1466973908}
+  - {fileID: 736608508}
+  - {fileID: 1107478240}
   m_Father: {fileID: 872896258}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.5999756, y: 228.2}
-  m_SizeDelta: {x: -589.6, y: -755.5}
+  m_AnchoredPosition: {x: 3.5999756, y: 209.2}
+  m_SizeDelta: {x: -589.6, y: -717.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077782507
 MonoBehaviour:
@@ -35164,7 +35145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.2, y: -18.04}
+  m_AnchoredPosition: {x: -54.2, y: 18.2}
   m_SizeDelta: {x: 334.1, y: 42.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088982955
@@ -35851,6 +35832,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1135599355}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1107478239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1107478240}
+  - component: {fileID: 1107478242}
+  - component: {fileID: 1107478241}
+  m_Layer: 5
+  m_Name: Audience (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1107478240
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107478239}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1077782506}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 134, y: 28}
+  m_SizeDelta: {x: 45, y: 45}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1107478241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107478239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 63fc64b265e7c2b479f282549407f661, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1107478242
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107478239}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1109635176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39401,26 +39456,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73d3ec462f84de04b880f6ca24f941dd, type: 3}
---- !u!114 &1215646646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
-  m_Name: Mechanic BehaviourTree
-  m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4766.0,"y":-5523.0},"nodes":[{"_position":{"x":4942.0,"y":5302.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":4213.0,"y":5729.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4014.0,"y":5840.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"bb_target":{"_name":"tv_pos","_targetVariableID":"49ddb023-f4cd-4899-b0e8-991e61fc5a5c"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4303.0,"y":5845.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_position":{"x":4519.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"21"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4291.0,"y":6033.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"22"},{"_action":{"actions":[{"bb_target":{"_name":"investigate_pos","_targetVariableID":"127925f1-da47-48b5-9b08-3c7d122a97ab"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4573.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5326.0,"y":5560.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"39"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5004.0,"y":5722.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"40"},{"_condition":{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4802.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"41"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4846.0,"y":5902.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"45"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"bb_target":{"_name":"fuel_pos","_targetVariableID":"72ab448a-9d83-4599-a88a-2315b2d4c796"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5067.0,"y":5910.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"54"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5187.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5122.0,"y":6076.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"63"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5240.0,"y":5962.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"75"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5410.0,"y":5842.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"85"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5344.0,"y":6075.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"86"},{"_action":{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"},"_position":{"x":5464.0,"y":5997.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"98"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5672.0,"y":5838.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"101"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5605.0,"y":6085.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"102"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"fuel","_targetVariableID":"c2ec3b8b-f759-477e-b90d-e1a7ce77f381"},"valueB":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.SetFloat"},{"boolVariable":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5747.0,"y":5953.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"114"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"101"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"98"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"114"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
-    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _objectReferences: []
-  _deserializationFailed: 0
-  repeat: 1
-  updateInterval: 0
 --- !u!1001 &1216223832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42726,26 +42761,6 @@ Transform:
   m_Father: {fileID: 1871501008}
   m_RootOrder: 106
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1343511343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
-  m_Name: Mechanic (1) BehaviourTree
-  m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4766.0,"y":-5523.0},"nodes":[{"_position":{"x":4942.0,"y":5302.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":4213.0,"y":5729.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4014.0,"y":5840.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"bb_target":{"_name":"tv_pos","_targetVariableID":"49ddb023-f4cd-4899-b0e8-991e61fc5a5c"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4303.0,"y":5845.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_position":{"x":4519.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"21"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4291.0,"y":6033.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"22"},{"_action":{"actions":[{"bb_target":{"_name":"investigate_pos","_targetVariableID":"127925f1-da47-48b5-9b08-3c7d122a97ab"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4573.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5326.0,"y":5560.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"39"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5004.0,"y":5722.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"40"},{"_condition":{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4802.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"41"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4846.0,"y":5902.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"45"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"bb_target":{"_name":"fuel_pos","_targetVariableID":"72ab448a-9d83-4599-a88a-2315b2d4c796"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5067.0,"y":5910.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"54"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5187.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5122.0,"y":6076.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"63"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5240.0,"y":5962.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"75"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5410.0,"y":5842.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"85"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5344.0,"y":6075.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"86"},{"_action":{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"},"_position":{"x":5464.0,"y":5997.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"98"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5672.0,"y":5838.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"101"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5605.0,"y":6085.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"102"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"fuel","_targetVariableID":"c2ec3b8b-f759-477e-b90d-e1a7ce77f381"},"valueB":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.SetFloat"},{"boolVariable":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5747.0,"y":5953.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"114"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"101"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"98"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"114"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
-    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _objectReferences: []
-  _deserializationFailed: 0
-  repeat: 1
-  updateInterval: 0
 --- !u!1 &1344281876
 GameObject:
   m_ObjectHideFlags: 0
@@ -45074,6 +45089,26 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1421402342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: Cop_1 BehaviourTree
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-2984.0,"y":-2954.0},"zoomFactor":0.6283951,"nodes":[{"_position":{"x":5472.0,"y":5033.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":5326.0,"y":5224.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4996.0,"y":5429.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"$type":"EnableWander"},{"bb_target":{"_name":"start_pos","_targetVariableID":"e21c08b7-a0ed-421f-b027-871f22e7733f"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5303.0,"y":5418.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"_position":{"x":5620.0,"y":5229.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"14"},{"_condition":{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":5510.0,"y":5417.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"15"},{"_action":{"enabled":true,"$type":"EnableWander"},"_position":{"x":5812.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"19"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0
 --- !u!1 &1426587306
 GameObject:
   m_ObjectHideFlags: 0
@@ -46962,6 +46997,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee7d0c4ddd804dd4e95f705d43c9135e, type: 3}
+--- !u!114 &1480984188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: Cop_3 BehaviourTree
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-2984.0,"y":-2954.0},"zoomFactor":0.6283951,"nodes":[{"_position":{"x":5472.0,"y":5033.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":5326.0,"y":5224.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4996.0,"y":5429.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"$type":"EnableWander"},{"bb_target":{"_name":"start_pos","_targetVariableID":"e21c08b7-a0ed-421f-b027-871f22e7733f"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5303.0,"y":5418.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"_position":{"x":5620.0,"y":5229.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"14"},{"_condition":{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":5510.0,"y":5417.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"15"},{"_action":{"enabled":true,"$type":"EnableWander"},"_position":{"x":5812.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"19"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0
 --- !u!1001 &1481281267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48672,6 +48727,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1175511550}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1536150614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: Mechanic BehaviourTree
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4766.0,"y":-5523.0},"nodes":[{"_position":{"x":4942.0,"y":5302.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":4213.0,"y":5729.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4014.0,"y":5840.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"bb_target":{"_name":"tv_pos","_targetVariableID":"49ddb023-f4cd-4899-b0e8-991e61fc5a5c"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4303.0,"y":5845.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_position":{"x":4519.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"21"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4291.0,"y":6033.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"22"},{"_action":{"actions":[{"bb_target":{"_name":"investigate_pos","_targetVariableID":"127925f1-da47-48b5-9b08-3c7d122a97ab"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4573.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5326.0,"y":5560.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"39"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5004.0,"y":5722.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"40"},{"_condition":{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4802.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"41"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4846.0,"y":5902.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"45"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"bb_target":{"_name":"fuel_pos","_targetVariableID":"72ab448a-9d83-4599-a88a-2315b2d4c796"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5067.0,"y":5910.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"54"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5187.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5122.0,"y":6076.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"63"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5240.0,"y":5962.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"75"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5410.0,"y":5842.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"85"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5344.0,"y":6075.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"86"},{"_action":{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"},"_position":{"x":5464.0,"y":5997.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"98"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5672.0,"y":5838.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"101"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5605.0,"y":6085.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"102"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"fuel","_targetVariableID":"c2ec3b8b-f759-477e-b90d-e1a7ce77f381"},"valueB":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.SetFloat"},{"boolVariable":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5747.0,"y":5953.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"114"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"101"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"98"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"114"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0
 --- !u!1001 &1536635906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57552,26 +57627,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1000130933}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1849132525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
-  m_Name: Mechanic (3) BehaviourTree
-  m_EditorClassIdentifier: 
-  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-4766.0,"y":-5523.0},"nodes":[{"_position":{"x":4942.0,"y":5302.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":4213.0,"y":5729.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4014.0,"y":5840.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"bb_target":{"_name":"tv_pos","_targetVariableID":"49ddb023-f4cd-4899-b0e8-991e61fc5a5c"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4303.0,"y":5845.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"13"},{"_position":{"x":4519.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"21"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_name":"_Game
-    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4291.0,"y":6033.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"22"},{"_action":{"actions":[{"bb_target":{"_name":"investigate_pos","_targetVariableID":"127925f1-da47-48b5-9b08-3c7d122a97ab"},"$type":"GoTo"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":4573.0,"y":6030.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"31"},{"_position":{"x":5326.0,"y":5560.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"39"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5004.0,"y":5722.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"40"},{"_condition":{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4802.0,"y":5816.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"41"},{"_condition":{"checkMode":"AnyTrueSuffice","conditions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Look_race","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_Investigate","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":4846.0,"y":5902.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"45"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"bb_target":{"_name":"fuel_pos","_targetVariableID":"72ab448a-9d83-4599-a88a-2315b2d4c796"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5067.0,"y":5910.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"54"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5187.0,"y":5836.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"62"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Pick_fuel","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5122.0,"y":6076.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"63"},{"_action":{"actions":[{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Actions.SetEnum"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5240.0,"y":5962.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"75"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5410.0,"y":5842.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"85"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5344.0,"y":6075.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"86"},{"_action":{"bb_target":{"_name":"bike_pos","_targetVariableID":"68e7d4d7-dbcb-4400-9340-f05940c60751"},"$type":"GoTo"},"_position":{"x":5464.0,"y":5997.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"98"},{"_color":{"r":0.7490196,"g":0.4980392,"b":1.0,"a":1.0},"_position":{"x":5672.0,"y":5838.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"101"},{"_condition":{"conditions":[{"valueA":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},{"valueA":{"_type":"System.Enum","_name":"action","_targetVariableID":"a2fefec3-d257-45c0-9f54-971d2c7d7f73"},"valueB":{"_type":"InitMechanicBB+MechAction","_value":{"$content":"Go_bike","$type":"InitMechanicBB+MechAction"}},"$type":"NodeCanvas.Tasks.Conditions.CheckEnum"},{"valueA":{"_name":"arrived","_targetVariableID":"697df6e3-dc46-46d4-a50b-23bb4df98710"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"}],"$type":"NodeCanvas.Framework.ConditionList"},"_position":{"x":5605.0,"y":6085.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"102"},{"_action":{"actions":[{"waitTime":{"_value":2.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"valueA":{"_name":"fuel","_targetVariableID":"c2ec3b8b-f759-477e-b90d-e1a7ce77f381"},"valueB":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.SetFloat"},{"boolVariable":{"_name":"bike_need_fuel","_targetVariableID":"c512f882-cdf1-4f2c-935b-d18303088ff2"},"setTo":"False","$type":"NodeCanvas.Tasks.Actions.SetBoolean"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5747.0,"y":5953.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"114"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"21"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"39"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"13"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"22"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"21"},"_targetNode":{"$ref":"31"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"40"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"62"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"85"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"39"},"_targetNode":{"$ref":"101"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"41"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"45"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"40"},"_targetNode":{"$ref":"54"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"63"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"62"},"_targetNode":{"$ref":"75"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"86"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"85"},"_targetNode":{"$ref":"98"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"102"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"101"},"_targetNode":{"$ref":"114"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
-    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
-  _objectReferences: []
-  _deserializationFailed: 0
-  repeat: 1
-  updateInterval: 0
 --- !u!4 &1853718644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471756, guid: e8daa6ea25472a340ad936cbbf987925,
@@ -58285,6 +58340,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1878684811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a686a47eee2fa44cb0a34b5d86e4d5e, type: 3}
+  m_Name: Cop_2 BehaviourTree
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"version":2.85,"type":"NodeCanvas.BehaviourTrees.BehaviourTree","translation":{"x":-2984.0,"y":-2954.0},"zoomFactor":0.6283951,"nodes":[{"_position":{"x":5472.0,"y":5033.0},"$type":"NodeCanvas.BehaviourTrees.Selector","$id":"2"},{"_position":{"x":5326.0,"y":5224.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"3"},{"_condition":{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":4996.0,"y":5429.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"4"},{"_action":{"actions":[{"$type":"EnableWander"},{"bb_target":{"_name":"start_pos","_targetVariableID":"e21c08b7-a0ed-421f-b027-871f22e7733f"},"$type":"GoTo"}],"$type":"NodeCanvas.Framework.ActionList"},"_position":{"x":5303.0,"y":5418.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"8"},{"_position":{"x":5620.0,"y":5229.0},"$type":"NodeCanvas.BehaviourTrees.Sequencer","$id":"14"},{"_condition":{"valueA":{"_name":"_Game
+    Manager_BB/Night","_targetVariableID":"6aa70014-81aa-4346-a046-0fa64825c4c6"},"valueB":{"_value":true},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":5510.0,"y":5417.0},"$type":"NodeCanvas.BehaviourTrees.ConditionNode","$id":"15"},{"_action":{"enabled":true,"$type":"EnableWander"},"_position":{"x":5812.0,"y":5415.0},"$type":"NodeCanvas.BehaviourTrees.ActionNode","$id":"19"}],"connections":[{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"14"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"15"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"},{"_sourceNode":{"$ref":"14"},"_targetNode":{"$ref":"19"},"$type":"NodeCanvas.BehaviourTrees.BTConnection"}],"primeNode":{"$ref":"2"},"localBlackboard":{"_name":"Local
+    Blackboard","_variables":{}},"derivedData":{"repeat":true,"$type":"NodeCanvas.BehaviourTrees.BehaviourTree+DerivedSerializationData"}}'
+  _objectReferences: []
+  _deserializationFailed: 0
+  repeat: 1
+  updateInterval: 0
 --- !u!1001 &1882961080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66285,7 +66360,7 @@ MonoBehaviour:
   boundGraphObjectReferences: []
   enableAction: 0
   disableAction: 0
-  _graph: {fileID: 611054305}
+  _graph: {fileID: 1480984188}
   _blackboard: {fileID: 2125142946}
 --- !u!114 &2125142946
 MonoBehaviour:

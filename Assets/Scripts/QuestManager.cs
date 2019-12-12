@@ -41,7 +41,7 @@ public class QuestManager : MonoBehaviour
         switch(days_quest)
         {
             case 1:
-                if (days_quest == 1 && visitors_quest < 25)
+                if (days_quest == 1 && visitors_quest < 2)
                 {
                     quest_completed = false;
                 }
