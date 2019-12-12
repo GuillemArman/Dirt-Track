@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private int num_mechanics = 2;
     private int mechanic_cost = 250;
     private int foodcart_cost = 50;
+    private int ticketline_cost = 30;
     private int taxes_day = 250;
     private int income_day = 0; // per day without taking into account expenses
     private int expenses_day = 0; 
@@ -33,6 +34,10 @@ public class GameManager : MonoBehaviour
     public GameObject food_cart1;
     public GameObject food_cart2;
     public GameObject cant_buy_foodcart;
+
+    public GameObject ticket_line3;
+    public GameObject ticket_line4;
+    public GameObject cant_buy_ticketline;
 
     [Header("------ Ui texts ------")]
     public Text money_text;
@@ -63,6 +68,7 @@ public class GameManager : MonoBehaviour
         CheckVisitorsNumber();
         CheckMoneyMechanic();
         CheckMoneyFoodCart();
+        CheckMoneyTicketLine();
         UpdateDataUI();
     }
 
@@ -74,8 +80,9 @@ public class GameManager : MonoBehaviour
         money = 0;
         visitors = 0;
         ticket_cost = 10;
-        mechanic_cost = 1; //250
-        foodcart_cost = 1; //50
+        mechanic_cost = 250; //250
+        foodcart_cost = 50; //50
+        ticketline_cost = 30; //30
         num_mechanics = 2;
         taxes_day = 250;
         savings_day = 0;
@@ -188,6 +195,38 @@ public class GameManager : MonoBehaviour
 
         food_carts++;
         bb.SetValue("FoodCarts", food_carts);
+    }
+
+    public void CheckMoneyTicketLine()
+    {
+        money = bb.GetValue<int>("Money");
+        income_day = bb.GetValue<int>("Income");
+        if (money >= ticketline_cost && food_carts < 4)
+        {
+            cant_buy_ticketline.SetActive(false);
+        }
+        else
+        {
+            cant_buy_ticketline.SetActive(true);
+        }
+    }
+
+    public void BuyTicketLine()
+    {
+        money -= ticketline_cost;
+        expenses_day += ticketline_cost;
+        popularity += 0.5f;
+        taxes_day += 15;
+        bb.SetValue("Money", money);
+
+        if (ticket_line4.activeSelf == false && ticket_lines == 3)
+        {
+            cant_buy_ticketline.SetActive(true);
+            cant_buy_ticketline.GetComponentInChildren<Text>().text = "SOLD OUT".ToString();
+        }
+
+        ticket_lines++;
+        bb.SetValue("TicketLines", ticket_lines);
     }
 
     public void Quest1Completed()
