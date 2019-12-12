@@ -6,8 +6,11 @@ ScriptsOnlyBuild:
     - CameraMovement
     - CameraSwitching
     - CountingVisitors
+    - DestroyGM
     - EntranceTrigger
+    - FuelRemaining
     - GameManager
+    - HideLineBlock
     - InitCopBB
     - InitMechanicBB
     - InitVisitorBB
@@ -20,6 +23,7 @@ ScriptsOnlyBuild:
     - NodeCanvas.BehaviourTrees.BehaviourTreeOwner
     - NodeCanvas.Framework.Blackboard
     - NodeCanvas.Framework.GlobalBlackboard
+    - QuestManager
     - StadiumTrigger
     - SteeringAlign
     - SteeringArrive
@@ -27,6 +31,7 @@ ScriptsOnlyBuild:
     - SteeringQueue
     - SteeringSeparation
     - SteeringWander
+    - UIFaceCamera
     - WelcomeTrigger
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -70,21 +75,21 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9524}
-    - Class: 114
       Script: {instanceID: 9526}
     - Class: 114
-      Script: {instanceID: 9532}
+      Script: {instanceID: 9528}
     - Class: 114
-      Script: {instanceID: 9538}
+      Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 9546}
+      Script: {instanceID: 9540}
     - Class: 114
-      Script: {instanceID: 9582}
+      Script: {instanceID: 9548}
     - Class: 114
       Script: {instanceID: 9584}
     - Class: 114
-      Script: {instanceID: 9750}
+      Script: {instanceID: 9586}
+    - Class: 114
+      Script: {instanceID: 9754}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -151,65 +156,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 9426}
-    - Class: 114
-      Script: {instanceID: 9524}
+      Script: {instanceID: 9428}
     - Class: 114
       Script: {instanceID: 9526}
     - Class: 114
-      Script: {instanceID: 9532}
+      Script: {instanceID: 9528}
     - Class: 114
-      Script: {instanceID: 9538}
+      Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 9546}
+      Script: {instanceID: 9540}
     - Class: 114
-      Script: {instanceID: 9582}
+      Script: {instanceID: 9548}
     - Class: 114
       Script: {instanceID: 9584}
     - Class: 114
-      Script: {instanceID: 9660}
+      Script: {instanceID: 9586}
     - Class: 114
-      Script: {instanceID: 9750}
+      Script: {instanceID: 9664}
     - Class: 114
-      Script: {instanceID: 10030}
+      Script: {instanceID: 9754}
+    - Class: 114
+      Script: {instanceID: 9946}
     - Class: 114
       Script: {instanceID: 10036}
     - Class: 114
-      Script: {instanceID: 10076}
+      Script: {instanceID: 10042}
     - Class: 114
-      Script: {instanceID: 10112}
+      Script: {instanceID: 10082}
     - Class: 114
-      Script: {instanceID: 10360}
+      Script: {instanceID: 10118}
     - Class: 114
-      Script: {instanceID: 10362}
+      Script: {instanceID: 10120}
     - Class: 114
-      Script: {instanceID: 10426}
+      Script: {instanceID: 10190}
+    - Class: 114
+      Script: {instanceID: 10370}
+    - Class: 114
+      Script: {instanceID: 10372}
     - Class: 114
       Script: {instanceID: 10438}
     - Class: 114
-      Script: {instanceID: 10500}
+      Script: {instanceID: 10450}
     - Class: 114
-      Script: {instanceID: 10678}
+      Script: {instanceID: 10512}
     - Class: 114
-      Script: {instanceID: 10790}
+      Script: {instanceID: 10690}
     - Class: 114
-      Script: {instanceID: 10806}
+      Script: {instanceID: 10802}
     - Class: 114
-      Script: {instanceID: 10906}
+      Script: {instanceID: 10818}
     - Class: 114
-      Script: {instanceID: 10948}
+      Script: {instanceID: 10918}
     - Class: 114
-      Script: {instanceID: 11164}
+      Script: {instanceID: 10960}
     - Class: 114
-      Script: {instanceID: 11228}
+      Script: {instanceID: 11088}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11408}
+      Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11448}
+      Script: {instanceID: 11374}
     - Class: 114
-      Script: {instanceID: 11592}
+      Script: {instanceID: 11422}
+    - Class: 114
+      Script: {instanceID: 11462}
+    - Class: 114
+      Script: {instanceID: 11606}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -274,35 +287,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9336}
     - Class: 114
-      Script: {instanceID: 9404}
-    - Class: 114
       Script: {instanceID: 9406}
     - Class: 114
-      Script: {instanceID: 9474}
+      Script: {instanceID: 9408}
     - Class: 114
-      Script: {instanceID: 9494}
+      Script: {instanceID: 9476}
     - Class: 114
-      Script: {instanceID: 9524}
+      Script: {instanceID: 9496}
     - Class: 114
       Script: {instanceID: 9526}
     - Class: 114
-      Script: {instanceID: 9532}
+      Script: {instanceID: 9528}
     - Class: 114
-      Script: {instanceID: 9538}
+      Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 9546}
+      Script: {instanceID: 9540}
     - Class: 114
-      Script: {instanceID: 9582}
+      Script: {instanceID: 9548}
     - Class: 114
       Script: {instanceID: 9584}
     - Class: 114
-      Script: {instanceID: 9750}
+      Script: {instanceID: 9586}
     - Class: 114
-      Script: {instanceID: 9852}
+      Script: {instanceID: 9754}
     - Class: 114
-      Script: {instanceID: 10496}
+      Script: {instanceID: 9856}
     - Class: 114
-      Script: {instanceID: 10894}
+      Script: {instanceID: 10508}
+    - Class: 114
+      Script: {instanceID: 10906}
+    - Class: 114
+      Script: {instanceID: 32366}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -608,7 +623,7 @@ ScriptsOnlyBuild:
     className: NetworkTransform
   - hash:
       serializedVersion: 2
-      Hash: 92b027f84e5da169b5aac3c934e6d65c
+      Hash: 1928be72ea7e2d2ba96e833b8c3665ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EntranceTrigger
@@ -848,6 +863,12 @@ ScriptsOnlyBuild:
     className: TransitionArmModel
   - hash:
       serializedVersion: 2
+      Hash: 29c04c5d6ad3b384d607d9092746bd2b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HideLineBlock
+  - hash:
+      serializedVersion: 2
       Hash: 780e8f682b3221346c034a6712a0fd25
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -872,7 +893,7 @@ ScriptsOnlyBuild:
     className: InitVisitorBB
   - hash:
       serializedVersion: 2
-      Hash: 84cfae4c0f6ad0ba174b6ad93c149f1e
+      Hash: ff2c29d04186b90895d568a10f654732
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NightCycle
@@ -902,6 +923,12 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: f22746bbe37dcc8bbf541b1adcdd4936
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FuelRemaining
+  - hash:
+      serializedVersion: 2
       Hash: 92b027f84e5da169b5aac3c934e6d65c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -924,6 +951,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: NodeCanvas.DialogueTrees
     className: DialogueTreeController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIFaceCamera
   - hash:
       serializedVersion: 2
       Hash: 265cf27ba050d55ff33a8acab4ded6c0
@@ -1082,7 +1115,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: a7a294aca92485f463f395a34fa8df23
+      Hash: 61fe94f7f43cabfb437fd81252ef9906
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1182,6 +1215,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 2c9d78a8443508e4a72a6dc0c32a3de9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuestManager
   - hash:
       serializedVersion: 2
       Hash: 04279f6083496e5268fb4f9dabb608af
@@ -1286,7 +1325,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: b5dbf660c4ceb6f214695754b0942390
+      Hash: 2fa2bdaef316ae94c214354e7176ba45
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitMechanicBB
@@ -1296,9 +1335,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DestroyGM
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Game.unity
   - Assets/Scenes/End Scene.unity
-  playerPath: C:/Users/Marc/Desktop/DirtTrack.exe
+  playerPath: C:/Users/familia/Desktop/DirtTrack.exe

@@ -29,8 +29,8 @@ public class InitGlobal_BB : MonoBehaviour
         Currency_string = Global_BB.GetValue<int>("Money").ToString();
         Currency.text = Currency_string;
 
-      // Investigating_Point_string = Global_BB.GetValue<int>("Investigating_Points").ToString();
-      // Investigating_Point.text = Investigating_Point_string;
+       Investigating_Point_string = Global_BB.GetValue<int>("Investigating_Points").ToString();
+       Investigating_Point.text = Investigating_Point_string;
     }
 
     void Start()
