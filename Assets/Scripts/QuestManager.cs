@@ -13,8 +13,12 @@ public class QuestManager : MonoBehaviour
     public int money_quest;
 
     public GameObject ButtonQuest;
+    public GameObject ButtonQuest2;
+    public GameObject ButtonQuest3;
 
-    public bool quest_completed = false;
+    public bool quest1_completed = false;
+    public bool quest2_completed = false;
+    public bool quest3_completed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,24 +42,20 @@ public class QuestManager : MonoBehaviour
 
     public void Money_Quest()
     {
-        switch(days_quest)
+         if (visitors_quest > 15 && quest2_completed == false && quest3_completed == false)
+         {
+            quest1_completed = true;
+            ButtonQuest.SetActive(true);
+         }
+         if (visitors_quest > 25 && quest1_completed == true && quest3_completed == false)
         {
-            case 1:
-                if (days_quest == 1 && visitors_quest < 2)
-                {
-                    quest_completed = false;
-                }
-                else
-                {
-                    quest_completed = true;
-                    ButtonQuest.SetActive(true);
-
-                }
-                break;
-            case 2:
-                break;
-
-
+            quest2_completed = true;
+            ButtonQuest2.SetActive(true);
+        }
+         if (visitors_quest > 35 && quest1_completed == true && quest2_completed == true)
+        {
+            quest3_completed = true;
+            ButtonQuest3.SetActive(true);
         }
 
     }

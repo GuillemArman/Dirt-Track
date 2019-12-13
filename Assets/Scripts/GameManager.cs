@@ -235,6 +235,18 @@ public class GameManager : MonoBehaviour
         bb.SetValue("Money", money);      
     }
 
+    public void Quest2Completed()
+    {
+        money += 100;
+        bb.SetValue("Money", money);
+    }
+
+    public void Quest3Completed()
+    {
+        money += 150;
+        bb.SetValue("Money", money);
+    }
+
     public void CheckVisitorsNumber()
     {
         visitors = count_visitors.num_visitors;       

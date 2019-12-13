@@ -259,7 +259,6 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.XRModule
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.TestRunner.xml
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\nunit.framework.xml
-C:\Users\familia\Documents\GitHub\Dirt-Track\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\familia\Documents\GitHub\Dirt-Track\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\familia\Documents\GitHub\Dirt-Track\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\familia\Documents\GitHub\Dirt-Track\obj\Debug\Assembly-CSharp.dll
@@ -564,3 +563,4 @@ C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEditor.SpatialT
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEngine.SpatialTracking.pdb
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\UnityEditor.XR.LegacyInputHelpers.pdb
 C:\Users\familia\Documents\GitHub\Dirt-Track\Temp\bin\Debug\com.unity.multiplayer-hlapi.Runtime.pdb
+C:\Users\familia\Documents\GitHub\Dirt-Track\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
