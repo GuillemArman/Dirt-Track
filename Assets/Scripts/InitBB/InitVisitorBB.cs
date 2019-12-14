@@ -33,11 +33,6 @@ public class InitVisitorBB : MonoBehaviour
 
         visitor_bb.SetValue("entrance_1", GameObject.Find("Entrance1_Trigger"));
         visitor_bb.SetValue("entrance_2", GameObject.Find("Entrance2_Trigger"));
-
-        // Billboarding 
-        visitor_bb.SetValue("happy", transform.Find("Happy").gameObject);
-        visitor_bb.SetValue("sad", transform.Find("Sad").gameObject);
-        visitor_bb.SetValue("food", transform.Find("Food").gameObject);
     }
 }
 

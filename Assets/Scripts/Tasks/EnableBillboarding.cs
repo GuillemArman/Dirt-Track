@@ -8,6 +8,7 @@ public class EnableBillboarding : ActionTask
     public bool enable_happy = false;
     public bool enable_sad = false;
     public bool enable_food = false;
+    public bool enable_steal = false;
 
     protected override void OnExecute()
     {
@@ -19,6 +20,12 @@ public class EnableBillboarding : ActionTask
 
         if (enable_food) agent.transform.Find("Food").gameObject.SetActive(true);
         else agent.transform.Find("Food").gameObject.SetActive(false);
+
+        if (enable_food) agent.transform.Find("Food").gameObject.SetActive(true);
+        else agent.transform.Find("Food").gameObject.SetActive(false);
+
+        if (enable_steal) agent.transform.Find("Steal").gameObject.SetActive(true);
+        else agent.transform.Find("Steal").gameObject.SetActive(false);
 
         EndAction();
     }
