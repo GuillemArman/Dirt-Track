@@ -14,6 +14,7 @@ public class InitVisitorBB : MonoBehaviour
     void Start()
     {
         visitor_bb = GetComponent<Blackboard>();
+        visitor_bb.SetValue("start_velocity", GetComponent<Move>().max_velocity);
 
         // Setting triggers and targets
         visitor_bb.SetValue("ticket_1", GameObject.Find("Ticket1_Trigger"));

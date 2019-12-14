@@ -19,7 +19,7 @@ public class WelcomeTrigger : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Agent"))
+        if (other.gameObject.CompareTag("Visitor"))
         {
             other.gameObject.GetComponent<Blackboard>().SetValue("checking_price", true);
         }

@@ -38,7 +38,8 @@ public class FindThieves : ActionTask
 
             for (int i = 0; i < hitColliders.Length; i++)
             {
-                if (hitColliders[i].gameObject != agent.gameObject && hitColliders[i].gameObject.GetComponent<Blackboard>().GetValue<bool>("stealing"))
+                if (hitColliders[i].gameObject != agent.gameObject && hitColliders[i].CompareTag("Visitor") &&
+                    hitColliders[i].gameObject.GetComponent<Blackboard>().GetValue<bool>("stealing"))
                 {
                     thief_to_follow.value = hitColliders[i].gameObject;
                     thief_found = true;

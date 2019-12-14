@@ -13,6 +13,7 @@ public class InitCopBB : MonoBehaviour
     {
         cop_bb = GetComponent<Blackboard>();
         cop_bb.SetValue("start_pos", start_pos);
+        cop_bb.SetValue("start_velocity", GetComponent<Move>().max_velocity);
     }
 }
 

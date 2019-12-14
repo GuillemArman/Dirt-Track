@@ -34,7 +34,7 @@ public class SteeringQueue : MonoBehaviour
             direction.x += ray.direction_offset;
 
             if (Physics.Raycast(transform.position, q * direction.normalized, out hit, ray.length)
-                && !hit.collider.CompareTag("Obstacle") && wants_to_queue && !hit.collider.gameObject.GetComponent<SteeringQueue>().is_in_queue)
+                && hit.collider.CompareTag("Visitor") && wants_to_queue)
             {
                 is_in_queue = true;
                 move.SetVelocity(Vector3.zero);

@@ -26,7 +26,7 @@ public class StadiumTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Agent") && !cycle.night)
+        if (other.gameObject.CompareTag("Visitor") && !cycle.night)
         {
             Destroy(other.gameObject);
             stadium_visitors.AddVisitor();

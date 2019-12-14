@@ -35,7 +35,7 @@ public class EntranceTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Agent") && other.gameObject.GetComponent<Blackboard>().GetValue<InitVisitorBB.Action>("visitor_state") == InitVisitorBB.Action.Go_home)
+        if (other.gameObject.CompareTag("Visitor") && other.gameObject.GetComponent<Blackboard>().GetValue<InitVisitorBB.Action>("visitor_state") == InitVisitorBB.Action.Go_home)
         {
             Destroy(other.gameObject);
         }
