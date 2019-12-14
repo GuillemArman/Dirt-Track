@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 5}
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 494}
   m_MaxSize: {x: 10004, y: 14044}
   vertical: 1
-  controlID: 33
+  controlID: 15
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 513
     height: 556
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -190,10 +190,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 711, y: 494}
-  m_MaxSize: {x: 18006, y: 14044}
+  m_MinSize: {x: 713, y: 494}
+  m_MaxSize: {x: 18008, y: 14044}
   vertical: 0
-  controlID: 32
+  controlID: 87
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -213,8 +213,8 @@ MonoBehaviour:
     y: 0
     width: 1105
     height: 947
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 13}
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 0
     width: 302
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -536,9 +536,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 78660000
-      m_LastClickedID: 26232
-      m_ExpandedIDs: 8efbffff3666000054670000406d0000
+      m_SelectedIDs: c28a0000
+      m_LastClickedID: 35522
+      m_ExpandedIDs: 86e9ffff1a7f0000647f0000f08400001a880000768a0000c28a0000088d0000e0900000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -681,20 +681,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Tasks
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Tasks
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\Marc\Documents\GitHub\Dirt-Track
+  m_LastProjectPath: C:\Users\familia\Documents\GitHub\Dirt-Track
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 98420000
-    m_LastClickedID: 17048
-    m_ExpandedIDs: 00000000863600009c410000ec470000a252000056540000ea7e0000ec7e0000ee7e0000f07e0000f27e0000f47e0000f67e0000f87e0000fa7e0000fc7e0000fe7e000000ca9a3b
+    m_SelectedIDs: 68600000
+    m_LastClickedID: 24680
+    m_ExpandedIDs: 000000009655000098660000d4700000e89b0000ea9b0000ec9b0000ee9b0000f09b0000f29b0000f49b0000f69b0000f89b0000fa9b0000fc9b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -722,7 +722,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000086360000ec470000a2520000ea7e0000ec7e0000ee7e0000f07e0000f27e0000f47e0000f67e0000f87e0000fa7e0000fc7e0000fe7e0000
+    m_ExpandedIDs: 000000009655000098660000d4700000e89b0000ea9b0000ec9b0000ee9b0000f09b0000f29b0000f49b0000f69b0000f89b0000fa9b0000fc9b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -753,18 +753,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 80250000ca45000040310000322f00005a3100006a2f0000f678000036830000c88a0000f0810000b888000092730000986b00009a810000427d0000ec760000d05a0000ac34000034700000b43200000c35000008380000f8380000f4380000e25d0000b6780000aa7900004e780000067a0000ac7800007634000032530000265f0000d84f00005c5d0000585e000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: EnableMachanicUI
-      m_OriginalName: EnableMachanicUI
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 32538
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_CreateAssetUtility:

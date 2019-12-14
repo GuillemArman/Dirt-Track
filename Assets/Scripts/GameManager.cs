@@ -9,12 +9,14 @@ public class GameManager : MonoBehaviour
 {
     private GlobalBlackboard bb;
     private CountingVisitors count_visitors;
+    private FuelRemaining FR;
     
     private int ticket_cost = 10;
     private int num_mechanics = 2;
     private int mechanic_cost = 250;
     private int foodcart_cost = 50;
     private int ticketline_cost = 30;
+    private int fuel_cost = 1;
     private int taxes_day = 250;
     private int income_day = 0; // per day without taking into account expenses
     private int expenses_day = 0; 
@@ -38,6 +40,9 @@ public class GameManager : MonoBehaviour
     public GameObject ticket_line3;
     public GameObject ticket_line4;
     public GameObject cant_buy_ticketline;
+
+    public GameObject cant_buy_fuel;
+    private int count_fuel = 0;
 
     [Header("------ Ui texts ------")]
     public Text money_text;
@@ -69,6 +74,7 @@ public class GameManager : MonoBehaviour
         CheckMoneyMechanic();
         CheckMoneyFoodCart();
         CheckMoneyTicketLine();
+        CheckMoneyFuel();
         UpdateDataUI();
     }
 
@@ -76,6 +82,7 @@ public class GameManager : MonoBehaviour
     {
         bb = GetComponent<GlobalBlackboard>();
         count_visitors = GameObject.Find("Stadium").GetComponent<CountingVisitors>();
+        FR = GetComponent<FuelRemaining>();
 
         money = 0;
         visitors = 0;
@@ -227,6 +234,40 @@ public class GameManager : MonoBehaviour
 
         ticket_lines++;
         bb.SetValue("TicketLines", ticket_lines);
+    }
+
+    public void CheckMoneyFuel()
+    {
+        money = bb.GetValue<int>("Money");
+        income_day = bb.GetValue<int>("Income");
+        if (money >= fuel_cost && count_fuel<2)
+        {
+            cant_buy_fuel.SetActive(false);
+        }
+        else if (count_fuel > 1)
+        {
+            cant_buy_fuel.SetActive(true);
+            cant_buy_fuel.GetComponentInChildren<Text>().text = "SOLD OUT".ToString();
+        }
+        else
+        {
+            cant_buy_fuel.SetActive(true);
+        }
+    }
+
+    public void BuyMoreFuel()
+    {
+        money -= fuel_cost;
+        expenses_day += fuel_cost;
+        popularity += 1.5f;
+        taxes_day += 30;
+        bb.SetValue("Money", money);
+
+       
+       
+        count_fuel++;
+
+        FR.fuel_consumption *= 2;
     }
 
     public void Quest1Completed()
