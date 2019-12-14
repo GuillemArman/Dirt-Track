@@ -6,20 +6,20 @@ using UnityEngine.AI;
 public class MoveBike : MonoBehaviour
 {
     private NightCycle cycle;
+    private NavMeshAgent nav_agent;
     private FuelRemaining fuel_remaining;
+    private GameObject targetWayPoint;
 
-    // put the points from unity interface
-    public GameObject[] wayPointList;
-
+    public bool colliding = false;
+    public GameObject[] wayPointList; // put the points from unity interface
     public int currentWayPoint = 0;
-    GameObject targetWayPoint;
-
     public float speed = 7f;
 
     // Use this for initialization
     void Start()
     {
         cycle = GameObject.Find("_Game Manager").GetComponent<NightCycle>();
+        nav_agent = GetComponent<NavMeshAgent>();
         fuel_remaining = GetComponent<FuelRemaining>();
     }
 
@@ -93,12 +93,25 @@ public class MoveBike : MonoBehaviour
                     // move towards the target
                     transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
                 }
-                else if (currentWayPoint == 0 && aux > 2)
+                else if (currentWayPoint == 0 && aux > 2 && !colliding)
                 {
                     // move towards the target
                     transform.position = Vector3.MoveTowards(transform.position, targetWayPoint.transform.position, speed * Time.deltaTime);
                 }
             }
         }
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("Bike"))
+        {
+            colliding = true;
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        colliding = false;
     }
 }

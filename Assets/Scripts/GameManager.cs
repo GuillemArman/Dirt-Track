@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private int mechanic_cost = 250;
     private int foodcart_cost = 50;
     private int ticketline_cost = 30;
-    private int fuel_cost = 1;
+    private int fuel_cost = 45;
     private int taxes_day = 250;
     private int income_day = 0; // per day without taking into account expenses
     private int expenses_day = 0; 
@@ -61,6 +61,14 @@ public class GameManager : MonoBehaviour
     public Text expenses;
     public Text final_money;
 
+    [Header("------ Ui panels ------")]
+    public GameObject camera_panel_open;
+    public GameObject camera_panel_closed;
+    public GameObject info_panel;
+    public GameObject taxes_panel;
+    public GameObject quest_panel;
+    public GameObject shop_panel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +98,7 @@ public class GameManager : MonoBehaviour
         mechanic_cost = 250; //250
         foodcart_cost = 50; //50
         ticketline_cost = 30; //30
+        fuel_cost = 45; //45
         num_mechanics = 2;
         taxes_day = 250;
         savings_day = 0;
@@ -301,6 +310,11 @@ public class GameManager : MonoBehaviour
         camera_switch.Camera5();
 
         // Set active balance sheet
+        camera_panel_open.SetActive(false);
+        info_panel.SetActive(false);
+        taxes_panel.SetActive(false);
+        quest_panel.SetActive(false);
+        shop_panel.SetActive(false);
         balance_sheet.SetActive(true);
 
         // Set values to text
@@ -322,6 +336,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
 
         // Change camera
+        camera_panel_closed.SetActive(true);
         CameraSwitching camera_switch = GetComponent<CameraSwitching>();
         camera_switch.Camera1();
 
