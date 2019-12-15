@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     private GlobalBlackboard bb;
     private CountingVisitors count_visitors;
     private FuelRemaining FR;
-    
+    private AudioSource source;
+
     private int ticket_cost = 10;
     private int num_mechanics = 2;
     private int mechanic_cost = 250;
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     public int money = 0; // total
     public float popularity = 1;
+    public AudioClip sound_buy;
+    public AudioClip sound_claim;
 
     [Header("------ Progression System ------")]
     public GameObject yellow_team;
@@ -74,6 +77,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         LoadEverything();
     }
 
@@ -163,10 +167,12 @@ public class GameManager : MonoBehaviour
     {
         money -= mechanic_cost;
         expenses_day += mechanic_cost;
-        popularity += 1.5f;
-        taxes_day += 50;
+        popularity += 0.75f;
+        taxes_day += 80;
         num_mechanics++;
         bb.SetValue("Money", money);
+
+        source.PlayOneShot(sound_buy);
 
         if (yellow_team.activeSelf == false)
         {
@@ -214,6 +220,7 @@ public class GameManager : MonoBehaviour
         }
 
         food_carts++;
+        source.PlayOneShot(sound_buy);
         bb.SetValue("FoodCarts", food_carts);
     }
 
@@ -236,10 +243,11 @@ public class GameManager : MonoBehaviour
         money -= ticketline_cost;
         expenses_day += ticketline_cost;
         popularity += 0.25f;
-        taxes_day += 15;
+        taxes_day += 45;
         bb.SetValue("Money", money);
         ticket_lines++;
         bb.SetValue("TicketLines", ticket_lines);
+        source.PlayOneShot(sound_buy);
 
         if (ticket_lines == 4)
         {
@@ -272,15 +280,13 @@ public class GameManager : MonoBehaviour
     {
         money -= fuel_cost;
         expenses_day += fuel_cost;
-        popularity += 0.5f;
+        popularity += 0.20f;
         taxes_day += 30;
         bb.SetValue("Money", money);
-
-       
-       
+    
         count_fuel++;
-
         FR.fuel_consumption *= 2;
+        source.PlayOneShot(sound_buy);
     }
 
     public void Quest1Completed()
@@ -288,7 +294,8 @@ public class GameManager : MonoBehaviour
         money += 50;
         income_day += 50;
         bb.SetValue("Income", income_day);
-        bb.SetValue("Money", money);      
+        bb.SetValue("Money", money);
+        source.PlayOneShot(sound_claim);
     }
 
     public void Quest2Completed()
@@ -297,6 +304,7 @@ public class GameManager : MonoBehaviour
         income_day += 100;
         bb.SetValue("Income", income_day);
         bb.SetValue("Money", money);
+        source.PlayOneShot(sound_claim);
     }
 
     public void Quest3Completed()
@@ -305,6 +313,7 @@ public class GameManager : MonoBehaviour
         income_day += 150;
         bb.SetValue("Income", income_day);
         bb.SetValue("Money", money);
+        source.PlayOneShot(sound_claim);
     }
 
     public void CheckVisitorsNumber()
@@ -328,6 +337,7 @@ public class GameManager : MonoBehaviour
         balance_sheet.SetActive(true);
 
         // Set values to text
+        day.GetComponent<Text>().text = bb.GetValue<int>("Days").ToString();
         income.GetComponent<Text>().text = income_day.ToString();
         expenses.GetComponent<Text>().text = (-expenses_day).ToString();
         taxes.GetComponent<Text>().text = (-taxes_day).ToString();
@@ -339,10 +349,8 @@ public class GameManager : MonoBehaviour
         {
             continue_button.SetActive(false);
             menu_button.SetActive(true);
-            day.GetComponent<Text>().text = "Final".ToString();
             youWin.SetActive(true);
         }
-        else day.GetComponent<Text>().text = bb.GetValue<int>("Days").ToString();
 
         // This pauses the game
         Time.timeScale = 0;
