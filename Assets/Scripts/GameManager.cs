@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         money = 0;
         visitors = 0;
         ticket_cost = 10;
-        mechanic_cost = 250; //250
+        mechanic_cost = 150; //150
         foodcart_cost = 50; //50
         ticketline_cost = 30; //30
         fuel_cost = 45; //45
@@ -345,7 +345,7 @@ public class GameManager : MonoBehaviour
         int p = savings_day + income_day - expenses_day - taxes_day;
         final_money.GetComponent<Text>().text = p.ToString();
 
-        if (balance_days > 3 && p >= 0)
+        if (balance_days > 2 && p >= 0)
         {
             continue_button.SetActive(false);
             menu_button.SetActive(true);
