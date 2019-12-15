@@ -5,6 +5,7 @@ Dirt Track
 Dirt Track is a Stadium Manager. Everyday day people will come to your stadium, manage the ticket price and upgrade the races thanks to the mechanics. Complete the quests and make sure everybody pays the ticket entrance!
 
 Use WASD or the mouse in order to move the camera. You can do zoom with the wheel (ONLY IN CAMERA 4).
+You can select a cop to chase visitors that don't pay the ticket.
 After 3 days the game ends.
 
 ## Game Areas
@@ -48,7 +49,9 @@ Guillem Arman: https://github.com/GuillemArman
 
 ![](https://imgur.com/n7mBKwY.png)
 
-Wiki: https://github.com/GuillemArman/WikiDirtTrack/wiki
+Wiki: https://github.com/GuillemArman/WikiDirtTrack
+
+Webpage: https://william25borr.wixsite.com/dirttrack
 
 
 ### License ###
@@ -62,4 +65,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
