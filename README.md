@@ -27,7 +27,7 @@ Visitors will spend their money in your Stadium. Make sure you gain money with t
 
 They will patrol at night. During day they will look out the visitors. If some visitor tries to sneak and don't pay the ticket, cops will chase them and make them pay a fee. 
 
-![](https://imgur.com/HGmXPZF.png)
+![](https://imgur.com/QTVBFQ8.png)
 
 ### Mechanics
 
