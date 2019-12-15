@@ -42,17 +42,18 @@ public class QuestManager : MonoBehaviour
 
     public void Money_Quest()
     {
-         if (visitors_quest > 25 && quest2_completed == false && quest3_completed == false)
+         if (visitors_quest > 24 && quest2_completed == false && quest3_completed == false)
          {
+
             quest1_completed = true;
             ButtonQuest.SetActive(true);
          }
-         if (visitors_quest > 35 && quest1_completed == true && quest3_completed == false)
+         if (visitors_quest > 34 && quest1_completed == true && quest3_completed == false)
         {
             quest2_completed = true;
             ButtonQuest2.SetActive(true);
         }
-         if (visitors_quest > 50 && quest1_completed == true && quest2_completed == true)
+         if (visitors_quest > 49 && quest1_completed == true && quest2_completed == true)
         {
             quest3_completed = true;
             ButtonQuest3.SetActive(true);

@@ -290,18 +290,24 @@ public class GameManager : MonoBehaviour
     public void Quest1Completed()
     {
         money += 50;
+        income_day += 50;
+        bb.SetValue("Income", income_day);
         bb.SetValue("Money", money);      
     }
 
     public void Quest2Completed()
     {
         money += 100;
+        income_day += 100;
+        bb.SetValue("Income", income_day);
         bb.SetValue("Money", money);
     }
 
     public void Quest3Completed()
     {
         money += 150;
+        income_day += 150;
+        bb.SetValue("Income", income_day);
         bb.SetValue("Money", money);
     }
 
