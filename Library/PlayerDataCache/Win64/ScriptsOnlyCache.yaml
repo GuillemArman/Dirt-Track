@@ -1141,7 +1141,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 1569781bdb9a9b1744f16f6e75193bc2
+      Hash: 16aaf4c87361f56c5f1e5dec4ebdfff8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
