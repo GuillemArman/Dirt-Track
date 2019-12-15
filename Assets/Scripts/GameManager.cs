@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
         money -= mechanic_cost;
         expenses_day += mechanic_cost;
         popularity += 0.75f;
-        taxes_day += 80;
+        taxes_day += 100;
         num_mechanics++;
         bb.SetValue("Money", money);
 
@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
         money -= foodcart_cost;
         expenses_day += foodcart_cost;
         popularity += 0.15f;
-        taxes_day += 15;
+        taxes_day += 25;
         bb.SetValue("Money", money);
 
         if (food_cart1.activeSelf == false && food_carts == 1)
@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
         money -= ticketline_cost;
         expenses_day += ticketline_cost;
         popularity += 0.25f;
-        taxes_day += 45;
+        taxes_day += 60;
         bb.SetValue("Money", money);
         ticket_lines++;
         bb.SetValue("TicketLines", ticket_lines);
@@ -281,7 +281,7 @@ public class GameManager : MonoBehaviour
         money -= fuel_cost;
         expenses_day += fuel_cost;
         popularity += 0.20f;
-        taxes_day += 30;
+        taxes_day += 45;
         bb.SetValue("Money", money);
     
         count_fuel++;
@@ -380,6 +380,8 @@ public class GameManager : MonoBehaviour
         // Check money to see if we lose
         if (bb.GetValue<int>("Money") < 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        taxes_day += 50;
     }
 
     public float GetPopularity()
