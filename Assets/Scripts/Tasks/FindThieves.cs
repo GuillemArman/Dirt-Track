@@ -41,19 +41,23 @@ public class FindThieves : ActionTask
 
             for (int i = 0; i < hitColliders.Length; i++)
             {
-                if (hitColliders[i].gameObject != agent.gameObject && hitColliders[i].CompareTag("Visitor") &&
-                    hitColliders[i].gameObject.GetComponent<Blackboard>().GetValue<bool>("stealing"))
+                detected.value = false;
+
+                if (hitColliders[i].gameObject != agent.gameObject && hitColliders[i].CompareTag("Visitor"))
                 {
-                    detected.value = true;
-
-                    Vector3 dist = hitColliders[i].gameObject.transform.position - agent.transform.position;
-
-                    if (dist.magnitude <= min_dist)
+                    if (hitColliders[i].gameObject.GetComponent<Blackboard>().GetValue<bool>("stealing"))
                     {
-                        // Do some stuff
-                        hitColliders[i].gameObject.GetComponent<Blackboard>().SetValue("caught", true);
-                        caught.value = true;
+                        detected.value = true;
+
+                        Vector3 dist = hitColliders[i].gameObject.transform.position - agent.transform.position;
+
+                        if (dist.magnitude <= min_dist)
+                        {
+                            hitColliders[i].gameObject.GetComponent<Blackboard>().SetValue("caught", true);
+                            caught.value = true;
+                        }
                     }
+
                 }
             }
         }
@@ -77,8 +81,8 @@ public class FindThieves : ActionTask
 
         for (int i = 0; i < (segments + 1); i++)
         {
-            x = Mathf.Sin(Mathf.Deg2Rad * angle) * alert_radius;
-            z = Mathf.Cos(Mathf.Deg2Rad * angle) * alert_radius;
+            x = Mathf.Sin(Mathf.Deg2Rad * angle) * alert_radius+1;
+            z = Mathf.Cos(Mathf.Deg2Rad * angle) * alert_radius+1;
 
             line.SetPosition(i, new Vector3(x, y, z));
 

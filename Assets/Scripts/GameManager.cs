@@ -117,7 +117,6 @@ public class GameManager : MonoBehaviour
         bb.SetValue("TicketLines", ticket_lines);
 
         balance_days = bb.GetValue<int>("Days");
-
     }
 
     void UpdateDataUI()
@@ -246,10 +245,7 @@ public class GameManager : MonoBehaviour
         {
             cant_buy_ticketline.SetActive(true);
             cant_buy_ticketline.GetComponentInChildren<Text>().text = "SOLD OUT".ToString();
-        }
-       
-
-       
+        }     
     }
 
     public void CheckMoneyFuel()
@@ -323,12 +319,6 @@ public class GameManager : MonoBehaviour
         CameraSwitching camera_switch = GetComponent<CameraSwitching>();
         camera_switch.Camera5();
 
-        if(balance_days > 2)
-        {
-            continue_button.SetActive(false);
-            menu_button.SetActive(true);
-            youWin.SetActive(true);
-        }
         // Set active balance sheet
         camera_panel_open.SetActive(false);
         info_panel.SetActive(false);
@@ -338,13 +328,21 @@ public class GameManager : MonoBehaviour
         balance_sheet.SetActive(true);
 
         // Set values to text
-        day.GetComponent<Text>().text = bb.GetValue<int>("Days").ToString();
         income.GetComponent<Text>().text = income_day.ToString();
         expenses.GetComponent<Text>().text = (-expenses_day).ToString();
         taxes.GetComponent<Text>().text = (-taxes_day).ToString();
         savings.GetComponent<Text>().text = savings_day.ToString();
         int p = savings_day + income_day - expenses_day - taxes_day;
         final_money.GetComponent<Text>().text = p.ToString();
+
+        if (balance_days > 3 && p >= 0)
+        {
+            continue_button.SetActive(false);
+            menu_button.SetActive(true);
+            day.GetComponent<Text>().text = "Final".ToString();
+            youWin.SetActive(true);
+        }
+        else day.GetComponent<Text>().text = bb.GetValue<int>("Days").ToString();
 
         // This pauses the game
         Time.timeScale = 0;

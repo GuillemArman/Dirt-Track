@@ -13,7 +13,6 @@ public class InitVisitorBB : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        visitor_bb = GetComponent<Blackboard>();
         visitor_bb.SetValue("start_velocity", GetComponent<Move>().max_velocity);
 
         // Setting triggers and targets
