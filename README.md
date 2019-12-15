@@ -48,7 +48,7 @@ Guillem Arman: https://github.com/GuillemArman
 
 ![](https://imgur.com/n7mBKwY.png)
 
-Wiki: https://github.com/GuillemArman/WikiDirtTrack
+Wiki: https://github.com/GuillemArman/WikiDirtTrack/wiki
 
 
 ### License ###
