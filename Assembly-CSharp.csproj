@@ -441,6 +441,7 @@
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\Timeout.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CameraSwitching.cs" />
+    <Compile Include="Assets\Scripts\ClickToPos.cs" />
     <Compile Include="Assets\Scripts\CountingVisitors.cs" />
     <Compile Include="Assets\Scripts\DestroyGM.cs" />
     <Compile Include="Assets\Scripts\EntranceTrigger.cs" />
@@ -455,6 +456,7 @@
     <Compile Include="Assets\Scripts\MoveBike.cs" />
     <Compile Include="Assets\Scripts\NightCycle.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\SelectCops.cs" />
     <Compile Include="Assets\Scripts\StadiumTrigger.cs" />
     <Compile Include="Assets\Scripts\Steering\Move.cs" />
     <Compile Include="Assets\Scripts\Steering\MoveNavMesh.cs" />
@@ -470,6 +472,7 @@
     <Compile Include="Assets\Scripts\Tasks\EnableWander.cs" />
     <Compile Include="Assets\Scripts\Tasks\FindThieves.cs" />
     <Compile Include="Assets\Scripts\Tasks\GoTo.cs" />
+    <Compile Include="Assets\Scripts\Tasks\GoToClick.cs" />
     <Compile Include="Assets\Scripts\Tasks\GoToFood.cs" />
     <Compile Include="Assets\Scripts\Tasks\GoToStadium.cs" />
     <Compile Include="Assets\Scripts\Tasks\GoToTicket.cs" />

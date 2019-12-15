@@ -6,13 +6,14 @@ using NodeCanvas.Framework;
 public class FindThieves : ActionTask
 {
     private bool radius_created = false;
-    private bool thief_found = false;
     private LineRenderer line;
+    private int segments = 50;
 
-    public BBParameter<GameObject> thief_to_follow;
+    public BBParameter<bool> caught;
     public BBParameter<bool> detected;
+    public BBParameter<bool> selected;
+
     public float alert_radius = 12.0f;
-    public int segments = 50;
     public float min_dist = 2.0f;
 
     protected override void OnExecute()
@@ -29,9 +30,11 @@ public class FindThieves : ActionTask
             radius_created = true;
         }
 
-        // Stay alert (finds only agents)
-        if (!thief_found)
+        // Enabling cirlce if selected
+        if (selected.value)
         {
+            line.enabled = true;
+
             int layer_id = 9;
             int layer_mask = 1 << layer_id;
             Collider[] hitColliders = Physics.OverlapSphere(agent.transform.position, alert_radius, layer_mask);
@@ -41,28 +44,24 @@ public class FindThieves : ActionTask
                 if (hitColliders[i].gameObject != agent.gameObject && hitColliders[i].CompareTag("Visitor") &&
                     hitColliders[i].gameObject.GetComponent<Blackboard>().GetValue<bool>("stealing"))
                 {
-                    thief_to_follow.value = hitColliders[i].gameObject;
-                    thief_found = true;
+                    detected.value = true;
+
+                    Vector3 dist = hitColliders[i].gameObject.transform.position - agent.transform.position;
+
+                    if (dist.magnitude <= min_dist)
+                    {
+                        // Do some stuff
+                        hitColliders[i].gameObject.GetComponent<Blackboard>().SetValue("caught", true);
+                        caught.value = true;
+                    }
                 }
-            }
-        }
-
-        // Check if cop arrives to thief
-        if (thief_to_follow.value != null)
-        {
-            Vector3 dist = thief_to_follow.value.transform.position - agent.transform.position;
-
-            if (dist.magnitude <= min_dist)
-            {
-                // Do some stuff
-                thief_to_follow.value.GetComponent<Blackboard>().SetValue("detected", true);
-                detected.value = true;
             }
         }
         else
         {
-            thief_to_follow.value = null;
-            thief_found = false;
+            detected.value = false;
+            caught.value = false;
+            line.enabled = false;
         }
 
         EndAction();
