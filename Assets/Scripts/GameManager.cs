@@ -37,8 +37,6 @@ public class GameManager : MonoBehaviour
     public GameObject food_cart2;
     public GameObject cant_buy_foodcart;
 
-    public GameObject ticket_line3;
-    public GameObject ticket_line4;
     public GameObject cant_buy_ticketline;
 
     public GameObject cant_buy_fuel;
@@ -54,6 +52,10 @@ public class GameManager : MonoBehaviour
 
     [Header("------ Balance sheet ------")]
     public GameObject balance_sheet;
+    public GameObject continue_button;
+    public GameObject menu_button;
+    public GameObject youWin;
+    public int balance_days; 
     public Text day;
     public Text savings;
     public Text income;
@@ -113,6 +115,9 @@ public class GameManager : MonoBehaviour
         bb.SetValue("Popularity", popularity);
         bb.SetValue("FoodCarts", food_carts);
         bb.SetValue("TicketLines", ticket_lines);
+
+        balance_days = bb.GetValue<int>("Days");
+
     }
 
     void UpdateDataUI()
@@ -159,7 +164,7 @@ public class GameManager : MonoBehaviour
     {
         money -= mechanic_cost;
         expenses_day += mechanic_cost;
-        popularity += 0.5f;
+        popularity += 1.5f;
         taxes_day += 50;
         num_mechanics++;
         bb.SetValue("Money", money);
@@ -194,7 +199,7 @@ public class GameManager : MonoBehaviour
     {    
         money -= foodcart_cost;
         expenses_day += foodcart_cost;
-        popularity += 0.5f;
+        popularity += 0.15f;
         taxes_day += 15;
         bb.SetValue("Money", money);
 
@@ -217,7 +222,7 @@ public class GameManager : MonoBehaviour
     {
         money = bb.GetValue<int>("Money");
         income_day = bb.GetValue<int>("Income");
-        if (money >= ticketline_cost && food_carts < 4)
+        if (money >= ticketline_cost && ticket_lines <4)
         {
             cant_buy_ticketline.SetActive(false);
         }
@@ -231,23 +236,26 @@ public class GameManager : MonoBehaviour
     {
         money -= ticketline_cost;
         expenses_day += ticketline_cost;
-        popularity += 0.5f;
+        popularity += 0.25f;
         taxes_day += 15;
         bb.SetValue("Money", money);
+        ticket_lines++;
+        bb.SetValue("TicketLines", ticket_lines);
 
-        if (ticket_line4.activeSelf == false && ticket_lines == 3)
+        if (ticket_lines == 4)
         {
             cant_buy_ticketline.SetActive(true);
             cant_buy_ticketline.GetComponentInChildren<Text>().text = "SOLD OUT".ToString();
         }
+       
 
-        ticket_lines++;
-        bb.SetValue("TicketLines", ticket_lines);
+       
     }
 
     public void CheckMoneyFuel()
     {
         money = bb.GetValue<int>("Money");
+        balance_days = bb.GetValue<int>("Days");
         income_day = bb.GetValue<int>("Income");
         if (money >= fuel_cost && count_fuel<2)
         {
@@ -268,7 +276,7 @@ public class GameManager : MonoBehaviour
     {
         money -= fuel_cost;
         expenses_day += fuel_cost;
-        popularity += 1.5f;
+        popularity += 0.5f;
         taxes_day += 30;
         bb.SetValue("Money", money);
 
@@ -309,6 +317,12 @@ public class GameManager : MonoBehaviour
         CameraSwitching camera_switch = GetComponent<CameraSwitching>();
         camera_switch.Camera5();
 
+        if(balance_days > 2)
+        {
+            continue_button.SetActive(false);
+            menu_button.SetActive(true);
+            youWin.SetActive(true);
+        }
         // Set active balance sheet
         camera_panel_open.SetActive(false);
         info_panel.SetActive(false);
